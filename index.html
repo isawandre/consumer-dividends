@@ -4,27 +4,33 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <title>Consumer Dividends — Practical Data & Automation Tools</title>
-  <meta name="description" content="Consumer Dividends builds practical automation tools, evaluation kits, and data resources for operators, researchers, and small teams." />
+  <title>Consumer Dividends</title>
+  <meta
+    name="description"
+    content="Consumer Dividends is a product hub for datasets, Discord bots, rubric packs, HR risk tools, workflows, and practical automation products."
+  />
 
   <style>
     :root {
-      --bg: #f7f9fc;
-      --card: #ffffff;
-      --text: #172033;
-      --muted: #627086;
-      --navy: #0b1f3a;
-      --navy-2: #102a4c;
-      --green: #16a36b;
-      --green-dark: #0f7d52;
-      --border: #dbe3ee;
-      --soft: #edf7f2;
-      --amber: #f59e0b;
-      --shadow: 0 20px 60px rgba(11, 31, 58, 0.08);
+      --bg: #070a0f;
+      --panel: #101722;
+      --panel2: #151f2d;
+      --text: #f4f7fb;
+      --muted: #aab5c5;
+      --line: rgba(255,255,255,0.11);
+      --accent: #7dd3fc;
+      --accent2: #a7f3d0;
+      --gold: #fde68a;
+      --danger: #fda4af;
+      --radius: 20px;
+      --max: 1160px;
+      --shadow: 0 22px 70px rgba(0,0,0,0.36);
     }
 
     * {
       box-sizing: border-box;
+      margin: 0;
+      padding: 0;
     }
 
     html {
@@ -32,11 +38,14 @@
     }
 
     body {
-      margin: 0;
-      font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      background: var(--bg);
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background:
+        radial-gradient(circle at 12% 0%, rgba(125,211,252,0.17), transparent 32%),
+        radial-gradient(circle at 92% 8%, rgba(167,243,208,0.13), transparent 30%),
+        radial-gradient(circle at 50% 100%, rgba(253,230,138,0.08), transparent 28%),
+        var(--bg);
       color: var(--text);
-      line-height: 1.55;
+      line-height: 1.6;
     }
 
     a {
@@ -44,8 +53,8 @@
       text-decoration: none;
     }
 
-    .container {
-      width: min(1120px, 92%);
+    .wrap {
+      width: min(var(--max), calc(100% - 32px));
       margin: 0 auto;
     }
 
@@ -53,372 +62,389 @@
       position: sticky;
       top: 0;
       z-index: 50;
-      background: rgba(255,255,255,0.9);
-      backdrop-filter: blur(14px);
-      border-bottom: 1px solid var(--border);
+      background: rgba(7,10,15,0.78);
+      backdrop-filter: blur(18px);
+      border-bottom: 1px solid var(--line);
     }
 
     .nav {
-      height: 74px;
+      height: 72px;
       display: flex;
-      align-items: center;
       justify-content: space-between;
+      align-items: center;
       gap: 24px;
     }
 
-    .logo {
-      font-weight: 900;
-      color: var(--navy);
-      letter-spacing: -0.04em;
-      font-size: 1.18rem;
-    }
-
-    .nav-links {
+    .brand {
       display: flex;
       align-items: center;
-      gap: 22px;
-      color: var(--muted);
-      font-weight: 700;
-      font-size: 0.94rem;
+      gap: 11px;
+      font-weight: 900;
+      letter-spacing: -0.04em;
+      font-size: 18px;
     }
 
-    .nav-links a:hover {
-      color: var(--navy);
+    .mark {
+      width: 36px;
+      height: 36px;
+      border-radius: 12px;
+      background: linear-gradient(135deg, var(--accent), var(--accent2));
+      box-shadow: 0 0 34px rgba(125,211,252,0.3);
+    }
+
+    nav {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      color: var(--muted);
+      font-size: 14px;
+      font-weight: 650;
+    }
+
+    nav a:hover {
+      color: var(--text);
+    }
+
+    .hero {
+      padding: 94px 0 70px;
+    }
+
+    .eyebrow {
+      color: var(--accent2);
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      font-size: 13px;
+      font-weight: 850;
+      margin-bottom: 16px;
+    }
+
+    h1 {
+      max-width: 920px;
+      font-size: clamp(45px, 7vw, 84px);
+      line-height: 0.94;
+      letter-spacing: -0.075em;
+      margin-bottom: 24px;
+    }
+
+    .hero-copy {
+      max-width: 760px;
+      font-size: 20px;
+      color: var(--muted);
+      margin-bottom: 34px;
+    }
+
+    .actions {
+      display: flex;
+      gap: 13px;
+      flex-wrap: wrap;
+      align-items: center;
     }
 
     .btn {
       display: inline-flex;
-      align-items: center;
       justify-content: center;
-      padding: 13px 18px;
-      border-radius: 13px;
-      font-weight: 900;
-      border: 1px solid transparent;
-      cursor: pointer;
-      transition: 0.18s ease;
+      align-items: center;
+      min-height: 46px;
+      padding: 0 18px;
+      border-radius: 999px;
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,0.045);
+      color: var(--text);
+      font-weight: 800;
+      font-size: 14px;
+      transition: transform 0.15s ease, background 0.15s ease;
       text-align: center;
-      font-size: 0.96rem;
     }
 
     .btn:hover {
       transform: translateY(-1px);
+      background: rgba(255,255,255,0.075);
     }
 
-    .btn-primary {
-      background: var(--green);
-      color: #fff;
-      box-shadow: 0 12px 28px rgba(22,163,107,0.22);
-    }
-
-    .btn-primary:hover {
-      background: var(--green-dark);
-    }
-
-    .btn-secondary {
-      background: #fff;
-      color: var(--navy);
-      border-color: var(--border);
-    }
-
-    .btn-dark {
-      background: var(--navy);
-      color: #fff;
-    }
-
-    .hero {
-      padding: 92px 0 70px;
-      background:
-        radial-gradient(circle at top right, rgba(22,163,107,0.18), transparent 34%),
-        radial-gradient(circle at top left, rgba(30,64,175,0.11), transparent 30%),
-        linear-gradient(180deg, #ffffff 0%, #f7f9fc 100%);
-    }
-
-    .hero-grid {
-      display: grid;
-      grid-template-columns: 1.08fr 0.92fr;
-      gap: 52px;
-      align-items: center;
-    }
-
-    .eyebrow {
-      display: inline-flex;
-      padding: 7px 12px;
-      border-radius: 999px;
-      background: #fff;
-      border: 1px solid var(--border);
-      color: var(--green-dark);
-      font-size: 0.84rem;
-      font-weight: 900;
-      margin-bottom: 18px;
-    }
-
-    h1 {
-      margin: 0 0 22px;
-      color: var(--navy);
-      font-size: clamp(2.6rem, 5vw, 5rem);
-      line-height: 0.95;
-      letter-spacing: -0.075em;
-    }
-
-    .hero p {
-      max-width: 660px;
-      color: var(--muted);
-      font-size: 1.17rem;
-      margin: 0 0 28px;
-    }
-
-    .buttons {
-      display: flex;
-      gap: 13px;
-      flex-wrap: wrap;
-    }
-
-    .hero-card {
-      background: var(--card);
-      border: 1px solid var(--border);
-      border-radius: 26px;
-      padding: 28px;
-      box-shadow: var(--shadow);
-    }
-
-    .hero-card h2 {
-      margin: 0 0 10px;
-      color: var(--navy);
-      font-size: 1.45rem;
-      letter-spacing: -0.04em;
-    }
-
-    .hero-card p {
-      font-size: 0.98rem;
-      margin-bottom: 20px;
-    }
-
-    .quick-links {
-      display: grid;
-      gap: 10px;
-    }
-
-    .quick-link {
-      padding: 14px 15px;
-      border-radius: 14px;
-      background: var(--soft);
-      border: 1px solid #cfe5da;
-      color: var(--navy);
-      font-weight: 900;
+    .btn.primary {
+      border: none;
+      background: linear-gradient(135deg, var(--accent), var(--accent2));
+      color: #061016;
     }
 
     section {
-      padding: 76px 0;
+      padding: 58px 0;
     }
 
     .section-head {
-      max-width: 790px;
-      margin-bottom: 34px;
+      display: flex;
+      justify-content: space-between;
+      align-items: end;
+      gap: 28px;
+      margin-bottom: 25px;
     }
 
-    .section-title {
-      margin: 0 0 14px;
-      color: var(--navy);
-      font-size: clamp(2rem, 3.5vw, 3.1rem);
-      line-height: 1.05;
-      letter-spacing: -0.06em;
+    h2 {
+      font-size: clamp(31px, 4.4vw, 48px);
+      line-height: 1.04;
+      letter-spacing: -0.055em;
     }
 
-    .section-lead {
-      margin: 0;
+    .section-head p {
+      max-width: 570px;
       color: var(--muted);
-      font-size: 1.08rem;
     }
 
-    .cards {
+    .grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 18px;
+      gap: 16px;
     }
 
     .card {
-      background: var(--card);
-      border: 1px solid var(--border);
-      border-radius: 21px;
-      padding: 24px;
-      box-shadow: 0 12px 34px rgba(11,31,58,0.045);
+      background: linear-gradient(180deg, rgba(255,255,255,0.058), rgba(255,255,255,0.027));
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 22px;
+      box-shadow: var(--shadow);
+    }
+
+    .card.featured {
+      border-color: rgba(125,211,252,0.32);
+      background:
+        linear-gradient(180deg, rgba(125,211,252,0.11), rgba(255,255,255,0.027));
     }
 
     .card h3 {
-      margin: 0 0 10px;
-      color: var(--navy);
-      font-size: 1.19rem;
+      font-size: 22px;
       letter-spacing: -0.035em;
+      margin-bottom: 8px;
     }
 
     .card p {
       color: var(--muted);
-      margin: 0 0 16px;
+      font-size: 15px;
+      margin-bottom: 16px;
+    }
+
+    .tags {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin-bottom: 15px;
     }
 
     .tag {
-      display: inline-flex;
-      padding: 6px 10px;
+      font-size: 12px;
+      font-weight: 750;
+      color: #dbeafe;
+      border: 1px solid rgba(125,211,252,0.25);
+      background: rgba(125,211,252,0.08);
       border-radius: 999px;
-      background: #eef4ff;
-      color: #1e3a8a;
-      font-size: 0.78rem;
-      font-weight: 900;
-      margin-bottom: 12px;
+      padding: 5px 9px;
+    }
+
+    .tag.live {
+      color: #dcfce7;
+      border-color: rgba(167,243,208,0.32);
+      background: rgba(167,243,208,0.1);
+    }
+
+    .tag.stripe {
+      color: #fef3c7;
+      border-color: rgba(253,230,138,0.32);
+      background: rgba(253,230,138,0.09);
     }
 
     .price {
-      font-size: 2rem;
+      color: var(--accent2);
+      font-weight: 900;
+      font-size: 14px;
+      margin-bottom: 16px;
+    }
+
+    .link {
+      color: var(--accent);
+      font-weight: 850;
+      font-size: 14px;
+    }
+
+    .link:hover {
+      color: var(--accent2);
+    }
+
+    .store-panel {
+      display: grid;
+      grid-template-columns: 1.25fr 0.75fr;
+      gap: 16px;
+      align-items: stretch;
+    }
+
+    .big-panel {
+      border: 1px solid var(--line);
+      border-radius: 28px;
+      padding: 32px;
+      background:
+        linear-gradient(135deg, rgba(125,211,252,0.13), rgba(167,243,208,0.08)),
+        var(--panel);
+      box-shadow: var(--shadow);
+    }
+
+    .big-panel p {
+      color: var(--muted);
+      max-width: 680px;
+      margin: 10px 0 22px;
+    }
+
+    .mini-list {
+      display: grid;
+      gap: 12px;
+    }
+
+    .mini-item {
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      padding: 16px;
+      background: rgba(255,255,255,0.04);
+    }
+
+    .mini-item strong {
+      display: block;
+      margin-bottom: 4px;
+      letter-spacing: -0.02em;
+    }
+
+    .mini-item span {
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .platforms {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      gap: 12px;
+    }
+
+    .platform {
+      min-height: 92px;
+      border: 1px solid var(--line);
+      background: var(--panel);
+      border-radius: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--muted);
+      font-weight: 900;
+      text-align: center;
+      padding: 12px;
+    }
+
+    .platform:hover {
+      color: var(--text);
+      background: var(--panel2);
+    }
+
+    .dataset-grid,
+    .tier-grid,
+    .pricing-grid {
+      display: grid;
+      gap: 16px;
+    }
+
+    .dataset-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    .tier-grid,
+    .pricing-grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    .hr-box {
+      border: 1px solid rgba(253,230,138,0.28);
+      background:
+        linear-gradient(135deg, rgba(253,230,138,0.11), rgba(255,255,255,0.03)),
+        var(--panel);
+      border-radius: 28px;
+      padding: 32px;
+      box-shadow: var(--shadow);
+    }
+
+    .hr-box p {
+      color: var(--muted);
+      margin: 10px 0 22px;
+      max-width: 760px;
+    }
+
+    .tier {
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      padding: 18px;
+      background: rgba(255,255,255,0.045);
+    }
+
+    .tier h3 {
+      margin-bottom: 6px;
+    }
+
+    .tier p {
+      font-size: 14px;
+      margin: 0 0 14px;
+    }
+
+    .tier .amount {
+      color: var(--gold);
       font-weight: 950;
-      color: var(--navy);
-      letter-spacing: -0.06em;
-      margin: 6px 0 4px;
+      font-size: 26px;
+      letter-spacing: -0.04em;
+      margin-bottom: 12px;
     }
 
-    .price small {
-      font-size: 0.9rem;
+    .tier ul {
       color: var(--muted);
-      letter-spacing: 0;
-      font-weight: 800;
-    }
-
-    .feature-list {
       padding-left: 18px;
-      color: var(--muted);
-      margin: 14px 0 20px;
+      font-size: 14px;
+      margin-bottom: 18px;
     }
 
-    .feature-list li {
+    .tier li {
       margin-bottom: 7px;
     }
 
-    .product-actions {
-      display: grid;
-      gap: 9px;
-      margin-top: 18px;
-    }
-
-    .dark-section {
-      background: var(--navy);
-      color: #fff;
-    }
-
-    .dark-section .section-title,
-    .dark-section .section-lead {
-      color: #fff;
-    }
-
-    .dark-section .section-lead {
-      opacity: 0.78;
-    }
-
-    .dark-section .card {
-      background: rgba(255,255,255,0.08);
-      border-color: rgba(255,255,255,0.14);
-      box-shadow: none;
-    }
-
-    .dark-section .card h3 {
-      color: #fff;
-    }
-
-    .dark-section .card p,
-    .dark-section .feature-list {
-      color: rgba(255,255,255,0.75);
-    }
-
-    .hf-panel {
-      background: linear-gradient(135deg, #ffffff, #eef7f3);
-      border: 1px solid var(--border);
-      border-radius: 26px;
-      padding: 30px;
-      box-shadow: var(--shadow);
-      display: grid;
-      grid-template-columns: 1fr 0.8fr;
-      gap: 28px;
-      align-items: center;
-    }
-
-    .hf-panel h3 {
-      margin: 0 0 12px;
-      color: var(--navy);
-      font-size: 1.55rem;
-      letter-spacing: -0.04em;
-    }
-
-    .hf-panel p {
+    footer {
+      border-top: 1px solid var(--line);
+      margin-top: 48px;
+      padding: 32px 0 46px;
       color: var(--muted);
-      margin: 0 0 18px;
+      font-size: 14px;
     }
 
-    .dataset-links {
-      display: grid;
-      gap: 10px;
-    }
-
-    .dataset-links a {
-      background: #fff;
-      border: 1px solid var(--border);
-      border-radius: 14px;
-      padding: 14px;
-      font-weight: 900;
-      color: var(--navy);
-    }
-
-    .dataset-links span {
-      display: block;
-      color: var(--muted);
-      font-weight: 600;
-      font-size: 0.88rem;
-      margin-top: 3px;
-    }
-
-    .note {
-      background: #fff7ed;
-      border: 1px solid #fed7aa;
-      color: #9a3412;
-      border-radius: 16px;
-      padding: 15px;
-      font-weight: 750;
-      margin-top: 20px;
-    }
-
-    .footer {
-      padding: 34px 0;
-      border-top: 1px solid var(--border);
-      color: var(--muted);
-      font-size: 0.94rem;
-    }
-
-    .footer-row {
+    .footer-inner {
       display: flex;
       justify-content: space-between;
-      gap: 20px;
       flex-wrap: wrap;
+      gap: 18px;
     }
 
-    .footer a {
-      color: var(--navy);
-      font-weight: 800;
-    }
-
-    @media (max-width: 880px) {
-      .hero-grid,
-      .cards,
-      .hf-panel {
-        grid-template-columns: 1fr;
-      }
-
-      .nav-links {
+    @media (max-width: 900px) {
+      nav {
         display: none;
       }
 
       .hero {
-        padding-top: 60px;
+        padding-top: 68px;
       }
 
-      section {
-        padding: 56px 0;
+      .section-head,
+      .store-panel {
+        grid-template-columns: 1fr;
+        display: grid;
+      }
+
+      .grid,
+      .dataset-grid,
+      .tier-grid,
+      .pricing-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .platforms {
+        grid-template-columns: repeat(2, 1fr);
       }
     }
   </style>
@@ -426,365 +452,447 @@
 
 <body>
   <header>
-    <div class="container nav">
-      <a class="logo" href="#">Consumer Dividends</a>
+    <div class="wrap nav">
+      <a class="brand" href="#">
+        <span class="mark"></span>
+        <span>Consumer Dividends</span>
+      </a>
 
-      <nav class="nav-links">
-        <a href="#clearcase">ClearCase HR</a>
-        <a href="#divai">DivAi</a>
-        <a href="#datasets">Hugging Face</a>
-        <a href="#links">Links</a>
+      <nav>
+        <a href="#products">Products</a>
+        <a href="#store">Store</a>
+        <a href="#datasets">Datasets</a>
+        <a href="#hr-risk">HR Risk</a>
+        <a href="#divai-plans">DivAI Plans</a>
+        <a href="#platforms">Platforms</a>
       </nav>
-
-      <a class="btn btn-primary" href="#clearcase">View Tools</a>
     </div>
   </header>
 
   <main>
     <section class="hero">
-      <div class="container hero-grid">
-        <div>
-          <div class="eyebrow">Practical automation, datasets, and evaluation workflows</div>
+      <div class="wrap">
+        <div class="eyebrow">AI products · datasets · bots · workflows</div>
+        <h1>Tools that put leverage back in your hands.</h1>
+        <p class="hero-copy">
+          Consumer Dividends is the product hub for practical AI systems: Discord bots,
+          datasets, rubric packs, prompt tools, Gumroad products, HR risk workflows,
+          and lightweight software built to make people less dependent on bloated institutions.
+        </p>
 
-          <h1>Useful tools for teams that want less guesswork.</h1>
-
-          <p>
-            Consumer Dividends builds focused digital systems for operators, researchers,
-            HR consultants, server owners, and small teams: risk assessments, workflow helpers,
-            evaluation kits, and clean datasets.
-          </p>
-
-          <div class="buttons">
-            <a class="btn btn-primary" href="#clearcase">Buy ClearCase HR</a>
-            <a class="btn btn-secondary" href="#datasets">View Hugging Face</a>
-          </div>
-        </div>
-
-        <div class="hero-card">
-          <h2>Current catalog</h2>
-          <p>
-            Start with the live products below. Payment is handled through Stripe.
-            Dataset and model-adjacent resources live primarily on Hugging Face.
-          </p>
-
-          <div class="quick-links">
-            <a class="quick-link" href="#clearcase">ClearCase HR Risk Assessment</a>
-            <a class="quick-link" href="#divai">DivAi Server Assistant Plans</a>
-            <a class="quick-link" href="#datasets">Hugging Face Datasets</a>
-          </div>
+        <div class="actions">
+          <a class="btn primary" href="https://consumerdiv.gumroad.com" target="_blank" rel="noopener">
+            Shop Gumroad
+          </a>
+          <a class="btn" href="https://top.gg/bot/1495711192780374116?s=0bc053e22c97c" target="_blank" rel="noopener">
+            Open DivAI
+          </a>
+          <a class="btn" href="https://huggingface.co/CDividends" target="_blank" rel="noopener">
+            Hugging Face
+          </a>
         </div>
       </div>
     </section>
 
-    <section id="clearcase">
-      <div class="container">
+    <section id="products">
+      <div class="wrap">
         <div class="section-head">
-          <h2 class="section-title">ClearCase HR Risk Assessment</h2>
-          <p class="section-lead">
-            A practical HR risk review for consultants, founders, and operators who need
-            structured analysis around workplace issues, documentation gaps, and escalation risk.
+          <div>
+            <div class="eyebrow">Product Stack</div>
+            <h2>The current Consumer Dividends lineup.</h2>
+          </div>
+          <p>
+            Tools, bots, datasets, templates, and checkout-ready products organized in one place
+            instead of scattered across the internet like confetti from hell.
           </p>
         </div>
 
-        <div class="cards">
-          <div class="card">
-            <span class="tag">One-time report</span>
-            <h3>Single Report</h3>
-            <p>
-              Best for reviewing one situation, incident, complaint, or policy concern.
-            </p>
-
-            <div class="price">$39</div>
-
-            <ul class="feature-list">
-              <li>One HR risk assessment</li>
-              <li>Structured issue review</li>
-              <li>Risk and documentation notes</li>
-              <li>Good for one-off cases</li>
-            </ul>
-
-            <div class="product-actions">
-              <a class="btn btn-primary" href="https://buy.stripe.com/14A6oGelS0Fef3T0OV87K02" target="_blank" rel="noopener">
-                Buy Single Report
-              </a>
+        <div class="grid">
+          <article class="card featured">
+            <div class="tags">
+              <span class="tag live">Live</span>
+              <span class="tag">Discord Bot</span>
+              <span class="tag">Top.gg</span>
             </div>
-          </div>
-
-          <div class="card">
-            <span class="tag">Bundle</span>
-            <h3>5 Report Bundle</h3>
+            <h3>DivAI</h3>
             <p>
-              Better for consultants or small teams handling multiple reviews.
+              Dividend AI — the Consumer Dividends Discord bot listed on Top.gg.
+              AI chat, moderation, onboarding, and server utilities.
             </p>
+            <div class="price">Status: Live on Top.gg</div>
+            <a class="link" href="https://top.gg/bot/1495711192780374116?s=0bc053e22c97c" target="_blank" rel="noopener">
+              View DivAI →
+            </a>
+          </article>
 
-            <div class="price">$149</div>
-
-            <ul class="feature-list">
-              <li>Five HR risk assessments</li>
-              <li>Lower cost per report</li>
-              <li>Useful for recurring client work</li>
-              <li>Simple Stripe checkout</li>
-            </ul>
-
-            <div class="product-actions">
-              <a class="btn btn-primary" href="https://buy.stripe.com/6oUfZg1z6cnWaNDdBH87K01" target="_blank" rel="noopener">
-                Buy 5 Report Bundle
-              </a>
+          <article class="card">
+            <div class="tags">
+              <span class="tag live">Open</span>
+              <span class="tag">Storefront</span>
             </div>
-          </div>
-
-          <div class="card">
-            <span class="tag">Monthly</span>
-            <h3>Unlimited Monthly</h3>
+            <h3>Gumroad Products</h3>
             <p>
-              For frequent reviews, HR consultants, agencies, and active operators.
+              Eval-Kits, prompt systems, datasets, YAML rubrics, and workflow products.
             </p>
+            <div class="price">Storefront active</div>
+            <a class="link" href="https://consumerdiv.gumroad.com" target="_blank" rel="noopener">
+              Shop products →
+            </a>
+          </article>
 
-            <div class="price">$99 <small>/ month</small></div>
-
-            <ul class="feature-list">
-              <li>Unlimited monthly HR risk reviews</li>
-              <li>Best value for recurring use</li>
-              <li>Built for consultants and teams</li>
-              <li>Cancel anytime through Stripe</li>
-            </ul>
-
-            <div class="product-actions">
-              <a class="btn btn-primary" href="https://buy.stripe.com/9B600i0v23Rq8Fvapv87K00" target="_blank" rel="noopener">
-                Start Monthly Plan
-              </a>
+          <article class="card">
+            <div class="tags">
+              <span class="tag live">Live</span>
+              <span class="tag">Hugging Face</span>
             </div>
-          </div>
-        </div>
+            <h3>Datasets</h3>
+            <p>
+              Public datasets for churn conversations and workplace dispute scenarios,
+              hosted under the CDividends profile.
+            </p>
+            <div class="price">Public resource hub</div>
+            <a class="link" href="https://huggingface.co/CDividends" target="_blank" rel="noopener">
+              View Hugging Face →
+            </a>
+          </article>
 
-        <div class="note">
-          ClearCase HR is separate from the public datasets. The HR risk tool is sold here through Stripe; datasets are listed separately below.
+          <article class="card">
+            <div class="tags">
+              <span class="tag">Rubrics</span>
+              <span class="tag">Eval Kits</span>
+            </div>
+            <h3>Eval Kits & Rubric Packs</h3>
+            <p>
+              Structured rubric packs for real estate, HR compliance, customer support,
+              sales enablement, and technical documentation.
+            </p>
+            <div class="price">Available on Gumroad</div>
+            <a class="link" href="https://consumerdiv.gumroad.com/l/eval-kit-bundle" target="_blank" rel="noopener">
+              Browse bundle →
+            </a>
+          </article>
+
+          <article class="card">
+            <div class="tags">
+              <span class="tag">Service</span>
+              <span class="tag">Catalogs</span>
+            </div>
+            <h3>Catalog Upgrade</h3>
+            <p>
+              Product catalog and listing upgrade service for stores with weak descriptions,
+              messy inventory, or no online catalog at all.
+            </p>
+            <div class="price">Service product</div>
+            <a class="link" href="https://www.linkedin.com/in/sawinskia-cdividends" target="_blank" rel="noopener">
+              Contact on LinkedIn →
+            </a>
+          </article>
+
+          <article class="card">
+            <div class="tags">
+              <span class="tag stripe">Stripe</span>
+              <span class="tag">HR</span>
+            </div>
+            <h3>ClearCase HR Risk Assessment</h3>
+            <p>
+              Three checkout options for HR risk reviews: single report, 5-report bundle,
+              and monthly access.
+            </p>
+            <div class="price">Stripe checkout live</div>
+            <a class="link" href="#hr-risk">
+              View HR pricing →
+            </a>
+          </article>
         </div>
       </div>
     </section>
 
-    <section id="divai" class="dark-section">
-      <div class="container">
-        <div class="section-head">
-          <h2 class="section-title">DivAi Server Assistant Plans</h2>
-          <p class="section-lead">
-            Plans for communities that want cleaner moderation, better server visibility,
-            and smoother onboarding without turning the admin panel into a second job.
-          </p>
-        </div>
-
-        <div class="cards">
-          <div class="card">
-            <span class="tag">Core</span>
-            <h3>DivAi AI Tier</h3>
+    <section id="store">
+      <div class="wrap">
+        <div class="store-panel">
+          <div class="big-panel">
+            <div class="eyebrow">Storefront</div>
+            <h2>Shop the product library.</h2>
             <p>
-              Entry plan for server owners who want the basic assistant layer.
+              Gumroad is the live storefront for downloadable Consumer Dividends products:
+              Eval-Kits, prompt tools, datasets, rubrics, and workflow assets.
             </p>
-
-            <div class="price" style="color:#fff;">$9.99 <small>/ month</small></div>
-
-            <ul class="feature-list">
-              <li>Core server assistant features</li>
-              <li>Useful for smaller communities</li>
-              <li>Simple monthly billing</li>
-            </ul>
-
-            <div class="product-actions">
-              <a class="btn btn-primary" href="https://buy.stripe.com/6oU4gya5C87GcVLfJP87K05" target="_blank" rel="noopener">
-                Subscribe
+            <div class="actions">
+              <a class="btn primary" href="https://consumerdiv.gumroad.com" target="_blank" rel="noopener">
+                Visit Gumroad Store
+              </a>
+              <a class="btn" href="https://consumerdiv.gumroad.com/l/eval-kit-bundle" target="_blank" rel="noopener">
+                Eval-Kit Bundle
               </a>
             </div>
           </div>
 
-          <div class="card">
-            <span class="tag">Core + package</span>
-            <h3>DivAi AI Tier + Full Package</h3>
-            <p>
-              Core tier plus moderation, analytics, and onboarding support.
-            </p>
-
-            <div class="price" style="color:#fff;">$21.96 <small>/ month</small></div>
-
-            <ul class="feature-list">
-              <li>DivAi AI Tier</li>
-              <li>Moderation package</li>
-              <li>Analytics package</li>
-              <li>Onboarding package</li>
-            </ul>
-
-            <div class="product-actions">
-              <a class="btn btn-primary" href="https://buy.stripe.com/14AeVc2Da9bK9Jz7dj87K06" target="_blank" rel="noopener">
-                Subscribe
-              </a>
+          <div class="mini-list">
+            <div class="mini-item">
+              <strong>Prompt systems</strong>
+              <span>Structured prompts and workflow assets.</span>
             </div>
-          </div>
-
-          <div class="card">
-            <span class="tag">Super</span>
-            <h3>DivAiSuper Tier</h3>
-            <p>
-              Higher-capability plan for more active communities and heavier usage.
-            </p>
-
-            <div class="price" style="color:#fff;">$24.99 <small>/ month</small></div>
-
-            <ul class="feature-list">
-              <li>Super tier features</li>
-              <li>Better fit for active servers</li>
-              <li>Monthly subscription</li>
-            </ul>
-
-            <div class="product-actions">
-              <a class="btn btn-primary" href="https://buy.stripe.com/14A7sK6Tq1Ji2h7gNT87K04" target="_blank" rel="noopener">
-                Subscribe
-              </a>
+            <div class="mini-item">
+              <strong>Rubric packs</strong>
+              <span>Evaluation systems for AI and content quality.</span>
             </div>
-          </div>
-        </div>
-
-        <div class="cards" style="margin-top:18px;">
-          <div class="card">
-            <span class="tag">Super + package</span>
-            <h3>DivAiSuper Tier + Full Package</h3>
-            <p>
-              Super tier plus the complete moderation, analytics, and onboarding package.
-            </p>
-
-            <div class="price" style="color:#fff;">$36.96 <small>/ month</small></div>
-
-            <ul class="feature-list">
-              <li>DivAiSuper Tier</li>
-              <li>Moderation package</li>
-              <li>Analytics package</li>
-              <li>Onboarding package</li>
-            </ul>
-
-            <div class="product-actions">
-              <a class="btn btn-primary" href="https://buy.stripe.com/3cI4gy5PmfA82h741787K03" target="_blank" rel="noopener">
-                Subscribe
-              </a>
+            <div class="mini-item">
+              <strong>Pipelines</strong>
+              <span>Reusable systems for building and shipping faster.</span>
             </div>
-          </div>
-
-          <div class="card">
-            <h3>What “full package” means</h3>
-            <p>
-              The Stripe products labeled “and 3 more” include the plan plus three add-ons:
-              moderation, analytics, and onboarding.
-            </p>
-          </div>
-
-          <div class="card">
-            <h3>Built for operators</h3>
-            <p>
-              The point is not buzzwords. It is reducing repetitive admin work,
-              improving visibility, and giving communities cleaner systems.
-            </p>
+            <div class="mini-item">
+              <strong>Datasets</strong>
+              <span>Premium datasets on Gumroad, public previews on Hugging Face.</span>
+            </div>
           </div>
         </div>
       </div>
     </section>
 
     <section id="datasets">
-      <div class="container">
+      <div class="wrap">
         <div class="section-head">
-          <h2 class="section-title">Datasets and research resources on Hugging Face.</h2>
-          <p class="section-lead">
-            Hugging Face is the main public home for Consumer Dividends datasets and evaluation resources.
-            If you want the raw materials, start there.
+          <div>
+            <div class="eyebrow">Hugging Face</div>
+            <h2>Datasets and public AI resources.</h2>
+          </div>
+          <p>
+            Hugging Face is the main public home for CDividends datasets.
+            Gumroad handles paid files; Hugging Face handles public discovery.
           </p>
         </div>
 
-        <div class="hf-panel">
-          <div>
-            <h3>Consumer Dividends on Hugging Face</h3>
-            <p>
-              Public datasets, structured resources, and evaluation-adjacent materials are published
-              under the CDividends profile.
-            </p>
-
-            <div class="buttons">
-              <a class="btn btn-primary" href="https://huggingface.co/CDividends" target="_blank" rel="noopener">
-                Visit Hugging Face Profile
-              </a>
-              <a class="btn btn-secondary" href="https://x.com/sawinskia23" target="_blank" rel="noopener">
-                Follow on X
-              </a>
+        <div class="dataset-grid">
+          <article class="card featured">
+            <div class="tags">
+              <span class="tag live">Live</span>
+              <span class="tag">Profile</span>
             </div>
-          </div>
-
-          <div class="dataset-links">
-            <a href="https://huggingface.co/datasets/CDividends/customer-churn-prediction-conversations" target="_blank" rel="noopener">
-              Customer Churn Prediction Conversations
-              <span>Conversation-style dataset for churn, retention, and customer-risk workflows.</span>
+            <h3>CDividends on Hugging Face</h3>
+            <p>
+              Public profile for datasets and related resources.
+            </p>
+            <a class="link" href="https://huggingface.co/CDividends" target="_blank" rel="noopener">
+              Open profile →
             </a>
+          </article>
 
-            <a href="https://huggingface.co/datasets/CDividends/WorkplaceDispute" target="_blank" rel="noopener">
-              Workplace Dispute Dataset
-              <span>Public dataset resource. Separate from the ClearCase HR Risk Assessment product.</span>
+          <article class="card">
+            <div class="tags">
+              <span class="tag live">Live</span>
+              <span class="tag">Dataset</span>
+            </div>
+            <h3>Customer Churn Prediction Conversations</h3>
+            <p>
+              Conversation-style dataset for churn, retention, and customer-risk workflows.
+            </p>
+            <a class="link" href="https://huggingface.co/datasets/CDividends/customer-churn-prediction-conversations" target="_blank" rel="noopener">
+              Open dataset →
             </a>
+          </article>
+
+          <article class="card">
+            <div class="tags">
+              <span class="tag live">Live</span>
+              <span class="tag">Dataset</span>
+            </div>
+            <h3>Workplace Dispute</h3>
+            <p>
+              Dataset of workplace dispute scenarios for classification, triage, and evaluation tasks.
+            </p>
+            <a class="link" href="https://huggingface.co/datasets/CDividends/WorkplaceDispute" target="_blank" rel="noopener">
+              Open dataset →
+            </a>
+          </article>
+
+          <article class="card">
+            <div class="tags">
+              <span class="tag">Note</span>
+            </div>
+            <h3>Separate from ClearCase HR</h3>
+            <p>
+              The public Workplace Dispute dataset is not the ClearCase HR product.
+              ClearCase HR is a separate paid risk review tool sold through Stripe.
+            </p>
+            <a class="link" href="#hr-risk">
+              View ClearCase HR →
+            </a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="hr-risk">
+      <div class="wrap">
+        <div class="hr-box">
+          <div class="eyebrow">ClearCase HR</div>
+          <h2>HR risk assessment for messy workplace situations.</h2>
+          <p>
+            ClearCase HR reviews workplace disputes, complaints, and policy concerns.
+            It helps organize the situation, flag risk areas, note documentation gaps,
+            and produce practical next steps.
+          </p>
+
+          <div class="pricing-grid">
+            <article class="tier">
+              <h3>Single Report</h3>
+              <div class="amount">$39</div>
+              <p>Best for one situation, incident, complaint, or policy concern.</p>
+              <ul>
+                <li>One HR risk assessment</li>
+                <li>Structured issue review</li>
+                <li>Risk and documentation notes</li>
+                <li>Good for one-off cases</li>
+              </ul>
+              <a class="btn primary" href="https://buy.stripe.com/14A6oGelS0Fef3T0OV87K02" target="_blank" rel="noopener">
+                Buy Single Report
+              </a>
+            </article>
+
+            <article class="tier">
+              <h3>5 Report Bundle</h3>
+              <div class="amount">$149</div>
+              <p>For consultants or small teams handling several reviews.</p>
+              <ul>
+                <li>Five HR risk assessments</li>
+                <li>Lower cost per report</li>
+                <li>Useful for recurring client work</li>
+                <li>Simple Stripe checkout</li>
+              </ul>
+              <a class="btn primary" href="https://buy.stripe.com/6oUfZg1z6cnWaNDdBH87K01" target="_blank" rel="noopener">
+                Buy 5 Report Bundle
+              </a>
+            </article>
+
+            <article class="tier">
+              <h3>Unlimited Monthly</h3>
+              <div class="amount">$99/mo</div>
+              <p>For frequent reviews, HR consultants, agencies, and active operators.</p>
+              <ul>
+                <li>Unlimited monthly HR risk reviews</li>
+                <li>Best value for recurring use</li>
+                <li>Built for consultants and teams</li>
+                <li>Cancel anytime through Stripe</li>
+              </ul>
+              <a class="btn primary" href="https://buy.stripe.com/9B600i0v23Rq8Fvapv87K00" target="_blank" rel="noopener">
+                Start Monthly Plan
+              </a>
+            </article>
           </div>
         </div>
       </div>
     </section>
 
-    <section id="links">
-      <div class="container">
+    <section id="divai-plans">
+      <div class="wrap">
         <div class="section-head">
-          <h2 class="section-title">Public links</h2>
-          <p class="section-lead">
-            The useful places to look. Hugging Face is the main public resource hub.
+          <div>
+            <div class="eyebrow">DivAI Stripe Plans</div>
+            <h2>Plans for the Discord bot.</h2>
+          </div>
+          <p>
+            DivAI plans are paid through Stripe. Full Package means the plan plus moderation,
+            analytics, and onboarding.
           </p>
         </div>
 
-        <div class="cards">
-          <div class="card">
-            <h3>Hugging Face</h3>
-            <p>
-              Datasets and public research resources from Consumer Dividends.
-            </p>
-            <a class="btn btn-primary" href="https://huggingface.co/CDividends" target="_blank" rel="noopener">
-              Open Hugging Face
+        <div class="grid">
+          <article class="card">
+            <div class="tags">
+              <span class="tag stripe">Stripe</span>
+              <span class="tag">AI Tier</span>
+            </div>
+            <h3>DivAI AI Tier</h3>
+            <p>Base monthly plan for DivAI.</p>
+            <div class="price">$9.99/month</div>
+            <a class="btn primary" href="https://buy.stripe.com/6oU4gya5C87GcVLfJP87K05" target="_blank" rel="noopener">
+              Subscribe
             </a>
-          </div>
+          </article>
 
-          <div class="card">
-            <h3>X / Twitter</h3>
-            <p>
-              Updates, launches, notes, and product chatter.
-            </p>
-            <a class="btn btn-secondary" href="https://x.com/sawinskia23" target="_blank" rel="noopener">
-              Follow on X
+          <article class="card">
+            <div class="tags">
+              <span class="tag stripe">Stripe</span>
+              <span class="tag">Full Package</span>
+            </div>
+            <h3>DivAI AI Tier + Full Package</h3>
+            <p>AI Tier plus moderation, analytics, and onboarding.</p>
+            <div class="price">$21.96/month</div>
+            <a class="btn primary" href="https://buy.stripe.com/14AeVc2Da9bK9Jz7dj87K06" target="_blank" rel="noopener">
+              Subscribe
             </a>
-          </div>
+          </article>
 
-          <div class="card">
-            <h3>GitHub</h3>
-            <p>
-              Public site files and selected open resources. Kept intentionally minimal.
-            </p>
-            <a class="btn btn-secondary" href="https://github.com/isawandre" target="_blank" rel="noopener">
-              View GitHub
+          <article class="card">
+            <div class="tags">
+              <span class="tag stripe">Stripe</span>
+              <span class="tag">Super</span>
+            </div>
+            <h3>DivAI Super Tier</h3>
+            <p>Higher tier for more active servers.</p>
+            <div class="price">$24.99/month</div>
+            <a class="btn primary" href="https://buy.stripe.com/14A7sK6Tq1Ji2h7gNT87K04" target="_blank" rel="noopener">
+              Subscribe
             </a>
+          </article>
+
+          <article class="card">
+            <div class="tags">
+              <span class="tag stripe">Stripe</span>
+              <span class="tag">Super + Full Package</span>
+            </div>
+            <h3>DivAI Super Tier + Full Package</h3>
+            <p>Super Tier plus moderation, analytics, and onboarding.</p>
+            <div class="price">$36.96/month</div>
+            <a class="btn primary" href="https://buy.stripe.com/3cI4gy5PmfA82h741787K03" target="_blank" rel="noopener">
+              Subscribe
+            </a>
+          </article>
+
+          <article class="card featured">
+            <div class="tags">
+              <span class="tag live">Top.gg</span>
+            </div>
+            <h3>DivAI Bot Listing</h3>
+            <p>View the public DivAI bot page on Top.gg.</p>
+            <div class="price">Public listing</div>
+            <a class="btn" href="https://top.gg/bot/1495711192780374116?s=0bc053e22c97c" target="_blank" rel="noopener">
+              Open Top.gg
+            </a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="platforms">
+      <div class="wrap">
+        <div class="section-head">
+          <div>
+            <div class="eyebrow">Platforms</div>
+            <h2>Everything connected.</h2>
           </div>
+          <p>
+            Live links only. Hugging Face and Gumroad are the main public hubs.
+          </p>
+        </div>
+
+        <div class="platforms">
+          <a class="platform" href="https://consumerdiv.gumroad.com" target="_blank" rel="noopener">Gumroad</a>
+          <a class="platform" href="https://top.gg/bot/1495711192780374116?s=0bc053e22c97c" target="_blank" rel="noopener">DivAI<br>Top.gg</a>
+          <a class="platform" href="https://huggingface.co/CDividends" target="_blank" rel="noopener">Hugging Face</a>
+          <a class="platform" href="https://www.linkedin.com/in/sawinskia-cdividends" target="_blank" rel="noopener">LinkedIn</a>
+          <a class="platform" href="https://x.com/sawinskia23" target="_blank" rel="noopener">X</a>
+          <a class="platform" href="https://github.com/isawandre" target="_blank" rel="noopener">GitHub</a>
         </div>
       </div>
     </section>
   </main>
 
-  <footer class="footer">
-    <div class="container footer-row">
-      <div>© <span id="year"></span> Consumer Dividends</div>
-      <div>
-        <a href="#clearcase">ClearCase HR</a> ·
-        <a href="#divai">DivAi</a> ·
-        <a href="#datasets">Hugging Face</a>
-      </div>
+  <footer>
+    <div class="wrap footer-inner">
+      <span>© 2026 Consumer Dividends</span>
+      <span>Datasets · Discord bots · rubrics · HR risk tools · workflows</span>
     </div>
   </footer>
-
-  <script>
-    document.getElementById("year").textContent = new Date().getFullYear();
-  </script>
 </body>
 </html>
