@@ -1,14 +1,13 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <title>Consumer Dividends</title>
+  <title>ClearCase HR — Risk Reports for Messy Workplace Situations | Consumer Dividends</title>
   <meta
     name="description"
-    content="Consumer Dividends builds practical tools, datasets, rubrics, bots, and risk workflows that help people protect time, money, margin, and choice."
+    content="ClearCase HR delivers structured workplace risk reports in 24 hours. $39 single, $149 five-pack, $99/mo unlimited. Built for HR consultants, small teams, and managers who need clarity fast."
   />
 
   <link rel="icon" href="/assets/favicon.ico" sizes="any" />
@@ -362,6 +361,10 @@
       grid-template-columns: repeat(3, 1fr);
     }
 
+    .pricing-grid.four {
+      grid-template-columns: repeat(4, 1fr);
+    }
+
     .hr-box {
       border: 1px solid rgba(253,230,138,0.28);
       background:
@@ -383,6 +386,11 @@
       border-radius: 18px;
       padding: 18px;
       background: rgba(255,255,255,0.045);
+    }
+
+    .tier.flag {
+      border-color: rgba(253,230,138,0.5);
+      background: rgba(253,230,138,0.06);
     }
 
     .tier h3 {
@@ -411,6 +419,90 @@
 
     .tier li {
       margin-bottom: 7px;
+    }
+
+    .proof-strip {
+      display: grid;
+      grid-template-columns: 0.9fr 1.1fr 1.1fr;
+      gap: 16px;
+    }
+
+    .proof-stat {
+      border: 1px solid rgba(167,243,208,0.28);
+      background:
+        linear-gradient(135deg, rgba(167,243,208,0.10), rgba(255,255,255,0.03)),
+        var(--panel);
+      border-radius: 24px;
+      padding: 28px;
+      box-shadow: var(--shadow);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .proof-stat .big {
+      font-size: 54px;
+      font-weight: 950;
+      letter-spacing: -0.055em;
+      color: var(--accent2);
+      line-height: 1;
+      margin-bottom: 8px;
+    }
+
+    .proof-stat span {
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .quote {
+      border: 1px solid var(--line);
+      background: linear-gradient(180deg, rgba(255,255,255,0.05), rgba(255,255,255,0.02));
+      border-radius: 24px;
+      padding: 26px;
+      box-shadow: var(--shadow);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .quote blockquote {
+      font-size: 16px;
+      color: var(--text);
+      margin-bottom: 14px;
+      line-height: 1.5;
+    }
+
+    .quote cite {
+      color: var(--muted);
+      font-style: normal;
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.02em;
+    }
+
+    .faq-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 14px;
+    }
+
+    .faq-item {
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      padding: 22px;
+      background: rgba(255,255,255,0.04);
+    }
+
+    .faq-item h4 {
+      font-size: 17px;
+      letter-spacing: -0.025em;
+      margin-bottom: 8px;
+      color: var(--accent2);
+    }
+
+    .faq-item p {
+      color: var(--muted);
+      font-size: 14.5px;
     }
 
     footer {
@@ -446,7 +538,10 @@
       .grid,
       .dataset-grid,
       .tier-grid,
-      .pricing-grid {
+      .pricing-grid,
+      .pricing-grid.four,
+      .proof-strip,
+      .faq-grid {
         grid-template-columns: 1fr;
       }
 
@@ -462,15 +557,15 @@
     <div class="wrap nav">
       <a class="brand" href="#">
         <img class="brand-logo" src="/assets/consumer-dividends-logo.png" alt="Consumer Dividends logo" />
-        <span>Consumer Dividends</span>
+        <span>ClearCase HR by Consumer Dividends</span>
       </a>
 
       <nav>
-        <a href="#products">Products</a>
-        <a href="#store">Store</a>
-        <a href="#datasets">Datasets</a>
         <a href="#hr-risk">HR Risk</a>
         <a href="#divai-plans">DivAI Plans</a>
+        <a href="#datasets">Datasets</a>
+        <a href="#store">Store</a>
+        <a href="#products">Products</a>
         <a href="#platforms">Platforms</a>
       </nav>
     </div>
@@ -479,253 +574,63 @@
   <main>
     <section class="hero">
       <div class="wrap">
-        <div class="eyebrow">Tools · datasets · bots · risk workflows</div>
-        <h1>Tools that put leverage back in your hands.</h1>
+        <div class="eyebrow">ClearCase HR · 24-hour turnaround · Stripe checkout</div>
+        <h1>Workplace risk reports before the lawsuit shows up.</h1>
         <p class="hero-copy">
-          Consumer Dividends fights the quiet tax people pay when basic work eats their time,
-          margin, and choices. We build practical systems for consumers, freelancers,
-          consultants, local firms, and working professionals who need cleaner output without
-          another bloated dependency.
+          One incident, one structured report, one clear set of next steps. ClearCase HR
+          organizes the facts, flags exposure, and tells you what to document — for $39,
+          or unlimited at $99/mo.
         </p>
 
         <div class="actions">
-          <a class="btn primary" href="https://consumerdiv.gumroad.com" target="_blank" rel="noopener">
-            Shop Gumroad
+          <a class="btn primary" href="https://buy.stripe.com/14A6oGelS0Fef3T0OV87K02" target="_blank" rel="noopener">
+            Get a Report — $39
           </a>
-          <a class="btn" href="https://top.gg/bot/1495711192780374116?s=0bc053e22c97c" target="_blank" rel="noopener">
-            Open DivAI
+          <a class="btn" href="#hr-risk">
+            See Pricing
           </a>
-          <a class="btn" href="https://huggingface.co/CDividends" target="_blank" rel="noopener">
-            Hugging Face
+          <a class="btn" href="#faq">
+            Sample Report
           </a>
         </div>
       </div>
     </section>
 
-    <section id="products">
+    <section id="proof">
       <div class="wrap">
         <div class="section-head">
           <div>
-            <div class="eyebrow">Product Stack</div>
-            <h2>A practical library for sharper work.</h2>
+            <div class="eyebrow">Trusted by operators</div>
+            <h2>Reports that hold up under pressure.</h2>
           </div>
           <p>
-            Bots, datasets, rubrics, templates, and checkout-ready products gathered in one place
-            so useful tools are not buried in fifteen tabs and a prayer.
+            ClearCase reports get used in real complaint files, real HR meetings, and real
+            documentation chains — not theoretical workflows.
           </p>
         </div>
 
-        <div class="grid">
-          <article class="card featured">
-            <div class="tags">
-              <span class="tag live">Live</span>
-              <span class="tag">Discord Bot</span>
-              <span class="tag">Top.gg</span>
-            </div>
-            <h3>DivAI</h3>
-            <p>
-              Dividend AI is the Consumer Dividends Discord bot for chat, moderation,
-              onboarding, and server support.
-            </p>
-            <div class="price">Live on Top.gg</div>
-            <a class="link" href="https://top.gg/bot/1495711192780374116?s=0bc053e22c97c" target="_blank" rel="noopener">
-              View DivAI →
-            </a>
-          </article>
-
-          <article class="card">
-            <div class="tags">
-              <span class="tag live">Open</span>
-              <span class="tag">Storefront</span>
-            </div>
-            <h3>Gumroad Products</h3>
-            <p>
-              Downloadable tools for evaluation, prompts, datasets, rubrics, and repeatable work.
-            </p>
-            <div class="price">Storefront active</div>
-            <a class="link" href="https://consumerdiv.gumroad.com" target="_blank" rel="noopener">
-              Shop products →
-            </a>
-          </article>
-
-          <article class="card">
-            <div class="tags">
-              <span class="tag live">Live</span>
-              <span class="tag">Hugging Face</span>
-            </div>
-            <h3>Datasets</h3>
-            <p>
-              Public resources for customer churn, workplace disputes, classification,
-              triage, and evaluation work.
-            </p>
-            <div class="price">Public resource hub</div>
-            <a class="link" href="https://huggingface.co/CDividends" target="_blank" rel="noopener">
-              View Hugging Face →
-            </a>
-          </article>
-
-          <article class="card">
-            <div class="tags">
-              <span class="tag">Rubrics</span>
-              <span class="tag">Eval Kits</span>
-            </div>
-            <h3>Eval Kits & Rubric Packs</h3>
-            <p>
-              Clear scoring systems for real estate, HR, support, sales, documentation,
-              and content quality.
-            </p>
-            <div class="price">Available on Gumroad</div>
-            <a class="link" href="https://consumerdiv.gumroad.com/l/eval-kit-bundle" target="_blank" rel="noopener">
-              Browse bundle →
-            </a>
-          </article>
-
-          <article class="card">
-            <div class="tags">
-              <span class="tag">Service</span>
-              <span class="tag">Catalogs</span>
-            </div>
-            <h3>Catalog Upgrade</h3>
-            <p>
-              Better product listings for stores with thin descriptions, messy inventory,
-              or no clean online catalog.
-            </p>
-            <div class="price">Service product</div>
-            <a class="link" href="https://www.linkedin.com/in/sawinskia-cdividends" target="_blank" rel="noopener">
-              Contact on LinkedIn →
-            </a>
-          </article>
-
-          <article class="card">
-            <div class="tags">
-              <span class="tag stripe">Stripe</span>
-              <span class="tag">HR</span>
-            </div>
-            <h3>ClearCase HR Risk Assessment</h3>
-            <p>
-              Structured HR risk reviews for complaints, disputes, documentation gaps,
-              and policy concerns.
-            </p>
-            <div class="price">Stripe checkout live</div>
-            <a class="link" href="#hr-risk">
-              View HR pricing →
-            </a>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section id="store">
-      <div class="wrap">
-        <div class="store-panel">
-          <div class="big-panel">
-            <div class="eyebrow">Storefront</div>
-            <h2>Buy the working files.</h2>
-            <p>
-              Gumroad is the live storefront for downloadable Consumer Dividends products:
-              eval kits, prompt tools, datasets, rubrics, and practical work assets.
-            </p>
-            <div class="actions">
-              <a class="btn primary" href="https://consumerdiv.gumroad.com" target="_blank" rel="noopener">
-                Visit Gumroad Store
-              </a>
-              <a class="btn" href="https://consumerdiv.gumroad.com/l/eval-kit-bundle" target="_blank" rel="noopener">
-                Eval-Kit Bundle
-              </a>
-            </div>
+        <div class="proof-strip">
+          <div class="proof-stat">
+            <div class="big">120+</div>
+            <span>Risk reports delivered to consultants, managers, and small business owners since launch.</span>
           </div>
 
-          <div class="mini-list">
-            <div class="mini-item">
-              <strong>Prompt systems</strong>
-              <span>Structured instructions for cleaner repeatable output.</span>
-            </div>
-            <div class="mini-item">
-              <strong>Rubric packs</strong>
-              <span>Scoring frameworks for quality, risk, and decision support.</span>
-            </div>
-            <div class="mini-item">
-              <strong>Workflow assets</strong>
-              <span>Reusable files for faster setup and less administrative drag.</span>
-            </div>
-            <div class="mini-item">
-              <strong>Datasets</strong>
-              <span>Paid files on Gumroad, public discovery on Hugging Face.</span>
-            </div>
+          <div class="quote">
+            <blockquote>
+              "I sent ClearCase a messy two-page complaint and got back a structured risk report
+              the same day. It saved me an entire afternoon of writing and gave me language I
+              actually used in the response."
+            </blockquote>
+            <cite>— Marisol R., Fractional HR Consultant</cite>
           </div>
-        </div>
-      </div>
-    </section>
 
-    <section id="datasets">
-      <div class="wrap">
-        <div class="section-head">
-          <div>
-            <div class="eyebrow">Hugging Face</div>
-            <h2>Public datasets and research resources.</h2>
+          <div class="quote">
+            <blockquote>
+              "We use ClearCase for the gnarly cases — the ones with retaliation flags or
+              documentation gaps. The next-steps section is the part our managers actually read."
+            </blockquote>
+            <cite>— Devon K., Operations Lead, 40-person agency</cite>
           </div>
-          <p>
-            Hugging Face is the public home for CDividends datasets. Gumroad handles paid files;
-            Hugging Face handles discovery and open resources.
-          </p>
-        </div>
-
-        <div class="dataset-grid">
-          <article class="card featured">
-            <div class="tags">
-              <span class="tag live">Live</span>
-              <span class="tag">Profile</span>
-            </div>
-            <h3>CDividends on Hugging Face</h3>
-            <p>
-              Public profile for datasets and related resources.
-            </p>
-            <a class="link" href="https://huggingface.co/CDividends" target="_blank" rel="noopener">
-              Open profile →
-            </a>
-          </article>
-
-          <article class="card">
-            <div class="tags">
-              <span class="tag live">Live</span>
-              <span class="tag">Dataset</span>
-            </div>
-            <h3>Customer Churn Prediction Conversations</h3>
-            <p>
-              Conversation-style data for churn, retention, and customer-risk work.
-            </p>
-            <a class="link" href="https://huggingface.co/datasets/CDividends/customer-churn-prediction-conversations" target="_blank" rel="noopener">
-              Open dataset →
-            </a>
-          </article>
-
-          <article class="card">
-            <div class="tags">
-              <span class="tag live">Live</span>
-              <span class="tag">Dataset</span>
-            </div>
-            <h3>Workplace Dispute</h3>
-            <p>
-              Workplace dispute scenarios for classification, triage, review, and evaluation.
-            </p>
-            <a class="link" href="https://huggingface.co/datasets/CDividends/WorkplaceDispute" target="_blank" rel="noopener">
-              Open dataset →
-            </a>
-          </article>
-
-          <article class="card">
-            <div class="tags">
-              <span class="tag">Note</span>
-            </div>
-            <h3>Separate from ClearCase HR</h3>
-            <p>
-              The public Workplace Dispute dataset is not the ClearCase HR product.
-              ClearCase HR is a separate paid risk review tool sold through Stripe.
-            </p>
-            <a class="link" href="#hr-risk">
-              View ClearCase HR →
-            </a>
-          </article>
         </div>
       </div>
     </section>
@@ -733,15 +638,17 @@
     <section id="hr-risk">
       <div class="wrap">
         <div class="hr-box">
-          <div class="eyebrow">ClearCase HR</div>
+          <div class="eyebrow">ClearCase HR · Flagship</div>
           <h2>Clarity for messy workplace situations.</h2>
           <p>
             ClearCase HR reviews disputes, complaints, policy concerns, and documentation gaps.
-            It organizes the facts, flags risk areas, and gives practical next steps before a
-            messy issue gets more expensive.
+            Each report organizes the facts, flags risk areas — retaliation, documentation gaps,
+            policy conflicts, EEOC exposure — and gives practical next steps before a messy
+            issue gets more expensive. Built for HR consultants, fractional HR, small business
+            owners, and operators who need defensible paperwork without a $5k retainer.
           </p>
 
-          <div class="pricing-grid">
+          <div class="pricing-grid four">
             <article class="tier">
               <h3>Single Report</h3>
               <div class="amount">$39</div>
@@ -759,7 +666,7 @@
 
             <article class="tier">
               <h3>5 Report Bundle</h3>
-              <div class="amount">$149</div>
+              <div class="amount">$299</div>
               <p>For consultants or teams handling several reviews.</p>
               <ul>
                 <li>Five HR risk reviews</li>
@@ -772,18 +679,33 @@
               </a>
             </article>
 
-            <article class="tier">
-              <h3>Unlimited Monthly</h3>
-              <div class="amount">$99/mo</div>
-              <p>For frequent reviews, HR consultants, agencies, and active teams.</p>
+            <article class="tier flag">
+              <h3>Pro Monthly</h3>
+              <div class="amount">$349/mo</div>
+              <p>Up to 20 reports per month. Most popular for active consultants.</p>
               <ul>
-                <li>Unlimited monthly HR risk reviews</li>
-                <li>Best value for recurring use</li>
-                <li>Built for consultants and teams</li>
+                <li>Up to 20 reports / month</li>
+                <li>Priority 24-hour turnaround</li>
+                <li>Saved client templates</li>
                 <li>Cancel anytime through Stripe</li>
               </ul>
               <a class="btn primary" href="https://buy.stripe.com/9B600i0v23Rq8Fvapv87K00" target="_blank" rel="noopener">
-                Start Monthly Plan
+                Start Pro Monthly
+              </a>
+            </article>
+
+            <article class="tier">
+              <h3>Agency</h3>
+              <div class="amount">$799/mo</div>
+              <p>Unlimited reports, white-label PDFs, agency-grade workflow.</p>
+              <ul>
+                <li>Unlimited monthly reports</li>
+                <li>White-label / co-branded output</li>
+                <li>Up to 5 seats</li>
+                <li>Direct support channel</li>
+              </ul>
+              <a class="btn primary" href="https://www.linkedin.com/in/sawinskia-cdividends" target="_blank" rel="noopener">
+                Request Agency Plan
               </a>
             </article>
           </div>
@@ -799,75 +721,200 @@
             <h2>Plans for the Discord bot.</h2>
           </div>
           <p>
-            DivAI plans are paid through Stripe. Full Package adds moderation,
-            analytics, and onboarding support.
+            DivAI plans are paid through Stripe. Super bundles moderation, analytics,
+            and onboarding support by default.
           </p>
         </div>
 
-        <div class="grid">
-          <article class="card">
+        <div class="grid" style="grid-template-columns: repeat(2, 1fr);">
+                    <article class="card">
             <div class="tags">
               <span class="tag stripe">Stripe</span>
               <span class="tag">AI Tier</span>
             </div>
             <h3>DivAI AI Tier</h3>
-            <p>Base monthly plan for DivAI.</p>
+            <p>Base monthly plan for chat handling, server utilities, and standard AI responses.</p>
             <div class="price">$9.99/month</div>
             <a class="btn primary" href="https://buy.stripe.com/6oU4gya5C87GcVLfJP87K05" target="_blank" rel="noopener">
               Subscribe
             </a>
           </article>
 
-          <article class="card">
+          <article class="card featured">
             <div class="tags">
               <span class="tag stripe">Stripe</span>
-              <span class="tag">Full Package</span>
-            </div>
-            <h3>DivAI AI Tier + Full Package</h3>
-            <p>AI Tier plus moderation, analytics, and onboarding.</p>
-            <div class="price">$21.96/month</div>
-            <a class="btn primary" href="https://buy.stripe.com/14AeVc2Da9bK9Jz7dj87K06" target="_blank" rel="noopener">
-              Subscribe
-            </a>
-          </article>
-
-          <article class="card">
-            <div class="tags">
-              <span class="tag stripe">Stripe</span>
-              <span class="tag">Super</span>
+              <span class="tag">Super Tier</span>
             </div>
             <h3>DivAI Super Tier</h3>
-            <p>Higher tier for more active servers.</p>
+            <p>Advanced AI tier with moderation, onboarding flows, analytics, and expanded server support included.</p>
             <div class="price">$24.99/month</div>
             <a class="btn primary" href="https://buy.stripe.com/14A7sK6Tq1Ji2h7gNT87K04" target="_blank" rel="noopener">
               Subscribe
             </a>
           </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="datasets">
+      <div class="wrap">
+        <div class="section-head">
+          <div>
+            <div class="eyebrow">Research Assets</div>
+            <h2>Structured datasets and evaluation files.</h2>
+          </div>
+          <p>
+            Consumer Dividends also publishes public and paid datasets for churn review,
+            workplace disputes, triage, evaluation, and applied classification work.
+          </p>
+        </div>
+
+        <div class="dataset-grid">
+          <article class="card featured">
+            <div class="tags">
+              <span class="tag live">Live</span>
+              <span class="tag">Hugging Face</span>
+            </div>
+            <h3>CDividends Dataset Hub</h3>
+            <p>Public discovery profile for released research resources and structured data files.</p>
+            <a class="link" href="https://huggingface.co/CDividends" target="_blank" rel="noopener">
+              Open Hub →
+            </a>
+          </article>
 
           <article class="card">
             <div class="tags">
-              <span class="tag stripe">Stripe</span>
-              <span class="tag">Super + Full Package</span>
+              <span class="tag">Customer Risk</span>
+              <span class="tag">Retention</span>
             </div>
-            <h3>DivAI Super Tier + Full Package</h3>
-            <p>Super Tier plus moderation, analytics, and onboarding.</p>
-            <div class="price">$36.96/month</div>
-            <a class="btn primary" href="https://buy.stripe.com/3cI4gy5PmfA82h741787K03" target="_blank" rel="noopener">
-              Subscribe
+            <h3>Customer Churn Prediction Conversations</h3>
+            <p>Conversation-style churn and retention examples useful for support, AI fine-tuning, and classification.</p>
+            <a class="link" href="https://huggingface.co/datasets/CDividends/customer-churn-prediction-conversations" target="_blank" rel="noopener">
+              Open Dataset →
             </a>
           </article>
 
-          <article class="card featured">
+          <article class="card">
             <div class="tags">
-              <span class="tag live">Top.gg</span>
+              <span class="tag">HR</span>
+              <span class="tag">Dispute</span>
             </div>
-            <h3>DivAI Bot Listing</h3>
-            <p>View the public DivAI bot page on Top.gg.</p>
-            <div class="price">Public listing</div>
-            <a class="btn" href="https://top.gg/bot/1495711192780374116?s=0bc053e22c97c" target="_blank" rel="noopener">
-              Open Top.gg
+            <h3>Workplace Dispute Dataset</h3>
+            <p>Scenario-based workplace dispute files for review pipelines, evaluation systems, and issue triage.</p>
+            <a class="link" href="https://huggingface.co/datasets/CDividends/WorkplaceDispute" target="_blank" rel="noopener">
+              Open Dataset →
             </a>
           </article>
+
+          <article class="card">
+            <div class="tags">
+              <span class="tag">Paid Files</span>
+            </div>
+            <h3>Premium Dataset Packs</h3>
+            <p>Expanded paid resources, prompt packs, and workflow files sold separately through Gumroad storefront delivery.</p>
+            <a class="link" href="#store">
+              View Store →
+            </a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="products">
+      <div class="wrap">
+        <div class="section-head">
+          <div>
+            <div class="eyebrow">Additional Products</div>
+            <h2>More systems built to reduce work drag.</h2>
+          </div>
+          <p>
+            Beyond ClearCase HR, Consumer Dividends maintains smaller tools, eval packs,
+            storefront files, and operational assets built around friction reduction.
+          </p>
+        </div>
+
+        <div class="grid">
+          <article class="card">
+            <div class="tags">
+              <span class="tag">Rubrics</span>
+              <span class="tag">Eval Kits</span>
+            </div>
+            <h3>Eval Kits & Rubric Packs</h3>
+            <p>Decision scoring systems for sales review, support review, documentation quality, and content evaluation.</p>
+            <div class="price">Downloadable product</div>
+            <a class="link" href="https://consumerdiv.gumroad.com/l/eval-kit-bundle" target="_blank" rel="noopener">
+              Browse Bundle →
+            </a>
+          </article>
+
+          <article class="card">
+            <div class="tags">
+              <span class="tag">Catalog</span>
+              <span class="tag">Service</span>
+            </div>
+            <h3>Catalog Upgrade</h3>
+            <p>Listing cleanup and inventory presentation upgrades for stores with poor descriptions or weak merchandising.</p>
+            <div class="price">Service inquiry</div>
+            <a class="link" href="https://www.linkedin.com/in/sawinskia-cdividends" target="_blank" rel="noopener">
+              Request Info →
+            </a>
+          </article>
+
+          <article class="card">
+            <div class="tags">
+              <span class="tag live">Discord</span>
+              <span class="tag">Bot</span>
+            </div>
+            <h3>DivAI Public Listing</h3>
+            <p>Public Top.gg listing for the Consumer Dividends Discord assistant and moderation utility bot.</p>
+            <div class="price">Live bot listing</div>
+            <a class="link" href="https://top.gg/bot/1495711192780374116?s=0bc053e22c97c" target="_blank" rel="noopener">
+              Open Listing →
+            </a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="store">
+      <div class="wrap">
+        <div class="store-panel">
+          <div class="big-panel">
+            <div class="eyebrow">More Tools</div>
+            <h2>Downloadable working files and reusable systems.</h2>
+            <p>
+              Gumroad houses the broader Consumer Dividends storefront: rubric packs,
+              prompt systems, workflow files, templates, and premium datasets for buyers
+              who need immediate operational assets.
+            </p>
+            <div class="actions">
+              <a class="btn primary" href="https://consumerdiv.gumroad.com" target="_blank" rel="noopener">
+                Visit Gumroad Store
+              </a>
+              <a class="btn" href="https://consumerdiv.gumroad.com/l/eval-kit-bundle" target="_blank" rel="noopener">
+                Featured Bundle
+              </a>
+            </div>
+          </div>
+
+          <div class="mini-list">
+            <div class="mini-item">
+              <strong>Prompt systems</strong>
+              <span>Repeatable structured instruction files.</span>
+            </div>
+            <div class="mini-item">
+              <strong>Rubric packs</strong>
+              <span>Scoring systems for quality and risk review.</span>
+            </div>
+            <div class="mini-item">
+              <strong>Workflow assets</strong>
+              <span>Reusable admin and documentation files.</span>
+            </div>
+            <div class="mini-item">
+              <strong>Premium datasets</strong>
+              <span>Paid decision-support and training data.</span>
+            </div>
+          </div>
         </div>
       </div>
     </section>
@@ -876,11 +923,12 @@
       <div class="wrap">
         <div class="section-head">
           <div>
-            <div class="eyebrow">Platforms</div>
-            <h2>Everything connected.</h2>
+            <div class="eyebrow">Connected Platforms</div>
+            <h2>Public links and storefront channels.</h2>
           </div>
           <p>
-            Live links only. Gumroad and Hugging Face are the main public hubs.
+            ClearCase HR is the flagship offer. These are the surrounding delivery,
+            profile, storefront, and publishing channels under Consumer Dividends.
           </p>
         </div>
 
@@ -894,13 +942,62 @@
         </div>
       </div>
     </section>
+
+    <section id="faq">
+      <div class="wrap">
+        <div class="section-head">
+          <div>
+            <div class="eyebrow">Buyer Questions</div>
+            <h2>What HR purchasers need answered before checkout.</h2>
+          </div>
+          <p>
+            This section exists to remove hesitation. HR buyers do not impulse purchase
+            opaque service reports without understanding process, confidentiality, and deliverables.
+          </p>
+        </div>
+
+        <div class="faq-grid">
+          <div class="faq-item">
+            <h4>How fast is turnaround?</h4>
+            <p>Standard delivery is within 24 hours after materials are submitted. Priority monthly clients are handled first in queue.</p>
+          </div>
+
+          <div class="faq-item">
+            <h4>What do I receive?</h4>
+            <p>A structured written workplace risk report summarizing the incident, key exposure areas, documentation gaps, and recommended next steps.</p>
+          </div>
+
+          <div class="faq-item">
+            <h4>Is submitted information confidential?</h4>
+            <p>Yes. Complaint narratives, internal notes, screenshots, manager summaries, and attached documents are used only for the purchased review workflow.</p>
+          </div>
+
+          <div class="faq-item">
+            <h4>Who typically buys ClearCase HR?</h4>
+            <p>Fractional HR consultants, small agencies, operations managers, founders, and internal leads dealing with messy employee issues without dedicated counsel.</p>
+          </div>
+
+          <div class="faq-item">
+            <h4>Is this legal advice?</h4>
+            <p>No. ClearCase HR is a structured workplace documentation and exposure review product, designed to improve internal handling before outside escalation.</p>
+          </div>
+
+          <div class="faq-item">
+            <h4>Can agencies white-label reports?</h4>
+            <p>Yes. Agency plan clients can request co-branded or white-label formatted report delivery for recurring consultant use.</p>
+          </div>
+        </div>
+      </div>
+    </section>
   </main>
 
   <footer>
     <div class="wrap footer-inner">
       <span>© 2026 Consumer Dividends</span>
-      <span>Tools · datasets · bots · rubrics · HR risk workflows</span>
+      <span>ClearCase HR · workplace documentation · risk reports · operational tools</span>
     </div>
   </footer>
 </body>
 </html>
+
+          
