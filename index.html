@@ -3,236 +3,415 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Consumer Dividends</title>
 
-  <meta name="description" content="Consumer Dividends builds tools, datasets, rubrics, bots, and risk systems that reduce operational friction and improve decision clarity." />
+  <title>Consumer Dividends</title>
+  <meta
+    name="description"
+    content="Consumer Dividends builds practical tools, datasets, rubrics, bots, and risk workflows that help people protect time, money, margin, and choice."
+  />
+
+  <link rel="icon" href="/assets/favicon.ico" sizes="any" />
+  <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml" />
+  <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
 
   <style>
     :root {
-      --bg:#070a0f;
-      --panel:#101722;
-      --text:#f4f7fb;
-      --muted:#aab5c5;
-      --accent:#7dd3fc;
-      --accent2:#a7f3d0;
-      --gold:#fde68a;
-      --line:rgba(255,255,255,0.1);
+      --bg: #070a0f;
+      --panel: #101722;
+      --panel2: #151f2d;
+      --text: #f4f7fb;
+      --muted: #aab5c5;
+      --line: rgba(255,255,255,0.11);
+      --accent: #7dd3fc;
+      --accent2: #a7f3d0;
+      --gold: #fde68a;
+      --danger: #fda4af;
+      --radius: 20px;
+      --max: 1160px;
+      --shadow: 0 22px 70px rgba(0,0,0,0.36);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
     }
 
     body {
-      margin:0;
-      font-family:system-ui;
-      background:var(--bg);
-      color:var(--text);
-      line-height:1.5;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background:
+        radial-gradient(circle at 12% 0%, rgba(125,211,252,0.17), transparent 32%),
+        radial-gradient(circle at 92% 8%, rgba(167,243,208,0.13), transparent 30%),
+        radial-gradient(circle at 50% 100%, rgba(253,230,138,0.08), transparent 28%),
+        var(--bg);
+      color: var(--text);
+      line-height: 1.6;
     }
 
-    .wrap { max-width:1100px; margin:0 auto; padding:0 18px; }
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .wrap {
+      width: min(var(--max), calc(100% - 32px));
+      margin: 0 auto;
+    }
 
     header {
-      position:sticky;
-      top:0;
-      background:rgba(7,10,15,0.85);
-      border-bottom:1px solid var(--line);
-      backdrop-filter:blur(12px);
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background: rgba(7,10,15,0.78);
+      backdrop-filter: blur(18px);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .nav {
+      height: 72px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 24px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 11px;
+      font-weight: 900;
+      letter-spacing: -0.04em;
+      font-size: 18px;
+    }
+
+    .brand-logo {
+      width: 38px;
+      height: 38px;
+      border-radius: 12px;
+      object-fit: contain;
+      display: block;
+      background: rgba(255,255,255,0.04);
+      box-shadow: 0 0 34px rgba(125,211,252,0.18);
     }
 
     nav {
-      display:flex;
-      justify-content:space-between;
-      align-items:center;
-      padding:18px 0;
-      color:var(--muted);
-      font-size:14px;
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      color: var(--muted);
+      font-size: 14px;
+      font-weight: 650;
     }
 
-    a { color:inherit; text-decoration:none; }
-
-    h1 {
-      font-size:54px;
-      line-height:1;
-      letter-spacing:-0.04em;
-    }
-
-    h2 {
-      font-size:32px;
-      letter-spacing:-0.03em;
+    nav a:hover {
+      color: var(--text);
     }
 
     .hero {
-      padding:80px 0 40px;
+      padding: 94px 0 70px;
     }
 
-    .muted { color:var(--muted); max-width:700px; }
-
-    .grid {
-      display:grid;
-      grid-template-columns:repeat(3,1fr);
-      gap:16px;
+    .eyebrow {
+      color: var(--accent2);
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      font-size: 13px;
+      font-weight: 850;
+      margin-bottom: 16px;
     }
 
-    .card {
-      border:1px solid var(--line);
-      background:var(--panel);
-      padding:18px;
-      border-radius:14px;
+    h1 {
+      max-width: 920px;
+      font-size: clamp(45px, 7vw, 84px);
+      line-height: 0.94;
+      letter-spacing: -0.075em;
+      margin-bottom: 24px;
     }
 
-    .primary {
-      border:1px solid rgba(125,211,252,0.4);
-      background:rgba(125,211,252,0.08);
+    .hero-copy {
+      max-width: 760px;
+      font-size: 20px;
+      color: var(--muted);
+      margin-bottom: 34px;
     }
 
-    .gold {
-      color:var(--gold);
-      font-weight:700;
+    .actions {
+      display: flex;
+      gap: 13px;
+      flex-wrap: wrap;
+      align-items: center;
     }
 
     .btn {
-      display:inline-block;
-      margin-top:12px;
-      padding:10px 14px;
-      border-radius:999px;
-      border:1px solid var(--line);
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 46px;
+      padding: 0 18px;
+      border-radius: 999px;
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,0.045);
+      color: var(--text);
+      font-weight: 800;
+      font-size: 14px;
+      transition: transform 0.15s ease, background 0.15s ease;
+      text-align: center;
+    }
+
+    .btn:hover {
+      transform: translateY(-1px);
+      background: rgba(255,255,255,0.075);
     }
 
     .btn.primary {
-      background:linear-gradient(135deg,var(--accent),var(--accent2));
-      color:#061016;
-      font-weight:700;
-      border:none;
+      border: none;
+      background: linear-gradient(135deg, var(--accent), var(--accent2));
+      color: #061016;
     }
 
-    section { padding:50px 0; border-top:1px solid var(--line); }
-
-    .small { font-size:14px; color:var(--muted); }
-
-    @media(max-width:900px){
-      .grid { grid-template-columns:1fr; }
+    section {
+      padding: 58px 0;
     }
+
+    .section-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: end;
+      gap: 28px;
+      margin-bottom: 25px;
+    }
+
+    h2 {
+      font-size: clamp(31px, 4.4vw, 48px);
+      line-height: 1.04;
+      letter-spacing: -0.055em;
+    }
+
+    .section-head p {
+      max-width: 570px;
+      color: var(--muted);
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+    }
+
+    .card {
+      background: linear-gradient(180deg, rgba(255,255,255,0.058), rgba(255,255,255,0.027));
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 22px;
+      box-shadow: var(--shadow);
+    }
+
+    .card.featured {
+      border-color: rgba(125,211,252,0.32);
+      background:
+        linear-gradient(180deg, rgba(125,211,252,0.11), rgba(255,255,255,0.027));
+    }
+
+    .card h3 {
+      font-size: 22px;
+      letter-spacing: -0.035em;
+      margin-bottom: 8px;
+    }
+
+    .card p {
+      color: var(--muted);
+      font-size: 15px;
+      margin-bottom: 16px;
+    }
+
+    .tags {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin-bottom: 15px;
+    }
+
+    .tag {
+      font-size: 12px;
+      font-weight: 750;
+      color: #dbeafe;
+      border: 1px solid rgba(125,211,252,0.25);
+      background: rgba(125,211,252,0.08);
+      border-radius: 999px;
+      padding: 5px 9px;
+    }
+
+    .tag.live {
+      color: #dcfce7;
+      border-color: rgba(167,243,208,0.32);
+      background: rgba(167,243,208,0.1);
+    }
+
+    .tag.stripe {
+      color: #fef3c7;
+      border-color: rgba(253,230,138,0.32);
+      background: rgba(253,230,138,0.09);
+    }
+
+    .price {
+      color: var(--accent2);
+      font-weight: 900;
+      font-size: 14px;
+      margin-bottom: 16px;
+    }
+
+    .link {
+      color: var(--accent);
+      font-weight: 850;
+      font-size: 14px;
+    }
+
+    .link:hover {
+      color: var(--accent2);
+    }
+
+    .store-panel {
+      display: grid;
+      grid-template-columns: 1.25fr 0.75fr;
+      gap: 16px;
+      align-items: stretch;
+    }
+
+    .big-panel {
+      border: 1px solid var(--line);
+      border-radius: 28px;
+      padding: 32px;
+      background:
+        linear-gradient(135deg, rgba(125,211,252,0.13), rgba(167,243,208,0.08)),
+        var(--panel);
+      box-shadow: var(--shadow);
+    }
+
+    .big-panel p {
+      color: var(--muted);
+      max-width: 680px;
+      margin: 10px 0 22px;
+    }
+
+    .mini-list {
+      display: grid;
+      gap: 12px;
+    }
+
+    .mini-item {
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      padding: 16px;
+      background: rgba(255,255,255,0.04);
+    }
+
+    .mini-item strong {
+      display: block;
+      margin-bottom: 4px;
+    }
+
+    .mini-item span {
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .platforms {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      gap: 12px;
+    }
+
+    .platform {
+      min-height: 92px;
+      border: 1px solid var(--line);
+      background: var(--panel);
+      border-radius: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--muted);
+      font-weight: 900;
+    }
+
+    footer {
+      border-top: 1px solid var(--line);
+      margin-top: 48px;
+      padding: 32px 0 46px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
   </style>
 </head>
 
 <body>
 
 <header>
-  <div class="wrap">
+  <div class="wrap nav">
+    <a class="brand" href="#">
+      <img class="brand-logo" src="/assets/consumer-dividends-logo.png" />
+      <span>Consumer Dividends</span>
+    </a>
+
     <nav>
-      <div>Consumer Dividends</div>
-      <div>
-        <a href="#systems">Systems</a> ·
-        <a href="#library">Library</a> ·
-        <a href="#clearcase">ClearCase</a> ·
-        <a href="#divai">DivAI</a>
-      </div>
+      <a href="#products">Products</a>
+      <a href="#store">Store</a>
+      <a href="#datasets">Datasets</a>
+      <a href="#hr-risk">HR Risk</a>
+      <a href="#divai-plans">DivAI Plans</a>
+      <a href="#platforms">Platforms</a>
     </nav>
   </div>
 </header>
 
-<section class="hero">
-  <div class="wrap">
-    <h1>Tools that reduce operational friction.</h1>
-    <p class="muted">
-      Consumer Dividends builds systems that remove hidden costs in time, margin, and decision-making.
-      We design practical tools for real workflows — not abstractions.
-    </p>
-  </div>
-</section>
+<main>
+  <section class="hero">
+    <div class="wrap">
+      <div class="eyebrow">Tools · datasets · bots · risk workflows</div>
+      <h1>Tools that put leverage back in your hands.</h1>
+      <p class="hero-copy">
+        Consumer Dividends fights the quiet tax people pay when basic work eats their time,
+        margin, and choices.
+      </p>
 
-<section id="systems">
-  <div class="wrap">
-    <h2>Flagship Systems</h2>
-    <p class="small">Primary live systems across Consumer Dividends.</p>
-
-    <div class="grid">
-
-      <div class="card primary">
-        <h3>ClearCase HR</h3>
-        <p class="muted">HR risk analysis for disputes, complaints, and workplace documentation gaps.</p>
-        <div class="gold">Primary Revenue Engine</div>
-        <a class="btn primary" href="#clearcase">Enter ClearCase</a>
-      </div>
-
-      <div class="card">
-        <h3>Evaluation Kits</h3>
-        <p class="muted">Rubric systems for HR, sales, real estate, support, and documentation quality.</p>
-        <div class="gold">High demand product line</div>
-        <a class="btn" href="#library">View Kits</a>
-      </div>
-
-      <div class="card">
-        <h3>DivAI Bot</h3>
-        <p class="muted">Discord AI system for moderation, onboarding, and server support.</p>
-        <div class="gold">Live SaaS Bot</div>
-        <a class="btn" href="#divai">Open DivAI</a>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<section id="library">
-  <div class="wrap">
-    <h2>Product Library</h2>
-    <p class="small">Actual deployed Gumroad products — structured and specific.</p>
-
-    <div class="grid">
-
-      <div class="card">Real Estate Rubric Pack</div>
-      <div class="card">HR Compliance Rubric Pack</div>
-      <div class="card">Sales Enablement Pack</div>
-      <div class="card">Technical Documentation Pack</div>
-      <div class="card">Customer Support Pack</div>
-      <div class="card">Prompt Engineering Kit</div>
-      <div class="card">Listing AI System</div>
-      <div class="card">HR Conflict Dataset</div>
-      <div class="card">Customer Churn Dataset</div>
-
-    </div>
-  </div>
-</section>
-
-<section id="clearcase">
-  <div class="wrap">
-    <h2>ClearCase HR</h2>
-    <p class="muted">
-      Structured HR risk analysis system for workplace disputes and documentation review.
-    </p>
-
-    <div class="grid">
-      <div class="card">
-        <h3>Single Report</h3>
-        <div class="gold">$39</div>
-        <a class="btn primary">Buy</a>
-      </div>
-
-      <div class="card">
-        <h3>5 Report Bundle</h3>
-        <div class="gold">$149</div>
-        <a class="btn primary">Buy</a>
-      </div>
-
-      <div class="card">
-        <h3>Unlimited Monthly</h3>
-        <div class="gold">$99/mo</div>
-        <a class="btn primary">Subscribe</a>
+      <div class="actions">
+        <a class="btn primary" href="https://consumerdiv.gumroad.com">Shop Gumroad</a>
+        <a class="btn" href="https://top.gg">Open DivAI</a>
+        <a class="btn" href="https://huggingface.co">Hugging Face</a>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<section id="divai">
-  <div class="wrap">
-    <h2>DivAI</h2>
-    <p class="muted">Discord AI system for moderation, onboarding, and automation.</p>
-    <a class="btn primary">Open Top.gg</a>
-  </div>
-</section>
+  <section id="products">
+    <div class="wrap">
+      <div class="grid">
+        <div class="card featured">
+          <h3>DivAI</h3>
+          <p>Discord bot system.</p>
+          <a class="link">View</a>
+        </div>
+
+        <div class="card">
+          <h3>Gumroad Products</h3>
+          <p>Downloadable tools.</p>
+        </div>
+
+        <div class="card">
+          <h3>Datasets</h3>
+          <p>HF public resources.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
 
 <footer>
-  <div class="wrap small">
-    © 2026 Consumer Dividends · tools · datasets · bots · risk systems
-  </div>
+  <div class="wrap">© 2026 Consumer Dividends</div>
 </footer>
 
 </body>
