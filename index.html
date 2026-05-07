@@ -357,10 +357,13 @@
       grid-template-columns: repeat(2, 1fr);
     }
 
-    .tier-grid,
-    .pricing-grid {
-      grid-template-columns: repeat(3, 1fr);
-    }
+    .tier-grid {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.pricing-grid {
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+}
 
     .hr-box {
       border: 1px solid rgba(253,230,138,0.28);
