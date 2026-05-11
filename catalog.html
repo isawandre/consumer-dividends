@@ -1,0 +1,658 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Catalog — Consumer Dividends</title>
+  <meta name="description" content="Eval kits, datasets, prompt tools, and risk workflows from Consumer Dividends. Built for developers, consultants, and operators." />
+  <link rel="icon" href="/assets/favicon.ico" sizes="any" />
+  <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml" />
+  <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+  <style>
+    :root {
+      --bg: #070a0f;
+      --panel: #101722;
+      --panel2: #151f2d;
+      --text: #f4f7fb;
+      --muted: #aab5c5;
+      --line: rgba(255,255,255,0.11);
+      --accent: #7dd3fc;
+      --accent2: #a7f3d0;
+      --gold: #fde68a;
+      --danger: #fda4af;
+      --radius: 20px;
+      --max: 1160px;
+      --shadow: 0 22px 70px rgba(0,0,0,0.36);
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background:
+        radial-gradient(circle at 12% 0%, rgba(125,211,252,0.17), transparent 32%),
+        radial-gradient(circle at 92% 8%, rgba(167,243,208,0.13), transparent 30%),
+        radial-gradient(circle at 50% 100%, rgba(253,230,138,0.08), transparent 28%),
+        var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+    a { color: inherit; text-decoration: none; }
+    .wrap { width: min(var(--max), calc(100% - 32px)); margin: 0 auto; }
+
+    /* ── HEADER ── */
+    header {
+      position: sticky; top: 0; z-index: 50;
+      background: rgba(7,10,15,0.78);
+      backdrop-filter: blur(18px);
+      border-bottom: 1px solid var(--line);
+    }
+    .nav {
+      height: 72px; display: flex;
+      justify-content: space-between; align-items: center; gap: 24px;
+    }
+    .brand {
+      display: flex; align-items: center; gap: 11px;
+      font-weight: 900; letter-spacing: -0.04em; font-size: 18px;
+    }
+    .brand-logo {
+      width: 38px; height: 38px; border-radius: 12px;
+      object-fit: contain; display: block;
+      background: rgba(255,255,255,0.04);
+      box-shadow: 0 0 34px rgba(125,211,252,0.18);
+    }
+    nav { display: flex; align-items: center; gap: 20px; color: var(--muted); font-size: 14px; font-weight: 650; }
+    nav a:hover { color: var(--text); }
+
+    /* ── BUTTONS ── */
+    .btn {
+      display: inline-flex; justify-content: center; align-items: center;
+      min-height: 42px; padding: 0 18px; border-radius: 999px;
+      border: 1px solid var(--line); background: rgba(255,255,255,0.045);
+      color: var(--text); font-weight: 800; font-size: 14px;
+      transition: transform 0.15s ease, background 0.15s ease;
+      text-align: center; cursor: pointer; font-family: inherit;
+    }
+    .btn:hover { transform: translateY(-1px); background: rgba(255,255,255,0.075); }
+    .btn.primary { border: none; background: linear-gradient(135deg, var(--accent), var(--accent2)); color: #061016; }
+    .btn.primary:hover { opacity: 0.92; transform: translateY(-1px); }
+    .btn.gold-btn { border: none; background: linear-gradient(135deg, var(--gold), #f5c542); color: #1a1000; }
+    .btn.gold-btn:hover { opacity: 0.92; transform: translateY(-1px); }
+
+    /* ── EYEBROW ── */
+    .eyebrow {
+      color: var(--accent2); text-transform: uppercase;
+      letter-spacing: 0.1em; font-size: 13px; font-weight: 850; margin-bottom: 16px;
+    }
+
+    /* ── HERO ── */
+    .hero { padding: 72px 0 48px; }
+    .hero h1 {
+      font-size: clamp(38px, 6vw, 68px);
+      line-height: 0.96; letter-spacing: -0.065em; margin-bottom: 18px;
+    }
+    .hero-copy { max-width: 640px; font-size: 18px; color: var(--muted); margin-bottom: 28px; }
+
+    /* ── FILTER TABS ── */
+    .filter-row {
+      display: flex; gap: 8px; flex-wrap: wrap;
+      margin-bottom: 36px; padding-top: 8px;
+    }
+    .filter-btn {
+      padding: 7px 16px; border-radius: 999px; font-size: 13px; font-weight: 750;
+      border: 1px solid var(--line); background: rgba(255,255,255,0.04);
+      color: var(--muted); cursor: pointer; transition: all 0.15s;
+    }
+    .filter-btn:hover, .filter-btn.active {
+      border-color: rgba(125,211,252,0.4);
+      background: rgba(125,211,252,0.1); color: var(--accent);
+    }
+
+    /* ── COMING SOON FLAGSHIP ── */
+    .flagship {
+      border: 1px solid rgba(253,230,138,0.3);
+      background: linear-gradient(135deg, rgba(253,230,138,0.07), rgba(255,255,255,0.02)), var(--panel);
+      border-radius: 28px; padding: 32px; margin-bottom: 48px;
+      box-shadow: var(--shadow);
+      display: grid; grid-template-columns: 1fr auto; gap: 32px; align-items: center;
+    }
+    .flagship-badge {
+      display: inline-flex; align-items: center; gap: 7px;
+      background: rgba(253,230,138,0.1); border: 1px solid rgba(253,230,138,0.3);
+      color: var(--gold); font-size: 11px; font-weight: 800;
+      letter-spacing: 0.1em; text-transform: uppercase;
+      padding: 5px 12px; border-radius: 999px; margin-bottom: 14px;
+    }
+    .flagship h2 {
+      font-size: clamp(22px, 3vw, 34px);
+      letter-spacing: -0.045em; line-height: 1.05; margin-bottom: 10px;
+    }
+    .flagship p { color: var(--muted); font-size: 15px; max-width: 580px; margin-bottom: 22px; }
+    .flagship-pills { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 20px; }
+    .flagship-pill {
+      font-size: 12px; font-weight: 750; color: #fef3c7;
+      border: 1px solid rgba(253,230,138,0.28); background: rgba(253,230,138,0.07);
+      border-radius: 999px; padding: 4px 10px;
+    }
+    .notify-row { display: flex; gap: 10px; flex-wrap: wrap; align-items: center; }
+    .notify-input {
+      flex: 1; min-width: 200px; max-width: 300px;
+      background: rgba(255,255,255,0.05); border: 1px solid rgba(253,230,138,0.25);
+      border-radius: 999px; padding: 11px 18px; font-size: 14px;
+      color: var(--text); font-family: inherit; outline: none;
+      transition: border-color 0.15s;
+    }
+    .notify-input:focus { border-color: rgba(253,230,138,0.5); }
+    .notify-input::placeholder { color: var(--muted); opacity: 0.6; }
+    .notify-confirm { font-size: 13px; color: var(--accent2); font-weight: 700; display: none; margin-top: 8px; }
+    .flagship-gumroad { text-align: right; }
+    .flagship-gumroad p { font-size: 12px; color: var(--muted); margin-top: 8px; }
+
+    /* ── SECTION DIVIDER ── */
+    .section-label {
+      font-size: 11px; font-weight: 800; text-transform: uppercase;
+      letter-spacing: 0.12em; color: var(--muted);
+      padding-bottom: 14px; margin-bottom: 20px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    /* ── PRODUCT GRID ── */
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 18px; margin-bottom: 48px;
+    }
+
+    .product-card {
+      background: linear-gradient(180deg, rgba(255,255,255,0.055), rgba(255,255,255,0.025));
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 24px;
+      box-shadow: var(--shadow);
+      display: flex; flex-direction: column; gap: 0;
+      transition: border-color 0.2s, transform 0.15s;
+    }
+    .product-card:hover { transform: translateY(-2px); border-color: rgba(125,211,252,0.22); }
+    .product-card.featured-card {
+      border-color: rgba(125,211,252,0.35);
+      background: linear-gradient(180deg, rgba(125,211,252,0.1), rgba(255,255,255,0.025));
+    }
+
+    .card-tags { display: flex; gap: 7px; flex-wrap: wrap; margin-bottom: 14px; }
+    .tag {
+      font-size: 11px; font-weight: 750; border-radius: 999px; padding: 4px 9px;
+    }
+    .tag-eval { color: #dbeafe; border: 1px solid rgba(125,211,252,0.28); background: rgba(125,211,252,0.09); }
+    .tag-data  { color: #fce7f3; border: 1px solid rgba(244,114,182,0.28); background: rgba(244,114,182,0.09); }
+    .tag-prompt{ color: #ede9fe; border: 1px solid rgba(167,139,250,0.28); background: rgba(167,139,250,0.09); }
+    .tag-hr    { color: #fef3c7; border: 1px solid rgba(253,230,138,0.28); background: rgba(253,230,138,0.08); }
+    .tag-re    { color: #dcfce7; border: 1px solid rgba(167,243,208,0.28); background: rgba(167,243,208,0.09); }
+    .tag-featured { color: #fef3c7; border: 1px solid rgba(253,230,138,0.4); background: rgba(253,230,138,0.12); }
+
+    .product-card h3 { font-size: 18px; letter-spacing: -0.03em; margin-bottom: 8px; line-height: 1.2; }
+    .product-card .desc { color: var(--muted); font-size: 14px; line-height: 1.6; flex: 1; margin-bottom: 14px; }
+
+    .dimensions { margin-bottom: 16px; }
+    .dimensions-label { font-size: 10px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.08em; color: var(--muted); margin-bottom: 6px; }
+    .dim-list { display: flex; flex-direction: column; gap: 3px; }
+    .dim-item { font-size: 12px; color: var(--muted); }
+    .dim-item::before { content: "→ "; color: var(--accent); }
+
+    .includes { margin-bottom: 16px; }
+    .includes-label { font-size: 10px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.08em; color: var(--muted); margin-bottom: 6px; }
+    .includes-text { font-size: 12px; color: var(--muted); line-height: 1.6; }
+
+    .card-footer { display: flex; justify-content: space-between; align-items: center; margin-top: auto; padding-top: 16px; border-top: 1px solid var(--line); }
+    .card-price { color: var(--accent2); font-weight: 900; font-size: 20px; letter-spacing: -0.03em; }
+    .card-price .was { font-size: 13px; color: var(--muted); font-weight: 600; text-decoration: line-through; margin-left: 6px; }
+
+    /* ── FOOTER ── */
+    footer {
+      border-top: 1px solid var(--line); margin-top: 32px;
+      padding: 32px 0 46px; color: var(--muted); font-size: 14px;
+    }
+    .footer-inner { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 18px; }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 860px) {
+      nav { display: none; }
+      .flagship { grid-template-columns: 1fr; }
+      .flagship-gumroad { text-align: left; }
+      .product-grid { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 500px) {
+      .hero h1 { font-size: 36px; }
+      .product-grid { grid-template-columns: 1fr; }
+    }
+
+    /* ── HIDDEN FOR FILTER ── */
+    .product-card[data-hidden="true"] { display: none; }
+  </style>
+</head>
+
+<body>
+  <header>
+    <div class="wrap nav">
+      <a class="brand" href="/">
+        <img class="brand-logo" src="/assets/consumer-dividends-logo.png" alt="Consumer Dividends logo" />
+        <span>Consumer Dividends</span>
+      </a>
+      <nav>
+        <a href="/#divai-plans">DivAI</a>
+        <a href="/#hr-risk">ClearCase HR</a>
+        <a href="/catalog">Catalog</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="wrap">
+        <div class="eyebrow">Product Catalog</div>
+        <h1>Everything we build,<br>in one place.</h1>
+        <p class="hero-copy">
+          Eval rubrics, training datasets, prompt toolkits, and AI pipelines.
+          Built for developers, consultants, and operators who need production-ready resources without the bloat.
+        </p>
+
+        <!-- FILTER -->
+        <div class="filter-row">
+          <button class="filter-btn active" onclick="filterProducts('all', this)">All</button>
+          <button class="filter-btn" onclick="filterProducts('eval', this)">Eval Kits</button>
+          <button class="filter-btn" onclick="filterProducts('data', this)">Datasets</button>
+          <button class="filter-btn" onclick="filterProducts('prompt', this)">Prompt Tools</button>
+          <button class="filter-btn" onclick="filterProducts('hr', this)">HR</button>
+          <button class="filter-btn" onclick="filterProducts('re', this)">Real Estate</button>
+        </div>
+
+        <!-- ══ COMING SOON FLAGSHIP ══ -->
+        <div class="flagship">
+          <div>
+            <div class="flagship-badge">⬡ Coming Soon — Flagship</div>
+            <h2>Real Estate Intelligence Engine</h2>
+            <p>
+              The $29 Gumroad download is just the start. We're upgrading the Real Estate Listing Copy Generator
+              into a full live tool — property data in, structured output out. Pricing tiers, subscription access,
+              and a live interface that does the heavy lifting for agents, brokerages, and proptech teams.
+            </p>
+            <div class="flagship-pills">
+              <span class="flagship-pill">Live Tool Interface</span>
+              <span class="flagship-pill">Listing Analysis</span>
+              <span class="flagship-pill">Market Content</span>
+              <span class="flagship-pill">Subscription Tiers</span>
+              <span class="flagship-pill">API Access</span>
+            </div>
+            <p style="font-size:13px; color:var(--muted); margin-bottom:14px;">
+              Get notified when it launches. Early access goes to the list first.
+            </p>
+            <div class="notify-row">
+              <input class="notify-input" type="email" id="flagship-email" placeholder="your@email.com" />
+              <button class="btn gold-btn" onclick="handleFlagshipNotify()" style="font-size:13px;">Notify me at launch →</button>
+            </div>
+            <p class="notify-confirm" id="flagship-confirm">✓ You're on the list. We'll reach out before launch.</p>
+          </div>
+          <div class="flagship-gumroad">
+            <p style="font-size:12px; color:var(--muted); margin-bottom:10px;">Current download available now</p>
+            <a class="btn gold-btn" href="https://consumerdiv.gumroad.com/l/listing-ai" target="_blank" rel="noopener" style="font-size:13px;">
+              Get it on Gumroad — $29
+            </a>
+            <p style="font-size:11px; color:var(--muted); margin-top:8px; opacity:0.7;">AI pipeline for listing copy generation</p>
+          </div>
+        </div>
+
+        <!-- ══ EVAL KITS ══ -->
+        <div class="section-label">Eval-Kit Rubric Packs — for eval-kit (<a href="https://github.com/isawandre/eval-kit" target="_blank" rel="noopener" style="color:var(--accent);">github.com/isawandre/eval-kit</a>)</div>
+        <div class="product-grid" id="product-grid">
+
+          <!-- BUNDLE — FEATURED -->
+          <div class="product-card featured-card" data-category="eval">
+            <div class="card-tags">
+              <span class="tag tag-featured">⭐ Best Value</span>
+              <span class="tag tag-eval">Eval Kit</span>
+              <span class="tag tag-eval">Bundle</span>
+            </div>
+            <h3>Eval-Kit Premium Bundle</h3>
+            <p class="desc">All 5 domain-specific rubric packs in one download. 30 production-ready YAML rubrics across every industry. Benchmarks included. Drop into eval-kit and score immediately.</p>
+            <div class="dimensions">
+              <div class="dimensions-label">Includes</div>
+              <div class="dim-list">
+                <div class="dim-item">Customer Support — 6 rubrics</div>
+                <div class="dim-item">HR Compliance — 6 rubrics</div>
+                <div class="dim-item">Sales Enablement — 6 rubrics</div>
+                <div class="dim-item">Technical Documentation — 6 rubrics</div>
+                <div class="dim-item">Real Estate — 6 rubrics</div>
+              </div>
+            </div>
+            <div class="includes">
+              <div class="includes-label">What's inside</div>
+              <div class="includes-text">All 5 rubric pack directories · All manifests and benchmarks · INSTALL.md · All marketing/product docs</div>
+            </div>
+            <div class="card-footer">
+              <div class="card-price">$39 <span class="was">$78</span></div>
+              <a class="btn primary" href="https://consumerdiv.gumroad.com/l/eval-kit-bundle" target="_blank" rel="noopener">Get it →</a>
+            </div>
+          </div>
+
+          <!-- CUSTOMER SUPPORT -->
+          <div class="product-card" data-category="eval">
+            <div class="card-tags">
+              <span class="tag tag-eval">Eval Kit</span>
+              <span class="tag tag-eval">Customer Support</span>
+            </div>
+            <h3>Eval-Kit: Customer Support</h3>
+            <p class="desc">Stop shipping support bots that sound like broken templates. 6 plug-and-play YAML rubrics for scoring LLM-generated customer support responses.</p>
+            <div class="dimensions">
+              <div class="dimensions-label">Scores across 6 dimensions</div>
+              <div class="dim-list">
+                <div class="dim-item">Empathy detection</div>
+                <div class="dim-item">Resolution quality</div>
+                <div class="dim-item">Escalation detection</div>
+                <div class="dim-item">Tone consistency</div>
+                <div class="dim-item">First contact resolution</div>
+                <div class="dim-item">Personalization</div>
+              </div>
+            </div>
+            <div class="includes">
+              <div class="includes-label">What's inside</div>
+              <div class="includes-text">6 YAML rubric files · manifest.yaml · INSTALL.md · Works with eval-kit CLI and Python API</div>
+            </div>
+            <div class="card-footer">
+              <div class="card-price">$12</div>
+              <a class="btn primary" href="https://consumerdiv.gumroad.com/l/eval-kit-customer-support" target="_blank" rel="noopener">Get it →</a>
+            </div>
+          </div>
+
+          <!-- HR COMPLIANCE -->
+          <div class="product-card" data-category="eval hr">
+            <div class="card-tags">
+              <span class="tag tag-eval">Eval Kit</span>
+              <span class="tag tag-hr">HR</span>
+            </div>
+            <h3>Eval-Kit: HR Compliance</h3>
+            <p class="desc">If your LLM touches anything HR-related, you need guardrails that actually measure something. 6 rubrics for evaluating LLM outputs in HR contexts.</p>
+            <div class="dimensions">
+              <div class="dimensions-label">Scores across 6 dimensions</div>
+              <div class="dim-list">
+                <div class="dim-item">Bias detection</div>
+                <div class="dim-item">Policy adherence</div>
+                <div class="dim-item">Legal language compliance</div>
+                <div class="dim-item">Accommodation compliance</div>
+                <div class="dim-item">Termination protocol</div>
+                <div class="dim-item">Documentation standards</div>
+              </div>
+            </div>
+            <div class="includes">
+              <div class="includes-label">What's inside</div>
+              <div class="includes-text">6 YAML rubric files · manifest.yaml · benchmark.jsonl with expected score distributions · INSTALL.md</div>
+            </div>
+            <div class="card-footer">
+              <div class="card-price">$18</div>
+              <a class="btn primary" href="https://consumerdiv.gumroad.com/l/eval-kit-hr-compliance" target="_blank" rel="noopener">Get it →</a>
+            </div>
+          </div>
+
+          <!-- SALES ENABLEMENT -->
+          <div class="product-card" data-category="eval">
+            <div class="card-tags">
+              <span class="tag tag-eval">Eval Kit</span>
+              <span class="tag tag-eval">Sales</span>
+            </div>
+            <h3>Eval-Kit: Sales Enablement</h3>
+            <p class="desc">Your AI writes sales emails that sound like a LinkedIn bot from 2019. Fix that. 6 rubrics for scoring LLM-generated sales copy, outreach, and enablement content.</p>
+            <div class="dimensions">
+              <div class="dimensions-label">Scores across 6 dimensions</div>
+              <div class="dim-list">
+                <div class="dim-item">Value proposition clarity</div>
+                <div class="dim-item">Objection handling</div>
+                <div class="dim-item">Call-to-action strength</div>
+                <div class="dim-item">Personalization depth</div>
+                <div class="dim-item">Urgency calibration</div>
+                <div class="dim-item">Competitive positioning</div>
+              </div>
+            </div>
+            <div class="includes">
+              <div class="includes-label">What's inside</div>
+              <div class="includes-text">6 YAML rubric files · manifest.yaml · benchmark.jsonl · INSTALL.md</div>
+            </div>
+            <div class="card-footer">
+              <div class="card-price">$15</div>
+              <a class="btn primary" href="https://consumerdiv.gumroad.com/l/eval-kit-sales-enablement" target="_blank" rel="noopener">Get it →</a>
+            </div>
+          </div>
+
+          <!-- TECHNICAL DOCUMENTATION -->
+          <div class="product-card" data-category="eval">
+            <div class="card-tags">
+              <span class="tag tag-eval">Eval Kit</span>
+              <span class="tag tag-eval">Technical</span>
+            </div>
+            <h3>Eval-Kit: Technical Documentation</h3>
+            <p class="desc">Auto-generated docs that confuse developers cost you more than writing them manually. 6 rubrics for evaluating LLM-generated technical writing.</p>
+            <div class="dimensions">
+              <div class="dimensions-label">Scores across 6 dimensions</div>
+              <div class="dim-list">
+                <div class="dim-item">Technical accuracy</div>
+                <div class="dim-item">Structural completeness</div>
+                <div class="dim-item">Code example quality</div>
+                <div class="dim-item">Terminology consistency</div>
+                <div class="dim-item">Audience calibration</div>
+                <div class="dim-item">Step-by-step clarity</div>
+              </div>
+            </div>
+            <div class="includes">
+              <div class="includes-label">What's inside</div>
+              <div class="includes-text">6 YAML rubric files · manifest.yaml · benchmark.jsonl · INSTALL.md</div>
+            </div>
+            <div class="card-footer">
+              <div class="card-price">$15</div>
+              <a class="btn primary" href="https://consumerdiv.gumroad.com/l/eval-kit-tech-docu" target="_blank" rel="noopener">Get it →</a>
+            </div>
+          </div>
+
+          <!-- REAL ESTATE EVAL -->
+          <div class="product-card" data-category="eval re">
+            <div class="card-tags">
+              <span class="tag tag-eval">Eval Kit</span>
+              <span class="tag tag-re">Real Estate</span>
+            </div>
+            <h3>Eval-Kit: Real Estate</h3>
+            <p class="desc">AI-written listings that say "stunning" fourteen times don't sell houses. 6 rubrics for scoring LLM-generated property listings, client communications, and market content.</p>
+            <div class="dimensions">
+              <div class="dimensions-label">Scores across 6 dimensions</div>
+              <div class="dim-list">
+                <div class="dim-item">Property description accuracy</div>
+                <div class="dim-item">Fair housing language compliance</div>
+                <div class="dim-item">Market data integration</div>
+                <div class="dim-item">Neighborhood context</div>
+                <div class="dim-item">Client communication tone</div>
+                <div class="dim-item">Listing SEO optimization</div>
+              </div>
+            </div>
+            <div class="includes">
+              <div class="includes-label">What's inside</div>
+              <div class="includes-text">6 YAML rubric files · manifest.yaml · benchmark.jsonl · INSTALL.md</div>
+            </div>
+            <div class="card-footer">
+              <div class="card-price">$18</div>
+              <a class="btn primary" href="https://consumerdiv.gumroad.com/l/-eval-kit-real-estate" target="_blank" rel="noopener">Get it →</a>
+            </div>
+          </div>
+
+        </div><!-- /eval grid -->
+
+        <!-- ══ DATASETS ══ -->
+        <div class="section-label">Datasets</div>
+        <div class="product-grid" id="data-grid">
+
+          <!-- CHURN DATASET -->
+          <div class="product-card" data-category="data">
+            <div class="card-tags">
+              <span class="tag tag-data">Dataset</span>
+              <span class="tag tag-data">1,500 Records</span>
+            </div>
+            <h3>Customer Churn Prediction Conversations</h3>
+            <p class="desc">1,500 synthetic customer churn conversations across 10 SaaS product categories, 5 communication channels, and 10 resolution outcomes. Schema-validated, train/eval splits included.</p>
+            <div class="dimensions">
+              <div class="dimensions-label">Built for</div>
+              <div class="dim-list">
+                <div class="dim-item">Fine-tuning churn prediction models</div>
+                <div class="dim-item">Customer success AI</div>
+                <div class="dim-item">Retention analysis</div>
+              </div>
+            </div>
+            <div class="includes">
+              <div class="includes-label">What's inside</div>
+              <div class="includes-text">full.jsonl · train.jsonl · eval.jsonl · schema.json · dataset_stats.json</div>
+            </div>
+            <div class="card-footer">
+              <div class="card-price">$19</div>
+              <a class="btn primary" href="https://consumerdiv.gumroad.com/l/customer-churn-dataset" target="_blank" rel="noopener">Get it →</a>
+            </div>
+          </div>
+
+          <!-- HR CONFLICT DATASET -->
+          <div class="product-card" data-category="data hr">
+            <div class="card-tags">
+              <span class="tag tag-data">Dataset</span>
+              <span class="tag tag-hr">HR</span>
+              <span class="tag tag-data">JSONL</span>
+            </div>
+            <h3>HR Conflict Resolution Dialogue Dataset</h3>
+            <p class="desc">Production-ready synthetic HR conflict dialogues in JSONL format. Every record includes labeled metadata — severity, resolution, escalation path, customer tone, and industry tag.</p>
+            <div class="dimensions">
+              <div class="dimensions-label">Covers</div>
+              <div class="dim-list">
+                <div class="dim-item">Harassment, discrimination, interpersonal conflict</div>
+                <div class="dim-item">Policy disputes, management escalation</div>
+                <div class="dim-item">Severity labels: low / medium / high / critical</div>
+                <div class="dim-item">Cleaned, deduplicated, and validated</div>
+              </div>
+            </div>
+            <div class="includes">
+              <div class="includes-label">What's inside</div>
+              <div class="includes-text">JSONL format · Train/eval split included · Automated refinement pipeline · Fine-tuning ready</div>
+            </div>
+            <div class="card-footer">
+              <div class="card-price">$45</div>
+              <a class="btn primary" href="https://consumerdiv.gumroad.com/l/hr-dataset" target="_blank" rel="noopener">Get it →</a>
+            </div>
+          </div>
+
+        </div><!-- /data grid -->
+
+        <!-- ══ PROMPT TOOLS ══ -->
+        <div class="section-label">Prompt Engineering Tools</div>
+        <div class="product-grid" id="prompt-grid">
+
+          <!-- SYSTEM PROMPT KIT -->
+          <div class="product-card" data-category="prompt">
+            <div class="card-tags">
+              <span class="tag tag-prompt">Prompt Engineering</span>
+              <span class="tag tag-prompt">48 Templates</span>
+            </div>
+            <h3>System Prompt Engineering Kit</h3>
+            <p class="desc">Stop guessing at system prompts. 48 battle-tested templates, debugging tools, and reusable snippets for building reliable AI-powered products. All markdown. No dependencies.</p>
+            <div class="dimensions">
+              <div class="dimensions-label">What's inside</div>
+              <div class="dim-list">
+                <div class="dim-item">Foundation templates — personas, memory, guardrails, tool-use agents</div>
+                <div class="dim-item">Industry-specific prompts — code, legal, medical, sales, support, education</div>
+                <div class="dim-item">Advanced patterns — chain-of-thought, multi-agent, few-shot, output locks</div>
+                <div class="dim-item">Debugging toolkit — hallucination fixes, tone drift, refusal handling</div>
+                <div class="dim-item">Reusable snippets — constraint blocks, formatting directives, fallbacks</div>
+                <div class="dim-item">Real-world case studies and before/after rewrites</div>
+              </div>
+            </div>
+            <div class="includes">
+              <div class="includes-label">Works with</div>
+              <div class="includes-text">OpenAI · Anthropic · Local models · Any LLM workflow</div>
+            </div>
+            <div class="card-footer">
+              <div class="card-price">$19</div>
+              <a class="btn primary" href="https://consumerdiv.gumroad.com/l/prompt-kit" target="_blank" rel="noopener">Get it →</a>
+            </div>
+          </div>
+
+          <!-- REAL ESTATE LISTING COPY GENERATOR -->
+          <div class="product-card" data-category="prompt re">
+            <div class="card-tags">
+              <span class="tag tag-re">Real Estate</span>
+              <span class="tag tag-prompt">AI Pipeline</span>
+            </div>
+            <h3>Real Estate Listing Copy Generator</h3>
+            <p class="desc">An AI pipeline for generating real estate listing copy. Property data in, polished listing copy out. The foundation for the upcoming Real Estate Intelligence Engine SaaS.</p>
+            <div class="dimensions">
+              <div class="dimensions-label">Built for</div>
+              <div class="dim-list">
+                <div class="dim-item">Agents generating MLS descriptions at scale</div>
+                <div class="dim-item">Brokerages standardizing listing quality</div>
+                <div class="dim-item">Proptech teams using LLMs for content</div>
+              </div>
+            </div>
+            <div class="includes">
+              <div class="includes-label">Note</div>
+              <div class="includes-text">This is the current download. A full live-tool SaaS version is in development — get notified above.</div>
+            </div>
+            <div class="card-footer">
+              <div class="card-price">$29</div>
+              <a class="btn primary" href="https://consumerdiv.gumroad.com/l/listing-ai" target="_blank" rel="noopener">Get it →</a>
+            </div>
+          </div>
+
+        </div><!-- /prompt grid -->
+
+        <!-- FOOTER NOTE -->
+        <p style="font-size:13px; color:var(--muted); text-align:center; padding: 12px 0 32px; opacity:0.7;">
+          All products delivered via Gumroad. Instant download after purchase.
+          Questions? <a href="mailto:support@consumerdividends.com" style="color:var(--accent);">support@consumerdividends.com</a>
+        </p>
+
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap footer-inner">
+      <span>© 2026 Consumer Dividends Holding Corp</span>
+      <span>Tools · Bots · HR Risk Workflows</span>
+    </div>
+  </footer>
+
+  <script>
+    function filterProducts(cat, btn) {
+      document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      document.querySelectorAll('.product-card').forEach(card => {
+        if (cat === 'all') {
+          card.setAttribute('data-hidden', 'false');
+          card.style.display = '';
+        } else {
+          const cats = (card.getAttribute('data-category') || '').split(' ');
+          if (cats.includes(cat)) {
+            card.setAttribute('data-hidden', 'false');
+            card.style.display = '';
+          } else {
+            card.setAttribute('data-hidden', 'true');
+            card.style.display = 'none';
+          }
+        }
+      });
+      // show/hide section labels based on visible cards
+      document.querySelectorAll('.section-label').forEach(label => {
+        const nextGrid = label.nextElementSibling;
+        if (!nextGrid) return;
+        const visible = nextGrid.querySelectorAll('.product-card:not([data-hidden="true"])').length;
+        label.style.display = (cat === 'all' || visible > 0) ? '' : 'none';
+      });
+    }
+
+    function handleFlagshipNotify() {
+      const email = document.getElementById('flagship-email').value.trim();
+      if (!email || !email.includes('@')) return;
+      document.getElementById('flagship-email').value = '';
+      document.getElementById('flagship-confirm').style.display = 'block';
+      console.log('Flagship waitlist:', email);
+      // TODO: wire to /notify endpoint or email list
+    }
+  </script>
+</body>
+</html>
