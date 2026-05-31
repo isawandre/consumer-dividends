@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Consumer Dividends</title>
-  <meta name="description" content="Consumer Dividends builds practical tools, bots, and risk workflows that help people protect time, money, margin, and choice." />
+  <meta name="description" content="Consumer Dividends builds practical tools and risk workflows for HR professionals and real estate operators. ClearCase HR and ListingPro." />
   <link rel="icon" href="/assets/favicon.ico" sizes="any" />
   <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml" />
   <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
@@ -55,12 +55,10 @@
     .tag.live { color: #dcfce7; border-color: rgba(167,243,208,0.32); background: rgba(167,243,208,0.1); }
     .tag.stripe { color: #fef3c7; border-color: rgba(253,230,138,0.32); background: rgba(253,230,138,0.09); }
     .price { color: var(--accent2); font-weight: 900; font-size: 14px; margin-bottom: 16px; }
-    .platforms { display: grid; grid-template-columns: repeat(6, 1fr); gap: 12px; }
+    .platforms { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; }
     .platform { min-height: 92px; border: 1px solid var(--line); background: var(--panel); border-radius: 16px; display: flex; align-items: center; justify-content: center; color: var(--muted); font-weight: 900; text-align: center; padding: 12px; }
     .platform:hover { color: var(--text); background: var(--panel2); }
     .pricing-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px; }
-    .divai-box { border: 1px solid rgba(125,211,252,0.28); background: linear-gradient(135deg, rgba(125,211,252,0.09), rgba(255,255,255,0.03)), var(--panel); border-radius: 28px; padding: 32px; box-shadow: var(--shadow); }
-    .divai-box > p { color: var(--muted); margin: 10px 0 22px; max-width: 760px; }
     .live-badge { display: inline-flex; align-items: center; gap: 7px; background: rgba(167,243,208,0.12); border: 1px solid rgba(167,243,208,0.3); color: var(--accent2); font-size: 11px; font-weight: 800; letter-spacing: 0.1em; text-transform: uppercase; padding: 5px 12px; border-radius: 999px; margin-bottom: 14px; }
     .live-dot { width: 7px; height: 7px; border-radius: 50%; background: var(--accent2); animation: blink 1.8s infinite; }
     @keyframes blink { 0%,100%{opacity:1} 50%{opacity:0.3} }
@@ -83,7 +81,6 @@
     .field-group select { background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%23aab5c5' d='M6 8L1 3h10z'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 12px center; padding-right: 32px; }
     .field-group select option { background: #101722; color: var(--text); }
     .field-group input:focus, .field-group select:focus, .field-group textarea:focus { border-color: rgba(253,230,138,0.5); }
-    .field-group input:focus.lp-focus, .field-group select:focus.lp-focus { border-color: rgba(134,239,172,0.5); }
     .field-group textarea { resize: vertical; min-height: 72px; }
     .field-row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
     .form-actions { display: flex; gap: 10px; margin-top: 18px; flex-wrap: wrap; }
@@ -125,8 +122,6 @@
     .hr-tier .hr-price span { font-size: 14px; color: var(--muted); font-weight: 700; }
     .hr-tier ul { color: var(--muted); padding-left: 16px; font-size: 13px; flex: 1; }
     .hr-tier li { margin-bottom: 5px; }
-
-    /* ── LISTINGPRO ── */
     .lp-box { border: 1px solid rgba(134,239,172,0.28); background: linear-gradient(135deg, rgba(134,239,172,0.08), rgba(255,255,255,0.02)), var(--panel); border-radius: 28px; padding: 32px; box-shadow: var(--shadow); }
     .lp-box > p { color: var(--muted); margin: 10px 0 22px; max-width: 760px; }
     .lp-live-badge { display: inline-flex; align-items: center; gap: 7px; background: rgba(134,239,172,0.12); border: 1px solid rgba(134,239,172,0.3); color: var(--green2); font-size: 11px; font-weight: 800; letter-spacing: 0.1em; text-transform: uppercase; padding: 5px 12px; border-radius: 999px; margin-bottom: 14px; }
@@ -146,7 +141,6 @@
     .lp-stat { background: rgba(134,239,172,0.06); border: 1px solid rgba(134,239,172,0.15); border-radius: 8px; padding: 10px 14px; flex: 1; min-width: 100px; }
     .lp-stat-label { font-size: 10px; color: var(--muted); margin-bottom: 3px; }
     .lp-stat-val { font-size: 16px; font-weight: 700; color: var(--green2); }
-
     footer { border-top: 1px solid var(--line); margin-top: 48px; padding: 32px 0 46px; color: var(--muted); font-size: 14px; }
     .footer-inner { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 18px; }
     @media (max-width: 900px) {
@@ -172,10 +166,9 @@
         <span>Consumer Dividends</span>
       </a>
       <nav>
-        <a href="#divai-plans">DivAI</a>
         <a href="#hr-risk">ClearCase HR</a>
         <a href="#listingpro">ListingPro</a>
-        <a href="/catalog">Catalog</a>
+        <a href="https://www.linkedin.com/in/sawinskia-cdividends" target="_blank" rel="noopener">LinkedIn</a>
       </nav>
     </div>
   </header>
@@ -183,35 +176,12 @@
   <main>
     <section class="hero">
       <div class="wrap">
-        <div class="eyebrow">Tools · Bots · Risk Workflows</div>
+        <div class="eyebrow">HR Risk Workflows · Real Estate Operations</div>
         <h1>Tools that put leverage back in your hands.</h1>
-        <p class="hero-copy">Consumer Dividends fights the quiet tax people pay when basic work eats their time, margin, and choices. We build practical systems for consumers, freelancers, consultants, local firms, and working professionals who need cleaner output without another bloated dependency.</p>
+        <p class="hero-copy">Consumer Dividends builds practical workflow tools for professionals who lose time and margin to documentation work with real stakes attached. Two products. Two verticals. Built to last.</p>
         <div class="actions">
-          <a class="btn primary" href="/catalog">Browse Catalog</a>
-          <a class="btn" href="https://top.gg/bot/1495711192780374116?s=0bc053e22c97c" target="_blank" rel="noopener">Open DivAI</a>
-          <a class="btn" href="https://huggingface.co/CDividends" target="_blank" rel="noopener">Hugging Face</a>
-        </div>
-      </div>
-    </section>
-
-    <!-- ══ DIVAI ══ -->
-    <section id="divai-plans">
-      <div class="wrap">
-        <div class="section-head">
-          <div><div class="eyebrow">DivAI — Discord Bot</div><h2>Smarter servers,<br>less overhead.</h2></div>
-          <p>DivAI handles moderation, onboarding, and engagement automation for Discord communities. Free to start. Upgrade when you need more.</p>
-        </div>
-        <div class="divai-box">
-          <div class="live-badge"><span class="live-dot"></span> Live &amp; Active</div>
-          <h2 style="font-size:clamp(20px,2.8vw,30px); margin-bottom:10px;">Built for community operators who want results without the busywork.</h2>
-          <p>DivAI runs 24/7 inside your Discord server — handling member moderation, onboarding flows, engagement, and reporting so you can focus on building, not managing. Free tier available. Upgrade through Stripe or directly from your server.</p>
-          <div class="pricing-grid">
-            <article class="tier"><div class="tags"><span class="tag stripe">Stripe</span><span class="tag">Base Tier</span></div><h3>DivAI — Base Tier</h3><div class="amount">$9.99<span class="per">/mo</span></div><p>Core bot features and workflow automation for your server.</p><ul><li>Automated chat workflows</li><li>Core bot commands</li><li>Monthly Stripe billing</li></ul><a class="btn primary" href="https://buy.stripe.com/6oU4gya5C87GcVLfJP87K05" target="_blank" rel="noopener">Subscribe</a></article>
-            <article class="tier"><div class="tags"><span class="tag stripe">Stripe</span><span class="tag">Full Package</span></div><h3>DivAI — Full Package</h3><div class="amount">$21.96<span class="per">/mo</span></div><p>Base tier plus moderation, analytics, and onboarding add-ons.</p><ul><li>Everything in Base Tier</li><li>Moderation automation</li><li>Analytics reporting</li><li>Member onboarding flows</li></ul><a class="btn primary" href="https://buy.stripe.com/14AeVc2Da9bK9Jz7dj87K06" target="_blank" rel="noopener">Subscribe</a></article>
-            <article class="tier"><div class="tags"><span class="tag stripe">Stripe</span><span class="tag">Super</span></div><h3>DivAI — Super Tier</h3><div class="amount">$24.99<span class="per">/mo</span></div><p>Higher capacity for larger and more active servers.</p><ul><li>High-volume usage support</li><li>Priority processing</li><li>Monthly Stripe billing</li></ul><a class="btn primary" href="https://buy.stripe.com/14A7sK6Tq1Ji2h7gNT87K04" target="_blank" rel="noopener">Subscribe</a></article>
-            <article class="tier"><div class="tags"><span class="tag stripe">Stripe</span><span class="tag">Super + Full</span></div><h3>DivAI — Super + Full Package</h3><div class="amount">$36.96<span class="per">/mo</span></div><p>Maximum capacity with the complete add-on suite.</p><ul><li>Everything in Super Tier</li><li>Moderation + analytics</li><li>Onboarding flows</li></ul><a class="btn primary" href="https://buy.stripe.com/3cI4gy5PmfA82h741787K03" target="_blank" rel="noopener">Subscribe</a></article>
-            <article class="card featured"><div class="tags"><span class="tag live">Top.gg</span></div><h3>DivAI Bot Listing</h3><p>View the public DivAI bot page on Top.gg and add it to your server free.</p><div class="price">Free to add</div><a class="btn" href="https://top.gg/bot/1495711192780374116?s=0bc053e22c97c" target="_blank" rel="noopener">Open Top.gg ↗</a></article>
-          </div>
+          <a class="btn gold-btn" href="#hr-risk">ClearCase HR — Free Trial</a>
+          <a class="btn green-btn" href="#listingpro">ListingPro — First Property Free</a>
         </div>
       </div>
     </section>
@@ -285,8 +255,6 @@
           <div class="lp-live-badge"><span class="lp-live-dot"></span> Live — v1.0</div>
           <h2 style="font-size:clamp(20px,2.8vw,30px); margin-bottom:10px;">Everything a listing needs. Generated in one shot.</h2>
           <p>ListingPro eliminates the hours agents spend writing MLS descriptions, running deal numbers, and building client documents. Enter your property details and get a complete professional package instantly. Sign up free — first property on us.</p>
-
-          <!-- LP TRIAL -->
           <div class="trial-layout">
             <div class="trial-panel">
               <h3>Free Preview — Generate Sample Output</h3>
@@ -321,8 +289,6 @@
               <div id="lp-error" class="error-msg" style="display:none;"></div>
             </div>
           </div>
-
-          <!-- LP TIERS -->
           <div class="lp-purchase-grid">
             <div class="lp-tier"><div class="lp-tier-label">One-Time</div><h4>Starter</h4><div class="lp-price">$39</div><ul><li>1 property package</li><li>Full content suite</li><li>Deal calculator</li><li>Client packet</li><li>PDF + DOCX export</li></ul><a class="btn green-btn" href="https://buy.stripe.com/cNi7sK5Pm0Fe8Fv41787K0b" target="_blank" rel="noopener" style="font-size:13px;">Buy — $39</a></div>
             <div class="lp-tier featured-tier"><div class="lp-tier-label">Most Popular</div><h4>Pro</h4><div class="lp-price">$99<span>/mo</span></div><ul><li>15 properties / month</li><li>Everything in Starter</li><li>Comp analyzer</li><li>Outreach email engine</li><li>Regenerate any module</li></ul><a class="btn green-btn" href="https://buy.stripe.com/bJe8wO0v2gEc7BrcxD87K0c" target="_blank" rel="noopener" style="font-size:13px;">Subscribe — $99/mo</a></div>
@@ -339,16 +305,13 @@
     <section id="platforms">
       <div class="wrap">
         <div class="section-head">
-          <div><div class="eyebrow">Platforms</div><h2>Everything connected.</h2></div>
-          <p>Live links only. Gumroad and Hugging Face are the main public hubs.</p>
+          <div><div class="eyebrow">Find Us</div><h2>Where we are.</h2></div>
         </div>
         <div class="platforms">
-          <a class="platform" href="/catalog">Catalog</a>
-          <a class="platform" href="https://top.gg/bot/1495711192780374116?s=0bc053e22c97c" target="_blank" rel="noopener">DivAI<br>Top.gg</a>
           <a class="platform" href="https://huggingface.co/CDividends" target="_blank" rel="noopener">Hugging Face</a>
           <a class="platform" href="https://www.linkedin.com/in/sawinskia-cdividends" target="_blank" rel="noopener">LinkedIn</a>
           <a class="platform" href="https://x.com/ConsumerDiv" target="_blank" rel="noopener">X</a>
-          <a class="platform" href="https://github.com/isawandre" target="_blank" rel="noopener">GitHub</a>
+          <a class="platform" href="https://github.com/Consumer-Dividends" target="_blank" rel="noopener">GitHub</a>
         </div>
       </div>
     </section>
@@ -357,12 +320,11 @@
   <footer>
     <div class="wrap footer-inner">
       <span>© 2026 Consumer Dividends Holding Corp</span>
-      <span>Tools · Bots · HR Risk Workflows · Real Estate</span>
+      <span>HR Risk Workflows · Real Estate Operations</span>
     </div>
   </footer>
 
   <script>
-    /* ── CLEARCASE HR ── */
     const API_BASE = "https://clearcasehr.up.railway.app";
     function getFields() {
       return { label:document.getElementById("cc-label").value.trim(), prepby:document.getElementById("cc-prepby").value.trim(), action:document.getElementById("cc-action").value, protected:document.getElementById("cc-protected").value, days:document.getElementById("cc-days").value, dmaker:document.getElementById("cc-dmaker").value, docs:document.getElementById("cc-docs").value, consistency:document.getElementById("cc-consistency").value, cls:document.getElementById("cc-class").value, notes:document.getElementById("cc-notes").value.trim(), code:document.getElementById("cc-code").value.trim() };
@@ -392,7 +354,6 @@
     function showCCError(msg){setCCLoading(false);document.getElementById("cc-placeholder").style.display="none";const el=document.getElementById("cc-error");el.textContent=msg;el.style.display="block";}
     function clearCCOutput(){document.getElementById("cc-result").style.display="none";document.getElementById("cc-error").style.display="none";document.getElementById("cc-loading").style.display="none";document.getElementById("cc-placeholder").style.display="flex";document.getElementById("cc-output-sub").textContent="Your structured risk report will appear here after submission.";}
 
-    /* ── LISTINGPRO TRIAL ── */
     function submitListingTrial() {
       const address = document.getElementById("lp-address").value.trim();
       const price   = parseFloat(document.getElementById("lp-price").value) || 0;
@@ -412,7 +373,6 @@
         finally { setLPLoading(false); btn.disabled = false; }
       }, 1200);
     }
-
     function renderLPResult(address, price, beds, baths, rent, sqft, type, features, location) {
       document.getElementById("lp-placeholder").style.display = "none";
       document.getElementById("lp-error").style.display = "none";
@@ -423,9 +383,7 @@
       const priceStr = price ? "$" + price.toLocaleString() : "";
       const rentStr  = rent  ? "$" + rent.toLocaleString() + "/mo" : "";
       const sqftStr  = sqft  ? sqft.toLocaleString() + " sq ft" : "";
-
       const mls = `Welcome to ${address} — a ${beds}-bedroom, ${baths}-bath ${typeLabel}${sqftStr ? " spanning " + sqftStr : ""} nestled in ${locStr}. This thoughtfully designed residence offers ${featStr}, making it the ideal home for those who value both comfort and convenience.\n\nThe open-concept layout creates seamless flow between living spaces, while abundant natural light enhances every room. ${beds > 2 ? "Multiple bedrooms provide flexibility for families, remote workers, or guests. " : ""}${rentStr ? "Available at " + rentStr + ", this " : "Priced at " + priceStr + ", this "}${typeLabel} represents exceptional value in today's market.\n\nSchedule your showing today — opportunities like this don't last.`;
-
       let dealHtml = "";
       if (price && rent) {
         const down = price * 0.20;
@@ -445,13 +403,11 @@
           <div class="lp-stat"><div class="lp-stat-label">Down Payment</div><div class="lp-stat-val">$${Math.round(down).toLocaleString()}</div></div>
         </div>`;
       }
-
       const headlines = [
         beds + "BR/" + baths + "BA " + (type==="rental"?"Rental":"Home") + (location?" in "+location.split(",")[0]:"") + " — " + (priceStr||rentStr),
         "Modern " + beds + "-Bedroom " + (type==="rental"?"Rental":"Property") + (sqftStr?" | "+sqftStr:"") + " | " + (priceStr||rentStr),
         "Don't Miss This " + beds + "BD/" + baths + "BA " + (location?location.split(",")[0]+" ":"") + (type==="rental"?"Rental":"Home"),
       ];
-
       document.getElementById("lp-result").innerHTML = `
         <div class="report-section">
           <div class="lp-section-title">MLS Description — Sample</div>
@@ -464,12 +420,11 @@
         </div>
         <div style="background:rgba(134,239,172,0.07);border:1px solid rgba(134,239,172,0.2);border-radius:10px;padding:12px 14px;font-size:12px;color:var(--green2);margin-top:4px;">
           ✦ This is a client-side preview. The full ListingPro package includes 3 MLS variants, social captions, email sequences, comp analyzer, client packet, and PDF/DOCX export.
-          <a href="https://listingpro-9ajm.onrender.com" style="color:var(--green2);text-decoration:underline;margin-left:4px;">Sign up free →</a>
+          <a href="https://listingpro-production-8215.up.railway.app" style="color:var(--green2);text-decoration:underline;margin-left:4px;">Sign up free →</a>
         </div>`;
       document.getElementById("lp-result").style.display = "block";
       document.getElementById("lp-output-sub").textContent = "Preview generated — first property free at ListingPro.";
     }
-
     function setLPLoading(on){document.getElementById("lp-loading").style.display=on?"flex":"none";if(on){document.getElementById("lp-placeholder").style.display="none";document.getElementById("lp-result").style.display="none";document.getElementById("lp-error").style.display="none";}}
     function showLPError(msg){setLPLoading(false);document.getElementById("lp-placeholder").style.display="none";const el=document.getElementById("lp-error");el.textContent=msg;el.style.display="block";}
     function clearLPOutput(){document.getElementById("lp-result").style.display="none";document.getElementById("lp-error").style.display="none";document.getElementById("lp-loading").style.display="none";document.getElementById("lp-placeholder").style.display="flex";document.getElementById("lp-output-sub").textContent="Your listing preview will appear here.";}
