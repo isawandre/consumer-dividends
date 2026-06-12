@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Founder | Consumer Dividends</title>
+<meta name="description" content="Why these tools exist, from the founder of Consumer Dividends, and the four things we hold to." />
+
+<meta property="og:title" content="Founder | Consumer Dividends" />
+<meta property="og:description" content="Consumer Dividends started from one idea: the individual at the bottom of a system should get something back from it." />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://consumerdividends.com/founder.html" />
+<meta property="og:image" content="https://consumerdividends.com/assets/cover.png" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:image" content="https://consumerdividends.com/assets/cover.png" />
+
+<link rel="icon" href="/assets/favicon.ico" sizes="any" />
+<link rel="icon" href="/assets/consumer-dividends-logo.png" type="image/png" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Public+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
+
+<style>
+  :root {
+    --graphite: #2F3437;
+    --cream: #EEE8DA;
+    --cream-deep: #E5DDCB;
+    --blue: #3D5873;
+    --brass: #B08D57;
+    --walnut: #5A4330;
+    --ink: #2A2E31;
+    --muted: #6B6256;
+    --line: rgba(90,67,48,0.22);
+    --line-soft: rgba(61,88,115,0.16);
+    --maxw: 1200px;
+    --serif: "Fraunces", Georgia, "Times New Roman", serif;
+    --sans: "Public Sans", system-ui, -apple-system, sans-serif;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+  body { font-family: var(--sans); background: var(--cream); color: var(--ink); line-height: 1.62; font-size: 17px; -webkit-font-smoothing: antialiased; overflow-x: hidden; }
+  a { color: inherit; text-decoration: none; }
+  .wrap { width: min(var(--maxw), calc(100% - 48px)); margin: 0 auto; }
+  .wrap-narrow { width: min(760px, calc(100% - 48px)); margin: 0 auto; }
+
+  header { position: sticky; top: 0; z-index: 100; background: var(--graphite); border-bottom: 1px solid rgba(176,141,87,0.28); }
+  .nav { display: flex; align-items: center; justify-content: space-between; height: 70px; }
+  .brand { display: flex; align-items: center; gap: 12px; font-family: var(--serif); font-weight: 500; font-size: 21px; letter-spacing: -0.01em; color: var(--cream); }
+  .brand img { width: 30px; height: 30px; object-fit: contain; display: block; }
+  .navlinks { display: flex; align-items: center; gap: 30px; }
+  .navlinks a { font-size: 14px; font-weight: 500; color: rgba(238,232,218,0.74); transition: color 0.18s ease; }
+  .navlinks a:hover { color: var(--cream); }
+  .navlinks a.active { color: var(--brass); }
+  .menu-btn { display: none; background: none; border: none; color: var(--cream); font-family: var(--sans); font-size: 14px; cursor: pointer; padding: 8px; }
+
+  /* FOUNDER HERO */
+  .fhero { background: var(--cream); padding: 88px 0 64px; }
+  .fhero-inner { display: grid; grid-template-columns: 1fr 0.82fr; gap: 56px; align-items: center; }
+  .tick { display: inline-block; width: 28px; height: 3px; background: var(--brass); margin-bottom: 22px; }
+  .fhero h1 { font-family: var(--serif); font-weight: 500; font-size: clamp(36px, 5.4vw, 56px); line-height: 1.0; letter-spacing: -0.025em; color: var(--graphite); margin-bottom: 26px; }
+  .fhero .intro-line { font-size: 19px; color: var(--muted); line-height: 1.6; }
+
+  /* photo */
+  .photo-frame { position: relative; aspect-ratio: 4 / 5; border: 1px solid var(--line); background: var(--cream-deep); overflow: hidden; }
+  .photo-grid { position: absolute; inset: 0; background-image: linear-gradient(to right, rgba(61,88,115,0.1) 1px, transparent 1px), linear-gradient(to bottom, rgba(61,88,115,0.1) 1px, transparent 1px); background-size: 34px 34px; z-index: 1; }
+  .photo-frame img { position: relative; z-index: 2; width: 100%; height: 100%; object-fit: cover; display: block; }
+  .photo-label { position: absolute; left: 16px; bottom: 16px; z-index: 3; font-size: 11px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); background: var(--cream); padding: 5px 10px; border: 1px solid var(--line); }
+  .photo-oak { position: absolute; right: -50px; top: -50px; width: 160px; height: 160px; border-radius: 50%; background: radial-gradient(circle at 45% 55%, rgba(176,141,87,0.4), rgba(90,67,48,0) 64%); z-index: 1; }
+
+  /* ORIGIN */
+  .origin { padding: 78px 0; border-top: 1px solid var(--line); }
+  .origin .tick { margin-bottom: 26px; }
+  .origin p { font-family: var(--serif); font-weight: 400; font-size: clamp(19px, 2.3vw, 23px); line-height: 1.58; color: var(--ink); margin-bottom: 26px; letter-spacing: -0.005em; }
+  .origin p:last-child { margin-bottom: 0; }
+  .origin .signoff { font-family: var(--sans); font-size: 15px; font-weight: 600; color: var(--muted); letter-spacing: 0.02em; margin-top: 34px; }
+
+  /* PRINCIPLES */
+  .principles { background: var(--graphite); color: var(--cream); padding: 84px 0; position: relative; overflow: hidden; }
+  .principles-oak { position: absolute; right: -140px; top: -100px; width: 360px; height: 360px; border-radius: 50%; background: radial-gradient(circle at 45% 55%, rgba(176,141,87,0.24), rgba(90,67,48,0) 64%); z-index: 0; }
+  .principles-grid-bg { position: absolute; inset: 0; background-image: linear-gradient(to right, rgba(238,232,218,0.05) 1px, transparent 1px), linear-gradient(to bottom, rgba(238,232,218,0.05) 1px, transparent 1px); background-size: 52px 52px; z-index: 0; }
+  .principles .inner { position: relative; z-index: 2; }
+  .principles-head { margin-bottom: 52px; }
+  .principles-head .tick { background: var(--brass); }
+  .principles-head h2 { font-family: var(--serif); font-weight: 500; font-size: clamp(30px, 4.4vw, 46px); line-height: 1.04; letter-spacing: -0.025em; color: var(--cream); }
+  .plist { display: grid; gap: 0; }
+  .principle { display: grid; grid-template-columns: 70px 1fr; gap: 28px; padding: 34px 0; border-top: 1px solid rgba(238,232,218,0.14); align-items: start; }
+  .principle:first-child { border-top: none; }
+  .principle-num { font-family: var(--serif); font-style: italic; font-weight: 400; font-size: 30px; color: var(--brass); line-height: 1; padding-top: 4px; }
+  .principle h3 { font-family: var(--serif); font-weight: 500; font-size: clamp(21px, 2.6vw, 27px); line-height: 1.16; letter-spacing: -0.015em; color: var(--cream); margin-bottom: 12px; }
+  .principle p { font-size: 16.5px; color: rgba(238,232,218,0.8); line-height: 1.62; max-width: 720px; }
+
+  /* CLOSING CTA */
+  .closing { padding: 76px 0; }
+  .closing-inner { display: flex; justify-content: space-between; align-items: center; gap: 40px; flex-wrap: wrap; }
+  .closing h2 { font-family: var(--serif); font-weight: 500; font-size: clamp(24px, 3.2vw, 34px); line-height: 1.1; letter-spacing: -0.02em; color: var(--graphite); max-width: 560px; }
+  .closing-actions { display: flex; gap: 14px; flex-wrap: wrap; }
+  .btn { display: inline-flex; align-items: center; justify-content: center; font-family: var(--sans); font-size: 15px; font-weight: 600; letter-spacing: 0.01em; padding: 14px 26px; border: 1px solid var(--graphite); background: var(--graphite); color: var(--cream); cursor: pointer; transition: background 0.18s ease, transform 0.18s ease; }
+  .btn:hover { background: #3a4044; transform: translateY(-1px); }
+  .btn.ghost { background: transparent; color: var(--graphite); border-color: var(--line); }
+  .btn.ghost:hover { background: rgba(90,67,48,0.06); }
+
+  footer { background: var(--graphite); color: rgba(238,232,218,0.7); padding: 54px 0 40px; border-top: 1px solid rgba(176,141,87,0.22); }
+  .footer-top { display: flex; justify-content: space-between; align-items: flex-start; gap: 40px; flex-wrap: wrap; margin-bottom: 40px; }
+  .footer-brand { font-family: var(--serif); font-size: 20px; font-weight: 500; color: var(--cream); margin-bottom: 10px; }
+  .footer-brand-tag { font-size: 14px; color: rgba(238,232,218,0.6); max-width: 280px; line-height: 1.5; }
+  .footer-cols { display: flex; gap: 64px; flex-wrap: wrap; }
+  .footer-col h4 { font-size: 12px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--brass); margin-bottom: 14px; }
+  .footer-col a { display: block; font-size: 14px; color: rgba(238,232,218,0.72); margin-bottom: 9px; transition: color 0.16s ease; }
+  .footer-col a:hover { color: var(--cream); }
+  .footer-bottom { border-top: 1px solid rgba(238,232,218,0.12); padding-top: 24px; display: flex; justify-content: space-between; gap: 20px; flex-wrap: wrap; font-size: 13px; color: rgba(238,232,218,0.5); }
+
+  @media (max-width: 880px) {
+    .menu-btn { display: block; }
+    .navlinks { display: none; position: absolute; top: 70px; left: 0; right: 0; background: var(--graphite); flex-direction: column; align-items: flex-start; gap: 0; padding: 8px 24px 20px; border-bottom: 1px solid rgba(176,141,87,0.28); }
+    .navlinks.open { display: flex; }
+    .navlinks a { padding: 12px 0; width: 100%; }
+    .fhero-inner { grid-template-columns: 1fr; gap: 36px; }
+    .photo-frame { max-width: 360px; }
+    .principle { grid-template-columns: 44px 1fr; gap: 18px; }
+    .closing-inner { flex-direction: column; align-items: flex-start; }
+  }
+  @media (max-width: 520px) { .wrap, .wrap-narrow { width: calc(100% - 36px); } }
+  @media (prefers-reduced-motion: reduce) { * { scroll-behavior: auto; transition: none !important; } }
+  :focus-visible { outline: 2px solid var(--brass); outline-offset: 3px; }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap nav">
+    <a class="brand" href="/index.html">
+      <img src="/assets/consumer-dividends-logo.png" alt="Consumer Dividends" />
+      <span>Consumer Dividends</span>
+    </a>
+    <button class="menu-btn" aria-label="Menu" onclick="document.getElementById('navlinks').classList.toggle('open')">Menu</button>
+    <nav class="navlinks" id="navlinks">
+      <a href="/clearcase.html">ClearCase HR</a>
+      <a href="/listingpro.html">ListingPro</a>
+      <a href="/founder.html" class="active">Founder</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+  <!-- FOUNDER HERO -->
+  <section class="fhero">
+    <div class="wrap fhero-inner">
+      <div>
+        <span class="tick"></span>
+        <h1>Why these tools exist.</h1>
+        <p class="intro-line">I'm Andrey Sawinski, the founder of Consumer Dividends. The company started from one idea, and it's the clearest way to explain what gets built and what does not.</p>
+      </div>
+      <div class="photo-frame">
+        <div class="photo-grid"></div>
+        <div class="photo-oak"></div>
+        <img src="/assets/andrey-sawinski.jpg" alt="Andrey Sawinski, founder of Consumer Dividends" onerror="this.style.display='none'" />
+        <span class="photo-label">Andrey Sawinski &middot; Founder</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ORIGIN (locked copy) -->
+  <section class="origin">
+    <div class="wrap-narrow">
+      <span class="tick"></span>
+      <p>Consumer Dividends started from one idea: the individual at the bottom of a system should get something back from it. The first version was built for consumers, a way to earn a real return on the spending and participation that companies are usually set up to extract value from. The work changed over time, but that conviction didn't, so the name stayed.</p>
+      <p>What I kept seeing is that the people losing the most to manual work are often the ones doing it alone, with no team behind them. The fractional HR consultant walking into a dispute by themselves, the solo agent doing the production a whole brokerage would normally split up. I build tools that take that load off their hands, because the dividend was always meant to go back to the person doing the work.</p>
+      <p class="signoff">Andrey Sawinski, founder</p>
+    </div>
+  </section>
+
+  <!-- PRINCIPLES -->
+  <section class="principles">
+    <div class="principles-oak"></div>
+    <div class="principles-grid-bg"></div>
+    <div class="wrap inner">
+      <div class="principles-head">
+        <span class="tick"></span>
+        <h2>What we hold to.</h2>
+      </div>
+      <div class="plist">
+        <div class="principle">
+          <div class="principle-num">i.</div>
+          <div>
+            <h3>Leverage means the system does the work, not you.</h3>
+            <p>It's when the work still gets done without you having to grind through it every time. A good tool takes the part that used to eat an afternoon and does it the same way every time, so the hours and the margin come back to you.</p>
+          </div>
+        </div>
+        <div class="principle">
+          <div class="principle-num">ii.</div>
+          <div>
+            <h3>We build for the operator doing the work themselves.</h3>
+            <p>The people we build for are the ones with no team to hand things off to: the fractional consultant, the solo agent, the small professional carrying the whole load. They lose the most time to manual work and have the least help absorbing it, so they get the most back when a tool takes that work off their hands.</p>
+          </div>
+        </div>
+        <div class="principle">
+          <div class="principle-num">iii.</div>
+          <div>
+            <h3>One person should be able to see what a whole team would.</h3>
+            <p>Most of these tools exist because the person facing the situation has no department behind them to make sense of it. You bring the facts, we organize them and weigh them, so a single operator walks in with the same clear read a full team would have spent days assembling.</p>
+          </div>
+        </div>
+        <div class="principle">
+          <div class="principle-num">iv.</div>
+          <div>
+            <h3>If it is not useful, it does not ship.</h3>
+            <p>We do not build things to look busy or to round out a catalog. A tool earns its place by doing something real for the person using it, or it does not go out.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CLOSING -->
+  <section class="closing">
+    <div class="wrap closing-inner">
+      <h2>Two systems are live now. See the one built for your work.</h2>
+      <div class="closing-actions">
+        <a class="btn" href="/clearcase.html">ClearCase HR</a>
+        <a class="btn ghost" href="/listingpro.html">ListingPro</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="footer-top">
+      <div>
+        <div class="footer-brand">Consumer Dividends</div>
+        <div class="footer-brand-tag">A multi-industry product studio, building tools that give professionals more control over their work and more of their time back.</div>
+      </div>
+      <div class="footer-cols">
+        <div class="footer-col">
+          <h4>Systems</h4>
+          <a href="/clearcase.html">ClearCase HR</a>
+          <a href="/listingpro.html">ListingPro</a>
+        </div>
+        <div class="footer-col">
+          <h4>Company</h4>
+          <a href="/founder.html">Founder</a>
+          <a href="/founder.html">What we hold to</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; 2026 Consumer Dividends Holding Corp</span>
+      <span>Built for the operator doing the work themselves.</span>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

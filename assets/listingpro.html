@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>ListingPro | Consumer Dividends</title>
+<meta name="description" content="A listing operations platform that eliminates the production overhead per listing. One property in, the full listing package out." />
+
+<meta property="og:title" content="ListingPro | Consumer Dividends" />
+<meta property="og:description" content="A listing operations platform that eliminates the production overhead per listing. One property in, the full listing package out." />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://consumerdividends.com/listingpro.html" />
+<meta property="og:image" content="https://consumerdividends.com/assets/cover.png" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:image" content="https://consumerdividends.com/assets/cover.png" />
+
+<link rel="icon" href="/assets/favicon.ico" sizes="any" />
+<link rel="icon" href="/assets/consumer-dividends-logo.png" type="image/png" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Public+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
+
+<style>
+  :root {
+    --graphite: #2F3437;
+    --cream: #EEE8DA;
+    --cream-deep: #E5DDCB;
+    --blue: #3D5873;
+    --brass: #B08D57;
+    --walnut: #5A4330;
+    --ink: #2A2E31;
+    --muted: #6B6256;
+    --line: rgba(90,67,48,0.22);
+    --line-soft: rgba(61,88,115,0.16);
+    --maxw: 1200px;
+    --serif: "Fraunces", Georgia, "Times New Roman", serif;
+    --sans: "Public Sans", system-ui, -apple-system, sans-serif;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+  body { font-family: var(--sans); background: var(--cream); color: var(--ink); line-height: 1.62; font-size: 17px; -webkit-font-smoothing: antialiased; overflow-x: hidden; }
+  a { color: inherit; text-decoration: none; }
+  .wrap { width: min(var(--maxw), calc(100% - 48px)); margin: 0 auto; }
+
+  header { position: sticky; top: 0; z-index: 100; background: var(--graphite); border-bottom: 1px solid rgba(176,141,87,0.28); }
+  .nav { display: flex; align-items: center; justify-content: space-between; height: 70px; }
+  .brand { display: flex; align-items: center; gap: 12px; font-family: var(--serif); font-weight: 500; font-size: 21px; letter-spacing: -0.01em; color: var(--cream); }
+  .brand img { width: 30px; height: 30px; object-fit: contain; display: block; }
+  .navlinks { display: flex; align-items: center; gap: 30px; }
+  .navlinks a { font-size: 14px; font-weight: 500; color: rgba(238,232,218,0.74); transition: color 0.18s ease; }
+  .navlinks a:hover { color: var(--cream); }
+  .navlinks a.active { color: var(--brass); }
+  .menu-btn { display: none; background: none; border: none; color: var(--cream); font-family: var(--sans); font-size: 14px; cursor: pointer; padding: 8px; }
+
+  .phero { background: var(--cream); padding: 92px 0 72px; position: relative; overflow: hidden; }
+  .phero-grid { position: absolute; inset: 0; background-image: linear-gradient(to right, var(--line-soft) 1px, transparent 1px), linear-gradient(to bottom, var(--line-soft) 1px, transparent 1px); background-size: 52px 52px; -webkit-mask-image: linear-gradient(to bottom, #000 40%, transparent 100%); mask-image: linear-gradient(to bottom, #000 40%, transparent 100%); z-index: 0; }
+  .phero-oak { position: absolute; right: -160px; top: -120px; width: 400px; height: 400px; border-radius: 50%; background: radial-gradient(circle at 40% 50%, rgba(176,141,87,0.28), rgba(90,67,48,0) 66%); z-index: 0; }
+  .phero-inner { position: relative; z-index: 2; max-width: 820px; }
+  .eyebrow-lg { font-size: 13px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--blue); margin-bottom: 18px; }
+  .phero h1 { font-family: var(--serif); font-weight: 500; font-size: clamp(38px, 6vw, 60px); line-height: 1.02; letter-spacing: -0.025em; color: var(--graphite); margin-bottom: 16px; }
+  .phero .lede { font-family: var(--serif); font-style: italic; font-weight: 400; font-size: clamp(20px, 2.6vw, 27px); color: var(--walnut); margin-bottom: 26px; line-height: 1.32; }
+  .phero .intro { font-size: 18.5px; color: var(--muted); line-height: 1.6; max-width: 720px; margin-bottom: 34px; }
+
+  .btn { display: inline-flex; align-items: center; justify-content: center; font-family: var(--sans); font-size: 15px; font-weight: 600; letter-spacing: 0.01em; padding: 14px 26px; border: 1px solid var(--graphite); background: var(--graphite); color: var(--cream); cursor: pointer; transition: background 0.18s ease, transform 0.18s ease; }
+  .btn:hover { background: #3a4044; transform: translateY(-1px); }
+  .btn.brass { background: var(--brass); border-color: var(--brass); color: var(--graphite); }
+  .btn.brass:hover { background: #bd9a63; }
+
+  .block { padding: 72px 0; border-top: 1px solid var(--line); }
+  .block-head { max-width: 760px; margin-bottom: 36px; }
+  .tick { display: inline-block; width: 28px; height: 3px; background: var(--brass); margin-bottom: 20px; }
+  .block h2 { font-family: var(--serif); font-weight: 500; font-size: clamp(26px, 3.6vw, 38px); line-height: 1.08; letter-spacing: -0.02em; color: var(--graphite); }
+  .block .lead-p { font-size: 18px; color: var(--muted); line-height: 1.64; max-width: 780px; }
+
+  /* situation split */
+  .split { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: start; }
+  .split p { font-size: 17px; color: var(--ink); line-height: 1.68; }
+  .split .col-muted p { color: var(--muted); }
+
+  /* the math band */
+  .math { background: var(--graphite); color: var(--cream); position: relative; overflow: hidden; }
+  .math-oak { position: absolute; right: -120px; top: -120px; width: 320px; height: 320px; border-radius: 50%; background: radial-gradient(circle at 45% 55%, rgba(176,141,87,0.3), rgba(90,67,48,0) 64%); z-index: 0; }
+  .math .inner { position: relative; z-index: 2; display: grid; grid-template-columns: auto 1fr; gap: 44px; align-items: center; }
+  .math .bignum { font-family: var(--serif); font-weight: 500; font-size: clamp(60px, 10vw, 112px); line-height: 0.9; color: var(--brass); letter-spacing: -0.03em; }
+  .math .bignum small { display: block; font-family: var(--sans); font-size: 15px; font-weight: 500; color: rgba(238,232,218,0.7); letter-spacing: 0.04em; margin-top: 10px; }
+  .math p { font-size: 18.5px; color: rgba(238,232,218,0.85); line-height: 1.6; max-width: 560px; }
+
+  /* output list */
+  .outputs { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0; border: 1px solid var(--line); }
+  .out { padding: 26px 28px; border-right: 1px solid var(--line); border-bottom: 1px solid var(--line); background: var(--cream); }
+  .out:nth-child(3n) { border-right: none; }
+  .out:nth-last-child(1), .out:nth-last-child(2), .out:nth-last-child(3) { border-bottom: none; }
+  .out h3 { font-family: var(--serif); font-weight: 500; font-size: 18px; color: var(--graphite); margin-bottom: 7px; letter-spacing: -0.01em; }
+  .out p { font-size: 14.5px; color: var(--muted); line-height: 1.54; }
+
+  /* audience */
+  .audience { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; }
+  .aud { padding: 28px; background: var(--cream); border: 1px solid var(--line); }
+  .aud .oak-dot { width: 34px; height: 34px; border-radius: 50%; background: radial-gradient(circle at 40% 40%, rgba(176,141,87,0.55), rgba(90,67,48,0)); margin-bottom: 16px; }
+  .aud h3 { font-family: var(--serif); font-weight: 500; font-size: 19px; color: var(--graphite); margin-bottom: 10px; }
+  .aud p { font-size: 15px; color: var(--muted); line-height: 1.56; }
+
+  /* trial */
+  .trial { background: var(--graphite); color: var(--cream); position: relative; overflow: hidden; border-top: none; }
+  .trial-oak { position: absolute; left: -120px; bottom: -140px; width: 320px; height: 320px; border-radius: 50%; background: radial-gradient(circle at 55% 45%, rgba(176,141,87,0.3), rgba(90,67,48,0) 64%); z-index: 0; }
+  .trial .inner { position: relative; z-index: 2; display: grid; grid-template-columns: 1.4fr 1fr; gap: 44px; align-items: center; }
+  .trial h2 { font-family: var(--serif); font-weight: 500; font-size: clamp(26px, 3.4vw, 36px); color: var(--cream); margin-bottom: 14px; letter-spacing: -0.02em; }
+  .trial p { font-size: 17px; color: rgba(238,232,218,0.82); line-height: 1.6; }
+  .trial .cta-col { display: flex; flex-direction: column; gap: 12px; align-items: flex-start; }
+  .trial .cta-col .btn { width: 100%; }
+
+  /* pricing */
+  .tiers { display: grid; grid-template-columns: repeat(3, 1fr); border: 1px solid var(--line); margin-top: 40px; }
+  .tier { padding: 30px 26px; border-right: 1px solid var(--line); position: relative; display: flex; flex-direction: column; background: var(--cream); }
+  .tier:last-child { border-right: none; }
+  .tier.popular { background: var(--cream-deep); padding-top: 54px; }
+  .tier.popular::before { content: "Most popular"; position: absolute; top: 0; left: 0; right: 0; background: var(--brass); color: var(--graphite); font-size: 11px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; text-align: center; padding: 6px; }
+  .tier-name { font-family: var(--serif); font-weight: 500; font-size: 20px; color: var(--graphite); margin-bottom: 6px; }
+  .tier-price { font-family: var(--serif); font-size: 34px; font-weight: 500; color: var(--graphite); letter-spacing: -0.02em; line-height: 1; margin-bottom: 4px; }
+  .tier-price span { font-size: 15px; color: var(--muted); font-family: var(--sans); font-weight: 500; }
+  .tier-sub { font-size: 13.5px; color: var(--muted); margin-bottom: 18px; min-height: 20px; }
+  .tier ul { list-style: none; margin-bottom: 22px; flex: 1; }
+  .tier li { font-size: 14.5px; color: var(--ink); padding: 7px 0 7px 18px; position: relative; line-height: 1.4; }
+  .tier li::before { content: ""; position: absolute; left: 0; top: 14px; width: 7px; height: 7px; border-radius: 50%; background: var(--brass); }
+  .tier .btn { width: 100%; font-size: 14px; padding: 12px; }
+  .pricing-note { font-size: 14px; color: var(--muted); margin-top: 22px; line-height: 1.5; }
+  .pricing-note a { color: var(--blue); border-bottom: 1px solid var(--line-soft); }
+
+  footer { background: var(--graphite); color: rgba(238,232,218,0.7); padding: 54px 0 40px; border-top: 1px solid rgba(176,141,87,0.22); }
+  .footer-top { display: flex; justify-content: space-between; align-items: flex-start; gap: 40px; flex-wrap: wrap; margin-bottom: 40px; }
+  .footer-brand { font-family: var(--serif); font-size: 20px; font-weight: 500; color: var(--cream); margin-bottom: 10px; }
+  .footer-brand-tag { font-size: 14px; color: rgba(238,232,218,0.6); max-width: 280px; line-height: 1.5; }
+  .footer-cols { display: flex; gap: 64px; flex-wrap: wrap; }
+  .footer-col h4 { font-size: 12px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--brass); margin-bottom: 14px; }
+  .footer-col a { display: block; font-size: 14px; color: rgba(238,232,218,0.72); margin-bottom: 9px; transition: color 0.16s ease; }
+  .footer-col a:hover { color: var(--cream); }
+  .footer-bottom { border-top: 1px solid rgba(238,232,218,0.12); padding-top: 24px; display: flex; justify-content: space-between; gap: 20px; flex-wrap: wrap; font-size: 13px; color: rgba(238,232,218,0.5); }
+
+  @media (max-width: 880px) {
+    .menu-btn { display: block; }
+    .navlinks { display: none; position: absolute; top: 70px; left: 0; right: 0; background: var(--graphite); flex-direction: column; align-items: flex-start; gap: 0; padding: 8px 24px 20px; border-bottom: 1px solid rgba(176,141,87,0.28); }
+    .navlinks.open { display: flex; }
+    .navlinks a { padding: 12px 0; width: 100%; }
+    .split { grid-template-columns: 1fr; gap: 24px; }
+    .math .inner { grid-template-columns: 1fr; gap: 22px; }
+    .outputs { grid-template-columns: 1fr; }
+    .out { border-right: none; }
+    .out:nth-last-child(2) { border-bottom: 1px solid var(--line); }
+    .audience { grid-template-columns: 1fr; gap: 18px; }
+    .trial .inner { grid-template-columns: 1fr; gap: 26px; }
+    .tiers { grid-template-columns: 1fr; }
+    .tier { border-right: none; border-bottom: 1px solid var(--line); }
+    .tier:last-child { border-bottom: none; }
+  }
+  @media (max-width: 520px) { .wrap { width: calc(100% - 36px); } }
+  @media (prefers-reduced-motion: reduce) { * { scroll-behavior: auto; transition: none !important; } }
+  :focus-visible { outline: 2px solid var(--brass); outline-offset: 3px; }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap nav">
+    <a class="brand" href="/index.html">
+      <img src="/assets/consumer-dividends-logo.png" alt="Consumer Dividends" />
+      <span>Consumer Dividends</span>
+    </a>
+    <button class="menu-btn" aria-label="Menu" onclick="document.getElementById('navlinks').classList.toggle('open')">Menu</button>
+    <nav class="navlinks" id="navlinks">
+      <a href="/clearcase.html">ClearCase HR</a>
+      <a href="/listingpro.html" class="active">ListingPro</a>
+      <a href="/founder.html">Founder</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+  <!-- HERO / OPENER (locked copy) -->
+  <section class="phero">
+    <div class="phero-grid"></div>
+    <div class="phero-oak"></div>
+    <div class="wrap phero-inner">
+      <div class="eyebrow-lg">ListingPro</div>
+      <h1>One property in.<br>The full listing package out.</h1>
+      <p class="lede">A listing operations platform that eliminates the production overhead per listing.</p>
+      <p class="intro">You win the listing, but immediately have to dive into the MLS description, the social copy, the bullet highlights, the deal numbers, the client packet, all of it by hand and all of it before the listing can even go live. ListingPro takes the property details and turns out the whole set in one pass, so the hours go back to the work that actually wins you the next listing.</p>
+      <a class="btn brass" href="https://listingpro-production-8215.up.railway.app" target="_blank" rel="noopener">Try your first property free</a>
+    </div>
+  </section>
+
+  <!-- THE SITUATION -->
+  <section class="block">
+    <div class="wrap">
+      <div class="block-head">
+        <span class="tick"></span>
+        <h2>The situation</h2>
+      </div>
+      <div class="split">
+        <div>
+          <p>Winning the listing is the part that earns. Everything after it is overhead. The MLS copy, the deal numbers, the client packet, the social captions, the outreach emails, each living in a different tool, each taking a slice of an afternoon.</p>
+        </div>
+        <div class="col-muted">
+          <p>For an agent working on commission, that time comes straight out of prospecting, which is the only activity that brings in the next deal. The production work is necessary and it pays nothing.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- THE MATH -->
+  <section class="block math">
+    <div class="math-oak"></div>
+    <div class="wrap inner">
+      <div class="bignum">3&ndash;4<small>hours per listing</small></div>
+      <p>That is the production time a single listing pulls out of a working agent's day, spread across separate tools and done by hand. ListingPro collapses it to a few minutes, so the afternoon goes back into the work that wins the next listing.</p>
+    </div>
+  </section>
+
+  <!-- WHAT COMES OUT -->
+  <section class="block">
+    <div class="wrap">
+      <div class="block-head">
+        <span class="tick"></span>
+        <h2>What comes out</h2>
+        <p class="lead-p">You enter the property once and get the whole set back, ready to use.</p>
+      </div>
+      <div class="outputs">
+        <div class="out"><h3>MLS description</h3><p>Written to standard and ready to publish, in more than one variant.</p></div>
+        <div class="out"><h3>Social copy</h3><p>Captions and highlights formatted for the channels you actually post to.</p></div>
+        <div class="out"><h3>Bullet highlights</h3><p>The selling points pulled out and laid clean for the listing sheet.</p></div>
+        <div class="out"><h3>Deal numbers</h3><p>The figures a buyer or investor will ask about, run and laid out.</p></div>
+        <div class="out"><h3>Client packet</h3><p>A handover-ready document you can send without reformatting.</p></div>
+        <div class="out"><h3>Outreach emails</h3><p>Drafted and ready to send, plus export to PDF and DOCX.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHO IT'S FOR -->
+  <section class="block">
+    <div class="wrap">
+      <div class="block-head">
+        <span class="tick"></span>
+        <h2>Who it's for</h2>
+      </div>
+      <div class="audience">
+        <div class="aud">
+          <div class="oak-dot"></div>
+          <h3>Working agents</h3>
+          <p>Who feel every hour of overhead because it is their commission on the line.</p>
+        </div>
+        <div class="aud">
+          <div class="oak-dot"></div>
+          <h3>Brokerages</h3>
+          <p>That want consistent listing output across a team without adding headcount.</p>
+        </div>
+        <div class="aud">
+          <div class="oak-dot"></div>
+          <h3>Property managers</h3>
+          <p>Running volume who cannot spend an afternoon per unit on production.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FREE TRIAL -->
+  <section class="block trial">
+    <div class="trial-oak"></div>
+    <div class="wrap inner">
+      <div>
+        <h2>Your first property is free.</h2>
+        <p>Run a property through ListingPro and see the full package come back before you decide anything.</p>
+      </div>
+      <div class="cta-col">
+        <a class="btn brass" href="https://listingpro-production-8215.up.railway.app" target="_blank" rel="noopener">Open ListingPro</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRICING -->
+  <section class="block">
+    <div class="wrap">
+      <div class="block-head">
+        <span class="tick"></span>
+        <h2>Pricing</h2>
+      </div>
+      <div class="tiers">
+        <div class="tier">
+          <div class="tier-name">Starter</div>
+          <div class="tier-price">$39</div>
+          <div class="tier-sub">One-time, one property</div>
+          <ul>
+            <li>Full content suite</li>
+            <li>Deal calculator</li>
+            <li>Client packet</li>
+            <li>PDF and DOCX export</li>
+          </ul>
+          <a class="btn" href="https://buy.stripe.com/cNi7sK5Pm0Fe8Fv41787K0b" target="_blank" rel="noopener">Buy $39</a>
+        </div>
+        <div class="tier popular">
+          <div class="tier-name">Pro</div>
+          <div class="tier-price">$99<span>/mo</span></div>
+          <div class="tier-sub">Fifteen properties a month</div>
+          <ul>
+            <li>Everything in Starter</li>
+            <li>Comp analyzer</li>
+            <li>Outreach engine</li>
+            <li>Regenerate any module</li>
+          </ul>
+          <a class="btn brass" href="https://buy.stripe.com/bJe8wO0v2gEc7BrcxD87K0c" target="_blank" rel="noopener">Subscribe $99/mo</a>
+        </div>
+        <div class="tier">
+          <div class="tier-name">Unlimited</div>
+          <div class="tier-price">$199<span>/mo</span></div>
+          <div class="tier-sub">Unlimited properties</div>
+          <ul>
+            <li>Everything in Pro</li>
+            <li>Three seats</li>
+            <li>White-label exports</li>
+            <li>Priority support</li>
+          </ul>
+          <a class="btn" href="https://buy.stripe.com/7sYcN4cdK1JibRH8hn87K0d" target="_blank" rel="noopener">Subscribe $199/mo</a>
+        </div>
+      </div>
+      <p class="pricing-note">First property is free at <a href="https://listingpro-production-8215.up.railway.app" target="_blank" rel="noopener">listingpro-production-8215.up.railway.app</a>.</p>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="footer-top">
+      <div>
+        <div class="footer-brand">Consumer Dividends</div>
+        <div class="footer-brand-tag">A multi-industry product studio, building tools that give professionals more control over their work and more of their time back.</div>
+      </div>
+      <div class="footer-cols">
+        <div class="footer-col">
+          <h4>Systems</h4>
+          <a href="/clearcase.html">ClearCase HR</a>
+          <a href="/listingpro.html">ListingPro</a>
+        </div>
+        <div class="footer-col">
+          <h4>Company</h4>
+          <a href="/founder.html">Founder</a>
+          <a href="/founder.html">What we hold to</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; 2026 Consumer Dividends Holding Corp</span>
+      <span>Built for the operator doing the work themselves.</span>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
