@@ -39,6 +39,7 @@
     --maxw: 1200px;
     --serif: "Fraunces", Georgia, "Times New Roman", serif;
     --sans: "Public Sans", system-ui, -apple-system, sans-serif;
+    --warm-glow: radial-gradient(circle at 30% 40%, rgba(255,240,200,0.18), transparent 60%);
   }
 
   * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -105,6 +106,7 @@
   /* ---------- HERO ---------- */
   .hero {
     background: var(--cream);
+    background-image: var(--warm-glow);
     padding: 116px 0 104px;
     position: relative;
     overflow: hidden;
@@ -179,6 +181,7 @@
     padding: 92px 0;
     position: relative;
     overflow: hidden;
+    background: var(--graphite);
   }
   .studio-grid {
     display: grid;
@@ -221,7 +224,11 @@
   }
 
   /* ---------- PRODUCT ENTRIES ---------- */
-  .systems { padding: 96px 0 40px; }
+  .systems { 
+    padding: 96px 0 40px;
+    background: var(--cream);
+    background-image: var(--warm-glow);
+  }
   .systems-head { margin-bottom: 60px; max-width: 640px; }
   .systems-head .tick { margin-bottom: 22px; }
   .systems-head h2 {
@@ -289,6 +296,7 @@
   .product-plate {
     aspect-ratio: 4 / 3;
     background: var(--cream-deep);
+    background-image: var(--warm-glow);
     border: 1px solid var(--line);
     position: relative;
     overflow: hidden;
@@ -469,7 +477,7 @@
     <div class="wrap studio-grid">
       <div class="studio-label">A studio,<br>not a single app.</div>
       <div>
-        <p>Each tool gives that time back a different way, by saving the hours, reducing the risk, organizing the mess, or taking the production off your hands, so it goes to the work that actually makes money. Two are live now, in HR and real estate, with more to follow in other fields on the same idea.</p>
+        <p>Each tool gives that time back a different way, by saving the hours, reducing the risk, organizing the mess, or taking the production off your hands, so it goes to the work that actually matters.</p>
       </div>
     </div>
   </section>
@@ -488,7 +496,7 @@
           <div class="product-eyebrow">HR Risk</div>
           <h3>ClearCase HR</h3>
           <div class="tagline">You put in the facts. We organize them by risk factor.</div>
-          <p class="body">Structured risk scoring for the workplace dispute in front of you, built for fractional HR consultants and employment attorneys who need a fast, consistent read before they advise.</p>
+          <p class="body">Structured risk scoring for the workplace dispute in front of you, built for fractional HR consultants and employment attorneys who need a fast, consistent read before they act.</p>
           <a class="product-link" href="/clearcase.html">Explore ClearCase HR <span class="arr">&rarr;</span></a>
         </div>
         <div class="product-plate">
@@ -505,7 +513,7 @@
           <div class="product-eyebrow">Real Estate</div>
           <h3>ListingPro</h3>
           <div class="tagline">One property in. The full listing package out.</div>
-          <p class="body">A listing operations platform for working agents and brokerages, turning one property into the full production set so the hours go back to winning the next listing instead of formatting the last one.</p>
+          <p class="body">A listing operations platform for working agents and brokerages, turning one property into the full production set so the hours go back to winning the next listing instead of chasing shots.</p>
           <a class="product-link" href="/listingpro.html">Explore ListingPro <span class="arr">&rarr;</span></a>
         </div>
         <div class="product-plate">
