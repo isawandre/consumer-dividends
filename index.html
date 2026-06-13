@@ -1,618 +1,1014 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Consumer Dividends</title>
-<meta name="description" content="Consumer Dividends is a multi-industry product studio, building tools that give professionals more control over their work and more of their time back." />
-
-<!-- Open Graph / link preview -->
-<meta property="og:title" content="Consumer Dividends" />
-<meta property="og:description" content="A multi-industry product studio, building tools that give professionals more control over their work and more of their time back." />
-<meta property="og:type" content="website" />
-<meta property="og:url" content="https://consumerdividends.com" />
-<meta property="og:image" content="https://consumerdividends.com/assets/cover.png" />
-<meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:title" content="Consumer Dividends" />
-<meta name="twitter:description" content="A multi-industry product studio, building tools that give professionals more control over their work and more of their time back." />
-<meta name="twitter:image" content="https://consumerdividends.com/assets/cover.png" />
-
-<link rel="icon" href="/assets/favicon.ico" sizes="any" />
-<link rel="icon" href="/assets/consumer-dividends-logo.png" type="image/png" />
-
-<link rel="preconnect" href="https://fonts.googleapis.com" />
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Public+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
-
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Numidian - HR Compliance Intelligence</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Public+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
   :root {
     --graphite: #2F3437;
+    --graphite-soft: #3a4044;
     --cream: #EEE8DA;
     --cream-deep: #E5DDCB;
+    --surface: #F6F2E9;
     --blue: #3D5873;
     --brass: #B08D57;
+    --brass-deep: #9a7a48;
     --walnut: #5A4330;
-    --ink: #2A2E31;
+    --bg: #EEE8DA;
+    --border: rgba(90,67,48,0.20);
+    --border2: rgba(90,67,48,0.32);
+    --text: #2A2E31;
     --muted: #6B6256;
-    --line: rgba(90,67,48,0.22);
-    --line-soft: rgba(61,88,115,0.16);
-    --maxw: 1200px;
-    --serif: "Fraunces", Georgia, "Times New Roman", serif;
-    --sans: "Public Sans", system-ui, -apple-system, sans-serif;
-    --warm-glow: radial-gradient(circle at 50% 42%, rgba(255,242,206,0.20), transparent 62%);
-    --mx: 50%; --my: 38%;
+    --accent: #2F3437;
+    --accent-light: rgba(61,88,115,0.08);
+    --danger: #b91c1c;
+    --danger-light: #fbeceb;
+    --success: #2f5d3a;
+    --success-light: #eef3ec;
+    --warn: #8a5a2a;
+    --warn-light: #f6efe2;
+    --gold-light: #f3ead6;
+    --radius: 4px;
+    --serif: "Fraunces", Georgia, serif;
+    --sans: "Public Sans", -apple-system, "Segoe UI", Arial, sans-serif;
   }
 
   * { box-sizing: border-box; margin: 0; padding: 0; }
-  html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+  html { scroll-behavior: smooth; }
+
   body {
     font-family: var(--sans);
-    background: var(--cream);
-    color: var(--ink);
-    line-height: 1.62;
-    font-size: 17px;
-    -webkit-font-smoothing: antialiased;
-    overflow-x: hidden;
-  }
-  a { color: inherit; text-decoration: none; }
-
-  /* film grain — real CSS, sits over everything, never blocks clicks */
-  body::after {
-    content: "";
-    position: fixed; inset: 0;
-    z-index: 200;
-    pointer-events: none;
-    opacity: 0.045;
-    mix-blend-mode: multiply;
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
-    background-size: 140px 140px;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.6;
+    font-size: 14px;
   }
 
-  /* lit cream fields: centered bloom that follows the cursor, slow and faint */
-  .lit { position: relative; }
-  .lit::after {
-    content: "";
-    position: absolute; inset: 0;
-    z-index: 0;
-    pointer-events: none;
-    background: radial-gradient(circle 420px at var(--mx) var(--my), rgba(255,238,202,0.40), transparent 72%);
-    transition: background 0.4s ease;
-  }
-  .lit > .wrap { position: relative; z-index: 1; }
-
-  /* drafting grid texture */
-  .grid-bg {
-    position: relative;
-  }
-  .grid-bg::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background-image:
-      linear-gradient(to right, var(--line-soft) 1px, transparent 1px),
-      linear-gradient(to bottom, var(--line-soft) 1px, transparent 1px);
-    background-size: 46px 46px;
-    pointer-events: none;
-    z-index: 0;
-  }
-  .grid-bg > * { position: relative; z-index: 1; }
-
-  .wrap { width: min(var(--maxw), calc(100% - 48px)); margin: 0 auto; }
-
-  /* ---------- NAV ---------- */
-  header {
-    position: sticky; top: 0; z-index: 100;
+  .header {
     background: var(--graphite);
-    border-bottom: 1px solid rgba(176,141,87,0.28);
+    color: var(--cream);
+    padding: 16px 32px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    border-bottom: 1px solid rgba(176,141,87,0.30);
   }
-  .nav {
-    display: flex; align-items: center; justify-content: space-between;
-    height: 70px;
-  }
-  .brand {
-    display: flex; align-items: center; gap: 12px;
-    font-family: var(--serif);
-    font-weight: 500;
-    font-size: 21px;
-    letter-spacing: -0.01em;
+
+  .header-left { display: flex; align-items: center; gap: 14px; }
+  .header-tick { width: 4px; height: 34px; background: var(--brass); flex-shrink: 0; }
+  .header-left h1 { font-family: var(--serif); font-size: 19px; font-weight: 500; letter-spacing: -0.01em; }
+  .header-left p  { font-size: 11px; opacity: 0.66; margin-top: 1px; letter-spacing: 0.02em; }
+
+  .meter-pill {
+    background: rgba(238,232,218,0.12);
+    border: 1px solid rgba(176,141,87,0.40);
+    border-radius: 2px;
+    padding: 5px 14px;
+    font-size: 12px;
+    font-weight: 600;
     color: var(--cream);
   }
-  .brand img { width: 30px; height: 30px; object-fit: contain; display: block; }
-  .navlinks { display: flex; align-items: center; gap: 30px; }
-  .navlinks a {
-    font-size: 14px; font-weight: 500; letter-spacing: 0.01em;
-    color: rgba(238,232,218,0.74);
-    transition: color 0.18s ease;
-  }
-  .navlinks a:hover { color: var(--cream); }
-  .navlinks a.active { color: var(--brass); }
-  .menu-btn { display: none; background: none; border: none; color: var(--cream); font-family: var(--sans); font-size: 14px; cursor: pointer; padding: 8px; }
 
-  /* ---------- HERO ---------- */
-  .hero {
-    background: var(--cream);
-    background-image: var(--warm-glow);
-    padding: 116px 0 104px;
-    position: relative;
-    overflow: hidden;
-  }
-  .hero-oak {
-    position: absolute;
-    right: -150px; bottom: -150px;
-    width: 460px; height: 460px;
-    border-radius: 50%;
-    background: radial-gradient(circle at 32% 30%, #C9A876 0%, #A8824E 42%, #5A4330 100%);
-    opacity: 0.92;
-    z-index: 0;
-  }
-  .hero-grid {
-    position: absolute; inset: 0;
-    background-image:
-      linear-gradient(to right, var(--line-soft) 1px, transparent 1px),
-      linear-gradient(to bottom, var(--line-soft) 1px, transparent 1px);
-    background-size: 52px 52px;
-    -webkit-mask-image: linear-gradient(to right, #000 60%, transparent 100%);
-    mask-image: linear-gradient(to right, #000 60%, transparent 100%);
-    z-index: 0;
-  }
-  .hero-inner { position: relative; z-index: 2; max-width: 760px; }
-  .tick {
-    display: inline-block;
-    width: 30px; height: 3px;
-    background: var(--brass);
-    margin-bottom: 30px;
-  }
-  .hero h1 {
-    font-family: var(--serif);
-    font-weight: 500;
-    font-size: clamp(44px, 7vw, 84px);
-    line-height: 0.98;
-    letter-spacing: -0.025em;
-    color: var(--graphite);
-    margin-bottom: 28px;
-  }
-  .hero p {
-    font-size: clamp(18px, 2.2vw, 22px);
-    line-height: 1.5;
-    color: var(--muted);
-    max-width: 640px;
-    margin-bottom: 38px;
-  }
-  .hero-actions { display: flex; gap: 14px; flex-wrap: wrap; }
-
-  .btn {
-    display: inline-flex; align-items: center; justify-content: center;
-    font-family: var(--sans); font-size: 15px; font-weight: 600;
-    letter-spacing: 0.01em;
-    padding: 14px 26px;
-    border: 1px solid var(--graphite);
-    background: var(--graphite); color: var(--cream);
-    cursor: pointer;
-    transition: background 0.18s ease, color 0.18s ease, transform 0.18s ease, box-shadow 0.22s ease;
-  }
-  .btn:hover { background: #3a4044; transform: translateY(-1px); box-shadow: 0 8px 26px rgba(176,141,87,0.30); }
-  .btn.ghost {
-    background: transparent; color: var(--graphite);
-    border-color: var(--line);
-  }
-  .btn.ghost:hover { background: rgba(90,67,48,0.06); transform: translateY(-1px); }
-
-  /* ---------- SECTION SHELLS ---------- */
-  section { position: relative; }
-  .band-graphite { background: var(--graphite); color: var(--cream); }
-  .band-cream-deep { background: var(--cream-deep); }
-
-  .studio {
-    padding: 92px 0;
-    position: relative;
-    overflow: hidden;
-    background: var(--graphite);
-  }
-  .studio-grid {
+  .main {
+    max-width: 1120px;
+    margin: 0 auto;
+    padding: 28px 24px;
     display: grid;
-    grid-template-columns: 1fr 1.7fr;
-    gap: 56px;
+    grid-template-columns: 1fr 420px;
+    gap: 24px;
     align-items: start;
   }
-  .studio-label {
-    font-family: var(--serif);
-    font-style: normal;
-    font-size: 14px;
-    font-weight: 600;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    color: var(--brass);
-    padding-top: 10px;
-  }
-  .studio h2 {
-    font-family: var(--serif);
-    font-weight: 500;
-    font-size: clamp(28px, 3.6vw, 40px);
-    line-height: 1.12;
-    letter-spacing: -0.02em;
-    color: var(--cream);
-    margin-bottom: 24px;
-  }
-  .studio p {
-    font-size: 18px;
-    line-height: 1.6;
-    color: rgba(238,232,218,0.82);
-    max-width: 640px;
-  }
-  .studio .oak-mark {
-    position: absolute;
-    left: -120px; top: -120px;
-    width: 300px; height: 300px;
-    border-radius: 50%;
-    background: radial-gradient(circle at 60% 60%, rgba(176,141,87,0.34) 0%, rgba(90,67,48,0.0) 64%);
-    z-index: 0;
+
+  @media (max-width: 860px) {
+    .main { grid-template-columns: 1fr; padding: 16px; }
+    .header { padding: 14px 16px; }
   }
 
-  /* ---------- PRODUCT ENTRIES ---------- */
-  .systems { 
-    padding: 96px 0 40px;
-    background: var(--cream);
-    background-image: var(--warm-glow);
-  }
-  .systems-head { margin-bottom: 60px; max-width: 640px; }
-  .systems-head .tick { margin-bottom: 22px; }
-  .systems-head h2 {
-    font-family: var(--serif);
-    font-weight: 500;
-    font-size: clamp(30px, 4.4vw, 46px);
-    line-height: 1.04;
-    letter-spacing: -0.025em;
-    color: var(--graphite);
+  #gate-wrap {
+    grid-column: 1 / -1;
+    display: flex;
+    justify-content: center;
+    padding: 40px 24px;
   }
 
-  .product {
+  .gate-panels {
+    width: 100%;
+    max-width: 860px;
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 56px;
-    align-items: center;
-    padding: 60px 0;
-    border-top: 1px solid var(--line);
+    gap: 20px;
   }
-  .product:last-of-type { border-bottom: 1px solid var(--line); }
-  .product.flip .product-text { order: 2; }
-  .product.flip .product-plate { order: 1; }
 
-  .product-eyebrow {
-    font-size: 13px; font-weight: 600;
-    letter-spacing: 0.06em; text-transform: uppercase;
-    color: var(--blue);
+  @media (max-width: 640px) {
+    .gate-panels { grid-template-columns: 1fr; }
+  }
+
+  .gate {
+    background: var(--surface);
+    border: 1px solid var(--border2);
+    border-top: 3px solid var(--graphite);
+    border-radius: var(--radius);
+    padding: 36px;
+  }
+
+  .gate.trial-gate {
+    border-top-color: var(--brass);
+    background: #F4EFE3;
+  }
+
+  .gate h2 { font-family: var(--serif); font-size: 21px; font-weight: 500; margin-bottom: 6px; color: var(--graphite); letter-spacing: -0.01em; }
+  .gate.trial-gate h2 { color: var(--walnut); }
+  .gate p  { font-size: 13px; color: var(--muted); margin-bottom: 18px; line-height: 1.6; }
+  .gate p a, .pricing-links p a { color: var(--blue); font-weight: 600; }
+  .gate-row { display: flex; gap: 10px; }
+  .gate-row input { flex: 1; }
+  .status-ok  { color: var(--success); font-size: 13px; font-weight: 700; margin-top: 10px; }
+  .status-bad { color: var(--danger);  font-size: 13px; font-weight: 700; margin-top: 10px; }
+
+  .trial-badge {
+    display: inline-block;
+    background: var(--brass);
+    color: var(--graphite);
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    padding: 4px 12px;
+    border-radius: 2px;
+    margin-bottom: 12px;
+  }
+
+  .trial-features {
+    font-size: 13px;
+    color: var(--text);
+    padding-left: 18px;
+    margin-bottom: 20px;
+    line-height: 2;
+  }
+  .trial-features li::marker { color: var(--brass); }
+
+  .pricing-links {
+    margin-top: 20px;
+    padding-top: 16px;
+    border-top: 1px solid var(--border);
+  }
+
+  .pricing-links p {
+    font-size: 12px;
+    color: var(--muted);
+    margin-bottom: 10px;
+  }
+
+  .pricing-links-stack {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 20px;
     margin-bottom: 16px;
   }
-  .product-text h3 {
-    font-family: var(--serif);
-    font-weight: 500;
-    font-size: clamp(26px, 3.4vw, 38px);
-    line-height: 1.06;
-    letter-spacing: -0.02em;
-    color: var(--graphite);
-    margin-bottom: 10px;
-  }
-  .product-text .tagline {
-    font-family: var(--serif);
-    font-style: italic;
-    font-size: 19px;
-    color: var(--walnut);
-    margin-bottom: 20px;
-    line-height: 1.4;
-  }
-  .product-text p.body {
-    font-size: 16.5px;
-    color: var(--muted);
-    line-height: 1.62;
-    margin-bottom: 26px;
-  }
-  .product-link {
-    display: inline-flex; align-items: center; gap: 9px;
-    font-size: 15px; font-weight: 600;
-    color: var(--graphite);
-    border-bottom: 1.5px solid var(--brass);
-    padding-bottom: 3px;
-    transition: gap 0.2s ease;
-  }
-  .product-link:hover { gap: 14px; }
-  .product-link .arr { color: var(--brass); }
 
-  /* plate (screenshot) */
-  .product-plate {
-    aspect-ratio: 4 / 3;
-    background: var(--cream-deep);
-    background-image: var(--warm-glow);
-    border: 1px solid var(--line);
-    position: relative;
-    overflow: hidden;
-    box-shadow: 16px 16px 0 -1px rgba(176,141,87,0.16), 0 22px 48px rgba(47,52,55,0.16);
-  }
-  .plate-grid {
-    position: absolute; inset: 0;
-    background-image:
-      linear-gradient(to right, rgba(61,88,115,0.12) 1px, transparent 1px),
-      linear-gradient(to bottom, rgba(61,88,115,0.12) 1px, transparent 1px);
-    background-size: 32px 32px;
-  }
-  .plate-corner {
-    position: absolute;
-    width: 60px; height: 60px;
-    border-radius: 50%;
-    background: radial-gradient(circle at 40% 40%, rgba(176,141,87,0.5), rgba(90,67,48,0));
-    right: 18px; bottom: 18px;
-  }
-  .plate-label {
-    position: absolute;
-    left: 16px; top: 16px;
-    z-index: 3;
-    font-size: 11px; font-weight: 600;
-    letter-spacing: 0.1em; text-transform: uppercase;
-    color: var(--muted);
-    background: var(--cream);
-    padding: 5px 10px;
-    border: 1px solid var(--line);
-  }
-  .product-plate img { width: 100%; height: 100%; object-fit: cover; display: block; position: relative; z-index: 2; }
-
-  /* ---------- FOUNDER POINTER ---------- */
-  .pointer {
-    padding: 78px 0;
-    position: relative;
-    overflow: hidden;
-  }
-  .pointer-inner {
-    display: grid;
-    grid-template-columns: 1.6fr 1fr;
-    gap: 48px;
+  .card-title {
+    font-family: var(--serif);
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: -0.005em;
+    color: var(--graphite);
+    margin-bottom: 14px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    justify-content: space-between;
     align-items: center;
   }
-  .pointer h2 {
-    font-family: var(--serif);
-    font-weight: 500;
-    font-size: clamp(26px, 3.4vw, 38px);
-    line-height: 1.1;
-    letter-spacing: -0.02em;
-    color: var(--cream);
-    margin-bottom: 18px;
-  }
-  .pointer p {
-    font-size: 17px;
-    color: rgba(238,232,218,0.78);
-    line-height: 1.6;
-    max-width: 540px;
-  }
-  .pointer-cta { display: flex; justify-content: flex-end; }
-  .btn.brass {
-    background: var(--brass); border-color: var(--brass); color: var(--graphite);
-  }
-  .btn.brass:hover { background: #bd9a63; box-shadow: 0 8px 28px rgba(176,141,87,0.48); }
-  .pointer-oak {
-    position: absolute;
-    left: 40%; top: -160px;
-    width: 320px; height: 320px;
-    border-radius: 50%;
-    background: radial-gradient(circle at 50% 50%, rgba(176,141,87,0.22), rgba(90,67,48,0) 66%);
-    z-index: 0;
+
+  .field { margin-bottom: 14px; }
+  .field:last-child { margin-bottom: 0; }
+
+  label {
+    display: block;
+    font-size: 11.5px;
+    font-weight: 600;
+    color: var(--muted);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 5px;
   }
 
-  /* ---------- FOOTER ---------- */
-  footer {
-    background: var(--graphite);
-    color: rgba(238,232,218,0.7);
-    padding: 54px 0 40px;
-    border-top: 1px solid rgba(176,141,87,0.22);
+  label .hint {
+    font-weight: 400;
+    text-transform: none;
+    letter-spacing: 0;
+    opacity: 0.85;
+    font-size: 11px;
   }
-  .footer-top {
-    display: flex; justify-content: space-between; align-items: flex-start;
-    gap: 40px; flex-wrap: wrap;
-    margin-bottom: 40px;
+
+  input[type="text"],
+  input[type="number"],
+  select,
+  textarea {
+    width: 100%;
+    padding: 9px 11px;
+    border: 1px solid var(--border2);
+    border-radius: var(--radius);
+    font-size: 13.5px;
+    color: var(--text);
+    font-family: inherit;
+    background: #FCFAF5;
+    outline: none;
+    transition: border-color 0.15s, box-shadow 0.15s;
+    appearance: none;
+    -webkit-appearance: none;
   }
-  .footer-brand {
-    font-family: var(--serif);
-    font-size: 20px; font-weight: 500;
-    color: var(--cream);
+
+  select {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%235A4330' d='M6 8L1 3h10z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+    padding-right: 30px;
+  }
+
+  input:focus, select:focus, textarea:focus {
+    border-color: var(--brass);
+    box-shadow: 0 0 0 3px rgba(176,141,87,0.18);
+  }
+
+  textarea { resize: vertical; min-height: 80px; }
+
+  .row2 { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+  .row3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 12px; }
+
+  @media (max-width: 600px) {
+    .row2, .row3 { grid-template-columns: 1fr; }
+  }
+
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    padding: 10px 20px;
+    border-radius: var(--radius);
+    font-size: 13.5px;
+    font-weight: 600;
+    border: 1px solid transparent;
+    cursor: pointer;
+    transition: background 0.15s, opacity 0.15s, transform 0.1s;
+    font-family: inherit;
+    white-space: nowrap;
+    text-decoration: none;
+  }
+
+  .btn:active { transform: scale(0.98); }
+  .btn:disabled { opacity: 0.45; cursor: not-allowed; }
+
+  .btn-primary   { background: var(--graphite); color: var(--cream); }
+  .btn-primary:hover { background: var(--graphite-soft); }
+  .btn-secondary { background: transparent; color: var(--graphite); border-color: var(--border2); }
+  .btn-secondary:hover { background: rgba(90,67,48,0.06); }
+  .btn-success   { background: var(--brass); color: var(--graphite); }
+  .btn-success:hover { background: var(--brass-deep); }
+  .btn-outline   { background: transparent; color: var(--graphite); border: 1px solid var(--border2); }
+  .btn-outline:hover { background: rgba(90,67,48,0.06); }
+  .btn-sm        { padding: 6px 14px; font-size: 12px; }
+  .btn-row       { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 16px; }
+
+  .output-wrap { position: relative; }
+
+  .output-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     margin-bottom: 10px;
-  }
-  .footer-brand-tag { font-size: 14px; color: rgba(238,232,218,0.6); max-width: 280px; line-height: 1.5; }
-  .footer-cols { display: flex; gap: 64px; flex-wrap: wrap; }
-  .footer-col h4 {
-    font-size: 12px; font-weight: 600; letter-spacing: 0.08em;
-    text-transform: uppercase; color: var(--brass); margin-bottom: 14px;
-  }
-  .footer-col a, .footer-col span {
-    display: block; font-size: 14px; color: rgba(238,232,218,0.72);
-    margin-bottom: 9px; transition: color 0.16s ease;
-  }
-  .footer-col a:hover { color: var(--cream); }
-  .footer-bottom {
-    border-top: 1px solid rgba(238,232,218,0.12);
-    padding-top: 24px;
-    display: flex; justify-content: space-between; gap: 20px; flex-wrap: wrap;
-    font-size: 13px; color: rgba(238,232,218,0.5);
+    flex-wrap: wrap;
+    gap: 8px;
   }
 
-  /* ---------- RESPONSIVE ---------- */
-  @media (max-width: 880px) {
-    .menu-btn { display: block; }
-    .navlinks {
-      display: none;
-      position: absolute; top: 70px; left: 0; right: 0;
-      background: var(--graphite);
-      flex-direction: column; align-items: flex-start;
-      gap: 0; padding: 8px 24px 20px;
-      border-bottom: 1px solid rgba(176,141,87,0.28);
-    }
-    .navlinks.open { display: flex; }
-    .navlinks a { padding: 12px 0; width: 100%; }
-    .studio-grid { grid-template-columns: 1fr; gap: 24px; }
-    .product { grid-template-columns: 1fr; gap: 28px; }
-    .product.flip .product-text { order: 1; }
-    .product.flip .product-plate { order: 2; }
-    .pointer-inner { grid-template-columns: 1fr; gap: 28px; }
-    .pointer-cta { justify-content: flex-start; }
-  }
-  @media (max-width: 520px) {
-    .wrap { width: calc(100% - 36px); }
-    .hero { padding: 84px 0 76px; }
-    .hero-actions { flex-direction: column; align-items: stretch; }
-    .btn { width: 100%; }
+  .output-title { font-family: var(--serif); font-size: 14px; font-weight: 600; color: var(--graphite); }
+  .output-actions { display: flex; gap: 8px; }
+
+  #output {
+    background: var(--graphite);
+    color: #cdbf9c;
+    padding: 18px;
+    border-radius: var(--radius);
+    white-space: pre-wrap;
+    font-family: Consolas, Monaco, monospace;
+    font-size: 12px;
+    line-height: 1.65;
+    min-height: 320px;
+    max-height: 72vh;
+    overflow-y: auto;
+    border: 1px solid rgba(176,141,87,0.22);
+    word-break: break-word;
   }
 
-  @media (prefers-reduced-motion: reduce) {
-    * { scroll-behavior: auto; transition: none !important; }
+  #output.empty {
+    color: rgba(238,232,218,0.45);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-family: var(--sans);
+    font-size: 13px;
   }
-  :focus-visible { outline: 2px solid var(--brass); outline-offset: 3px; }
+
+  .history-panel { grid-column: 1 / -1; display: none; }
+  .history-panel.visible { display: block; }
+
+  .history-list { display: flex; flex-direction: column; gap: 8px; margin-top: 14px; }
+
+  .history-item {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 12px 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+    flex-wrap: wrap;
+  }
+
+  .history-case { font-size: 13px; font-weight: 700; }
+  .history-meta { font-size: 12px; color: var(--muted); margin-top: 2px; }
+
+  .upsell {
+    background: var(--gold-light);
+    border: 1px solid rgba(176,141,87,0.45);
+    border-radius: var(--radius);
+    padding: 12px 16px;
+    font-size: 13px;
+    color: var(--walnut);
+    display: none;
+    margin-top: 14px;
+  }
+
+  .upsell a { color: var(--blue); font-weight: 700; }
+
+  .disclaimer {
+    grid-column: 1 / -1;
+    font-size: 11px;
+    color: var(--muted);
+    border-top: 1px solid var(--border);
+    padding-top: 16px;
+    margin-top: 8px;
+    line-height: 1.7;
+  }
+
+  #app { display: none; }
+
+  .spinner {
+    width: 14px; height: 14px;
+    border: 2px solid rgba(238,232,218,0.3);
+    border-top-color: var(--cream);
+    border-radius: 50%;
+    animation: spin 0.6s linear infinite;
+    display: inline-block;
+  }
+
+  @keyframes spin { to { transform: rotate(360deg); } }
+
+  .section-note {
+    font-size: 12px;
+    color: var(--muted);
+    background: var(--accent-light);
+    border-left: 2px solid var(--blue);
+    border-radius: 2px;
+    padding: 8px 12px;
+    margin-bottom: 14px;
+    line-height: 1.5;
+  }
+
+  :focus-visible { outline: 2px solid var(--brass); outline-offset: 2px; }
 </style>
 </head>
 <body>
 
-<header>
-  <div class="wrap nav">
-    <a class="brand" href="/index.html">
-      <img src="/assets/consumer-dividends-logo.png" alt="Consumer Dividends" />
-      <span>Consumer Dividends</span>
-    </a>
-    <button class="menu-btn" aria-label="Menu" onclick="document.getElementById('navlinks').classList.toggle('open')">Menu</button>
-    <nav class="navlinks" id="navlinks">
-      <a href="/numidian.html">Numidian</a>
-      <a href="/listingpro.html">ListingPro</a>
-      <a href="/founder.html">Founder</a>
-    </nav>
-  </div>
-</header>
-
-<main>
-
-  <!-- HERO -->
-  <section class="hero lit">
-    <div class="hero-grid"></div>
-    <div class="hero-oak"></div>
-    <div class="wrap hero-inner">
-      <span class="tick"></span>
-      <h1>Tools that put leverage back in your hands.</h1>
-      <p>Consumer Dividends is a multi-industry product studio, building tools that give professionals more control over their work and more of their time back.</p>
-      <div class="hero-actions">
-        <a class="btn" href="/numidian.html">Numidian</a>
-        <a class="btn ghost" href="/listingpro.html">ListingPro</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- STUDIO STATEMENT -->
-  <section class="studio band-graphite">
-    <div class="oak-mark"></div>
-    <div class="wrap studio-grid">
-      <div class="studio-label">A studio,<br>not a single app.</div>
-      <div>
-        <p>Each tool gives professionals time back by saving the hours, reducing the risk, organizing the mess, or taking the production off your hands, so it goes to the work that actually matters.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- PRODUCT ENTRIES -->
-  <section class="systems lit">
-    <div class="wrap">
-      <div class="systems-head">
-        <span class="tick"></span>
-        <h2>Two systems, built for the operator doing the work.</h2>
-      </div>
-
-      <!-- Numidian -->
-      <div class="product">
-        <div class="product-text">
-          <div class="product-eyebrow">HR Risk</div>
-          <h3>Numidian</h3>
-          <div class="tagline">You put in the facts. We organize them by risk factor.</div>
-          <p class="body">Structured risk scoring for the workplace dispute in front of you, built for fractional HR consultants and employment attorneys who need a fast, consistent read before they act.</p>
-          <a class="product-link" href="/numidian.html">Explore Numidian <span class="arr">&rarr;</span></a>
-        </div>
-        <div class="product-plate">
-          <div class="plate-grid"></div>
-          <div class="plate-label">Numidian &middot; Risk Report</div>
-          <div class="plate-corner"></div>
-          <img src="/assets/Numidian-report.png" alt="Numidian risk report" onerror="this.style.display='none'" />
-        </div>
-      </div>
-
-      <!-- ListingPro -->
-      <div class="product flip">
-        <div class="product-text">
-          <div class="product-eyebrow">Real Estate</div>
-          <h3>ListingPro</h3>
-          <div class="tagline">One property in. The full listing package out.</div>
-          <p class="body">A listing operations platform for working agents and brokerages, turning one property into the full production set so the hours go back to winning the next listing instead of formatting the last one.</p>
-          <a class="product-link" href="/listingpro.html">Explore ListingPro <span class="arr">&rarr;</span></a>
-        </div>
-        <div class="product-plate">
-          <div class="plate-grid"></div>
-          <div class="plate-label">ListingPro &middot; Generated Listing</div>
-          <div class="plate-corner"></div>
-          <img src="/assets/listingpro-listing.png" alt="ListingPro generated listing"/>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- FOUNDER POINTER -->
-  <section class="pointer band-graphite">
-    <div class="pointer-oak"></div>
-    <div class="wrap pointer-inner">
-      <div>
-        <h2>The dividend was always meant to go back to the person doing the work.</h2>
-        <p>Consumer Dividends started from one idea, and it is our clearest way to understand what gets built and what does not.</p>
-      </div>
-      <div class="pointer-cta">
-        <a class="btn brass" href="/founder.html">Read the founder's message</a>
-      </div>
-    </div>
-  </section>
-
-</main>
-
-<footer>
-  <div class="wrap">
-    <div class="footer-top">
-      <div>
-        <div class="footer-brand">Consumer Dividends</div>
-        <div class="footer-brand-tag">A multi-industry product studio, building tools that give professionals more control over their work and more of their time back.</div>
-      </div>
-      <div class="footer-cols">
-        <div class="footer-col">
-          <h4>Systems</h4>
-          <a href="/numidian.html">Numidian</a>
-          <a href="/listingpro.html">ListingPro</a>
-        </div>
-        <div class="footer-col">
-          <h4>Company</h4>
-          <a href="/founder.html">Founder</a>
-          <a href="/founder.html">What we hold to</a>
-        </div>
-      </div>
-    </div>
-    <div class="footer-bottom">
-      <span>&copy; 2026 Consumer Dividends Holding Corp</span>
-      <span>Tools that put leverage back into your hands.</span>
+<div class="header">
+  <div class="header-left">
+    <div class="header-tick"></div>
+    <div>
+      <h1>Numidian</h1>
+      <p>Consumer Dividends · Structured risk-factor inventory · Not legal advice</p>
     </div>
   </div>
-</footer>
+  <div style="display:flex;align-items:center;gap:12px;">
+    <div class="meter-pill" id="meter-pill">Not authenticated</div>
+    <a href="/dashboard" id="dashboard-link" style="display:none;color:var(--brass);font-size:12px;font-weight:700;border:1px solid rgba(176,141,87,0.4);padding:5px 12px;border-radius:2px;letter-spacing:0.01em;">Portfolio →</a>
+    <a href="https://consumerdividends.com/numidian.html" target="_blank"
+       style="color:var(--cream);font-size:12px;font-weight:600;opacity:0.7;">Pricing →</a>
+  </div>
+</div>
+
+<div id="gate-wrap">
+  <div class="gate-panels">
+
+    <div class="gate trial-gate">
+      <div class="trial-badge">Free Trial</div>
+      <h2>Try it free, no purchase needed</h2>
+      <p>Run one full risk report right now. No account required. See exactly what Numidian produces before you buy.</p>
+      <ul class="trial-features">
+        <li>All 18 input fields</li>
+        <li>Full risk scores across 5 dimensions</li>
+        <li>15-state law matrix applied</li>
+        <li>Risk flags + recommended next steps</li>
+        <li>Save or print as PDF</li>
+      </ul>
+      <button class="btn btn-success" style="width:100%;" onclick="activateFreeTrial()">Start Free Trial →</button>
+      <p style="font-size:11px;color:var(--muted);margin-top:10px;text-align:center;margin-bottom:0;">One report · No credit card · No account</p>
+    </div>
+
+    <div class="gate">
+      <h2>Enter your access code</h2>
+      <p>Your access code was emailed after purchase. Don't have one? <a href="https://consumerdividends.com/numidian.html" target="_blank">See pricing →</a></p>
+      <div class="gate-row">
+        <input type="text" id="codeInput" placeholder="CC-XXXX-XXXX-XXXX"
+               style="text-transform:uppercase;letter-spacing:1px;font-family:Consolas,monospace;"
+               onkeydown="if(event.key==='Enter') checkCode()">
+        <button class="btn btn-primary" id="unlockBtn" onclick="checkCode()">Unlock</button>
+      </div>
+      <div id="codeStatus"></div>
+      <div class="pricing-links">
+        <p>Need more reports?</p>
+        <div class="pricing-links-stack">
+          <a href="https://buy.stripe.com/aFa28q91y9bKdZP8hn87K09" target="_blank" class="btn btn-outline btn-sm">Single Report · $79</a>
+          <a href="https://buy.stripe.com/00w4gycdKcnW2h755b87K08" target="_blank" class="btn btn-outline btn-sm">5-Report Pack · $299</a>
+          <a href="https://buy.stripe.com/dRm8wO1z6afOf3T55b87K07" target="_blank" class="btn btn-primary btn-sm">Pro Monthly · $349/mo</a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<div id="app">
+  <div class="main">
+
+    <div>
+
+      <div class="card">
+        <div class="card-title">Case Identification</div>
+        <div class="row2">
+          <div class="field">
+            <label>Case Label</label>
+            <input type="text" id="f-case_name" placeholder="e.g. Acme Corp — J. Smith">
+          </div>
+          <div class="field">
+            <label>Prepared By</label>
+            <input type="text" id="f-prepared_by" placeholder="Consultant name">
+          </div>
+        </div>
+        <div class="row3">
+          <div class="field">
+            <label>Employee State <span class="hint">where they work</span></label>
+            <input type="text" id="f-state" placeholder="e.g. California, TX, NY"
+                   autocomplete="off" list="state-list">
+            <datalist id="state-list"></datalist>
+          </div>
+          <div class="field">
+            <label>Company Size</label>
+            <select id="f-company_size">
+              <option value="">— Select —</option>
+              <option>Under 15</option>
+              <option>15–50</option>
+              <option>51–100</option>
+              <option>101–500</option>
+              <option>500+</option>
+            </select>
+          </div>
+          <div class="field">
+            <label>Industry</label>
+            <select id="f-industry">
+              <option value="">— Select —</option>
+              <option>Healthcare</option>
+              <option>Financial services</option>
+              <option>Government / public sector</option>
+              <option>Technology</option>
+              <option>Retail</option>
+              <option>Manufacturing</option>
+              <option>Education</option>
+              <option>Transportation</option>
+              <option>Legal / professional services</option>
+              <option>Other</option>
+            </select>
+          </div>
+        </div>
+        <div class="row2">
+          <div class="field">
+            <label>Employee Tenure</label>
+            <select id="f-tenure">
+              <option value="">— Select —</option>
+              <option>Under 6 months</option>
+              <option>6–12 months</option>
+              <option>1–3 years</option>
+              <option>3–5 years</option>
+              <option>5–10 years</option>
+              <option>10+ years</option>
+            </select>
+          </div>
+          <div class="field">
+            <label>Union / CBA Coverage?</label>
+            <select id="f-union">
+              <option value="">— Select —</option>
+              <option>No</option>
+              <option>Yes — union covered</option>
+              <option>Yes — CBA applies</option>
+              <option>Unknown</option>
+            </select>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-title">Action Under Review</div>
+        <div class="field">
+          <label>Employment Action Being Considered</label>
+          <select id="f-action">
+            <option value="">— Select —</option>
+            <option>Verbal coaching</option>
+            <option>Written warning</option>
+            <option>Performance Improvement Plan (PIP)</option>
+            <option>Suspension</option>
+            <option>Demotion</option>
+            <option>Denied promotion</option>
+            <option>Pay reduction</option>
+            <option>Layoff / position elimination</option>
+            <option>Termination</option>
+            <option>Constructive discharge</option>
+            <option>Hostile work environment claim</option>
+            <option>Accommodation denial</option>
+          </select>
+        </div>
+        <div class="row2">
+          <div class="field">
+            <label>Was this action planned BEFORE the protected activity?</label>
+            <select id="f-action_predates">
+              <option value="">— Select —</option>
+              <option>Yes — documented evidence it predates</option>
+              <option>Yes — undocumented</option>
+              <option>No</option>
+              <option>Unknown</option>
+            </select>
+          </div>
+          <div class="field">
+            <label>Was performance documentation created BEFORE the protected activity?</label>
+            <select id="f-docs_predate">
+              <option value="">— Select —</option>
+              <option>Yes — clearly predates</option>
+              <option>Unclear — mixed dates</option>
+              <option>No — created after</option>
+              <option>No documentation exists</option>
+              <option>Unknown</option>
+            </select>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-title">Protected Activity</div>
+        <div class="field">
+          <label>Has the employee engaged in protected activity?</label>
+          <select id="f-protected_activity">
+            <option value="">— Select —</option>
+            <option>None</option>
+            <option>Filed internal complaint</option>
+            <option>Filed EEOC or agency charge</option>
+            <option>Requested FMLA / medical leave</option>
+            <option>Requested ADA accommodation</option>
+            <option>Reported safety violation (OSHA)</option>
+            <option>Whistleblower report</option>
+            <option>Wage / hour complaint</option>
+            <option>Multiple activities</option>
+            <option>Unknown</option>
+          </select>
+        </div>
+        <div class="row2">
+          <div class="field">
+            <label>Days Since Protected Activity</label>
+            <input type="number" id="f-days_since" placeholder="e.g. 18" min="0">
+          </div>
+          <div class="field">
+            <label>Decision-Maker Aware of Activity?</label>
+            <select id="f-decision_maker_aware">
+              <option value="">— Select —</option>
+              <option>Yes</option>
+              <option>No</option>
+              <option>Unknown</option>
+            </select>
+          </div>
+        </div>
+        <div class="row2">
+          <div class="field">
+            <label>Has the employee mentioned hiring a lawyer or filing suit?</label>
+            <select id="f-legal_threat">
+              <option value="">— Select —</option>
+              <option>Yes</option>
+              <option>No</option>
+              <option>Unknown</option>
+            </select>
+          </div>
+          <div class="field">
+            <label>Is the employee documenting interactions?</label>
+            <select id="f-employee_documenting">
+              <option value="">— Select —</option>
+              <option>Yes — emails, recordings, or notes</option>
+              <option>No / unknown</option>
+            </select>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-title">Documentation &amp; Performance Record</div>
+        <div class="row2">
+          <div class="field">
+            <label>Employer Documentation Quality <span class="hint">rate the company's records on file</span></label>
+            <select id="f-doc_quality">
+              <option value="">— Select —</option>
+              <option>None</option>
+              <option>Sparse / inconsistent</option>
+              <option>Adequate</option>
+              <option>Strong contemporaneous record</option>
+            </select>
+          </div>
+          <div class="field">
+            <label>Is there a written, documented reason for this action created BEFORE today?</label>
+            <select id="f-written_reason">
+              <option value="">— Select —</option>
+              <option>Yes</option>
+              <option>No</option>
+              <option>Unknown</option>
+            </select>
+          </div>
+        </div>
+        <div class="row2">
+          <div class="field">
+            <label>Has the employee received prior warnings for this issue?</label>
+            <select id="f-prior_warnings">
+              <option value="">— Select —</option>
+              <option>No prior warnings</option>
+              <option>Yes — once</option>
+              <option>Yes — multiple</option>
+              <option>Unknown</option>
+            </select>
+          </div>
+          <div class="field">
+            <label>Most Recent Performance Review</label>
+            <select id="f-perf_review">
+              <option value="">— Select —</option>
+              <option>Positive / meets expectations</option>
+              <option>Mixed / needs improvement</option>
+              <option>Negative / below expectations</option>
+              <option>No review on file</option>
+            </select>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-title">Comparator &amp; Policy Consistency</div>
+        <div class="row2">
+          <div class="field">
+            <label>Are there other employees who committed the same or similar conduct?</label>
+            <select id="f-comparators_exist">
+              <option value="">— Select —</option>
+              <option>Yes</option>
+              <option>No</option>
+              <option>Unknown</option>
+            </select>
+          </div>
+          <div class="field">
+            <label>How were those similar employees treated?</label>
+            <select id="f-comparator_treatment">
+              <option value="">— Select —</option>
+              <option>Same or more severe consequences</option>
+              <option>Mixed outcomes</option>
+              <option>Less severe consequences</option>
+              <option>N/A — no comparators</option>
+            </select>
+          </div>
+        </div>
+        <div class="field">
+          <label>Policy Applied Consistently to Similar Employees?</label>
+          <select id="f-consistency">
+            <option value="">— Select —</option>
+            <option>Yes — consistent</option>
+            <option>No — inconsistent</option>
+            <option>Unknown</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-title">Protected Class Factors</div>
+        <div class="field">
+          <label>Employee's Protected Class Status</label>
+          <select id="f-protected_class">
+            <option value="">— Select —</option>
+            <option>No / unknown</option>
+            <option>Age 40+</option>
+            <option>Race / national origin</option>
+            <option>Sex / gender</option>
+            <option>Disability</option>
+            <option>Religion</option>
+            <option>Pregnancy</option>
+            <option>Multiple protected classes</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-title">Case Notes</div>
+        <div class="section-note">
+          Include any relevant timeline details, witness information, specific statements made,
+          documentation context, or other facts that may affect the risk assessment.
+          The engine reads these notes for additional risk signals.
+        </div>
+        <div class="field">
+          <textarea id="f-notes" placeholder="e.g. Employee was terminated 18 days after filing an EEOC charge. Manager was CC'd on the charge notification email. No written performance warnings on file prior to termination. Employee has been forwarding work emails to personal account since the charge was filed."></textarea>
+        </div>
+      </div>
+
+      <div class="btn-row">
+        <button class="btn btn-primary" id="generateBtn" onclick="generateReport()">Generate Risk Report</button>
+        <button class="btn btn-secondary" onclick="clearAll()">Clear Form</button>
+      </div>
+
+      <div class="upsell" id="upsell">
+        Out of reports? <a href="https://consumerdividends.com/numidian.html" target="_blank">Purchase more on Stripe →</a>
+      </div>
+
+    </div>
+
+    <div class="output-wrap">
+      <div class="output-header">
+        <span class="output-title">Risk Report Output</span>
+        <div class="output-actions" id="outputActions" style="display:none;">
+          <button class="btn btn-outline btn-sm" onclick="copyReport()">Copy</button>
+          <button class="btn btn-success btn-sm" onclick="downloadReport()">Save PDF</button>
+        </div>
+      </div>
+      <div id="output" class="empty">
+        Fill in the case details and click Generate Risk Report.
+      </div>
+    </div>
+
+    <div class="history-panel" id="historyPanel">
+      <div class="card">
+        <div class="card-title">
+          <span>Case History — This Access Code</span>
+          <button class="btn btn-outline btn-sm" onclick="loadHistory()">Refresh</button>
+        </div>
+        <div class="history-list" id="historyList">
+          <p style="color:var(--muted);font-size:13px;">Loading...</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="disclaimer">
+      Numidian is a structured risk-factor inventory tool. It is not legal advice and does not create an
+      attorney-client relationship. Scores and flags are based on general employment law patterns and EEOC charge
+      data, not jurisdiction-specific legal opinions. Consult licensed employment counsel before taking any
+      employment action. © 2026 Consumer Dividends Holding Corp.
+    </div>
+
+  </div>
+</div>
 
 <script>
-  (function () {
-    if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-    var lits = document.querySelectorAll('.lit');
-    lits.forEach(function (el) {
-      el.addEventListener('pointermove', function (e) {
-        var r = el.getBoundingClientRect();
-        el.style.setProperty('--mx', (e.clientX - r.left) + 'px');
-        el.style.setProperty('--my', (e.clientY - r.top) + 'px');
-      });
-      el.addEventListener('pointerleave', function () {
-        el.style.setProperty('--mx', '50%');
-        el.style.setProperty('--my', '38%');
-      });
-    });
-  })();
-</script>
+  let ACCESS_CODE = null;
+  let CURRENT_TIER = null;
+  let LAST_TEXT_REPORT = null;
+  let LAST_HTML_REPORT = null;
 
+  const STATES = ["Alabama","Alaska","Arizona","Arkansas","California","Colorado","Connecticut",
+    "Delaware","Florida","Georgia","Hawaii","Idaho","Illinois","Indiana","Iowa","Kansas",
+    "Kentucky","Louisiana","Maine","Maryland","Massachusetts","Michigan","Minnesota","Mississippi",
+    "Missouri","Montana","Nebraska","Nevada","New Hampshire","New Jersey","New Mexico","New York",
+    "North Carolina","North Dakota","Ohio","Oklahoma","Oregon","Pennsylvania","Rhode Island",
+    "South Carolina","South Dakota","Tennessee","Texas","Utah","Vermont","Virginia","Washington",
+    "West Virginia","Wisconsin","Wyoming","Washington D.C.",
+    "AL","AK","AZ","AR","CA","CO","CT","DE","FL","GA","HI","ID","IL","IN","IA","KS","KY","LA",
+    "ME","MD","MA","MI","MN","MS","MO","MT","NE","NV","NH","NJ","NM","NY","NC","ND","OH","OK",
+    "OR","PA","RI","SC","SD","TN","TX","UT","VT","VA","WA","WV","WI","WY","DC"];
+  const dl = document.getElementById("state-list");
+  STATES.slice(0,51).forEach(s => { const o = document.createElement("option"); o.value=s; dl.appendChild(o); });
+
+  function activateFreeTrial() {
+    ACCESS_CODE = "FREE-TRIAL";
+    CURRENT_TIER = "trial";
+    document.getElementById("gate-wrap").style.display = "none";
+    document.getElementById("app").style.display = "block";
+    updateMeter(1, "trial");
+  }
+
+  async function checkCode() {
+    const code = document.getElementById("codeInput").value.trim().toUpperCase();
+    const statusEl = document.getElementById("codeStatus");
+    const btn = document.getElementById("unlockBtn");
+    if (!code) { statusEl.className="status-bad"; statusEl.textContent="Please enter your access code."; return; }
+    btn.disabled = true;
+    btn.innerHTML = '<span class="spinner"></span>';
+    try {
+      const res = await fetch("/api/validate-code", {
+        method:"POST", headers:{"Content-Type":"application/json"},
+        body: JSON.stringify({ code })
+      });
+      const data = await res.json();
+      if (data.valid) {
+        ACCESS_CODE = code;
+        CURRENT_TIER = data.tier;
+        document.getElementById("gate-wrap").style.display = "none";
+        document.getElementById("app").style.display = "block";
+        updateMeter(data.remaining, data.tier);
+        if (["agency","pro","master"].includes(data.tier)) {
+          document.getElementById("historyPanel").classList.add("visible");
+          loadHistory();
+        }
+      } else {
+        statusEl.className = "status-bad";
+        statusEl.textContent = data.message || "Invalid or expired code.";
+      }
+    } catch(e) {
+      statusEl.className = "status-bad";
+      statusEl.textContent = "Server error. Please try again.";
+    } finally {
+      btn.disabled = false;
+      btn.textContent = "Unlock";
+    }
+  }
+
+  function updateMeter(remaining, tier) {
+    const pill = document.getElementById("meter-pill");
+    const unlimited = remaining === 999999 || ["master","agency","pro"].includes(tier);
+    pill.textContent = unlimited
+      ? `Tier: ${tier} · Unlimited`
+      : `Tier: ${tier} · ${remaining} report${remaining!==1?"s":""} remaining`;
+    if (!unlimited && remaining <= 0) document.getElementById("upsell").style.display = "block";
+    // Show portfolio link for agency users only
+    if (["agency","master"].includes(tier)) {
+      document.getElementById("dashboard-link").style.display = "inline-flex";
+    }
+  }
+
+  function getFormData() {
+    return {
+      case_name:             document.getElementById("f-case_name").value.trim(),
+      prepared_by:           document.getElementById("f-prepared_by").value.trim(),
+      state:                 document.getElementById("f-state").value.trim(),
+      company_size:          document.getElementById("f-company_size").value,
+      industry:              document.getElementById("f-industry").value,
+      tenure:                document.getElementById("f-tenure").value,
+      union:                 document.getElementById("f-union").value,
+      action:                document.getElementById("f-action").value,
+      action_predates:       document.getElementById("f-action_predates").value,
+      docs_predate:          document.getElementById("f-docs_predate").value,
+      protected_activity:    document.getElementById("f-protected_activity").value,
+      days_since:            document.getElementById("f-days_since").value.trim(),
+      decision_maker_aware:  document.getElementById("f-decision_maker_aware").value,
+      legal_threat:          document.getElementById("f-legal_threat").value,
+      employee_documenting:  document.getElementById("f-employee_documenting").value,
+      doc_quality:           document.getElementById("f-doc_quality").value,
+      written_reason:        document.getElementById("f-written_reason").value,
+      prior_warnings:        document.getElementById("f-prior_warnings").value,
+      perf_review:           document.getElementById("f-perf_review").value,
+      comparators_exist:     document.getElementById("f-comparators_exist").value,
+      comparator_treatment:  document.getElementById("f-comparator_treatment").value,
+      consistency:           document.getElementById("f-consistency").value,
+      protected_class:       document.getElementById("f-protected_class").value,
+      notes:                 document.getElementById("f-notes").value.trim(),
+      code:                  ACCESS_CODE,
+    };
+  }
+
+  async function generateReport() {
+    if (!ACCESS_CODE) { alert("Enter your access code first."); return; }
+    const data = getFormData();
+    if (!data.action) { setOutput("Please select the employment action under review.", true); return; }
+
+    const btn = document.getElementById("generateBtn");
+    btn.disabled = true;
+    btn.innerHTML = '<span class="spinner"></span> Generating...';
+    setOutput("Analyzing case inputs...", false);
+    document.getElementById("outputActions").style.display = "none";
+
+    try {
+      const res = await fetch("/api/generate-report", {
+        method:"POST", headers:{"Content-Type":"application/json"},
+        body: JSON.stringify(data)
+      });
+      const result = await res.json();
+      if (!result.ok || result.error) {
+        setOutput("Error: " + (result.error || "Something went wrong."), true);
+        if (result.remaining !== undefined) updateMeter(result.remaining, CURRENT_TIER);
+        return;
+      }
+      LAST_TEXT_REPORT = result.report;
+      LAST_HTML_REPORT = result.html_report;
+      setOutput(result.report, false);
+      document.getElementById("outputActions").style.display = "flex";
+      updateMeter(result.remaining, result.tier || CURRENT_TIER);
+      if (document.getElementById("historyPanel").classList.contains("visible")) loadHistory();
+    } catch(e) {
+      setOutput("Server error: " + e.message, true);
+    } finally {
+      btn.disabled = false;
+      btn.textContent = "Generate Risk Report";
+    }
+  }
+
+  function setOutput(text, isError) {
+    const el = document.getElementById("output");
+    el.className = "";
+    el.style.color = isError ? "#e8a39d" : "#cdbf9c";
+    el.textContent = text;
+  }
+
+  function copyReport() {
+    if (!LAST_TEXT_REPORT) return;
+    navigator.clipboard.writeText(LAST_TEXT_REPORT).then(() => {
+      const btn = event.target;
+      const orig = btn.textContent;
+      btn.textContent = "Copied!";
+      setTimeout(() => btn.textContent = orig, 1800);
+    });
+  }
+
+  function downloadReport() {
+    if (!LAST_HTML_REPORT) return;
+    const win = window.open("","_blank");
+    if (!win) { alert("Please allow popups to open the PDF report."); return; }
+    win.document.write(LAST_HTML_REPORT);
+    win.document.close();
+    setTimeout(() => { try { win.print(); } catch(e) {} }, 600);
+  }
+
+  function clearAll() {
+    ["f-case_name","f-prepared_by","f-state","f-days_since","f-notes"].forEach(id => {
+      document.getElementById(id).value = "";
+    });
+    ["f-company_size","f-industry","f-tenure","f-union","f-action","f-action_predates",
+     "f-docs_predate","f-protected_activity","f-decision_maker_aware","f-legal_threat",
+     "f-employee_documenting","f-doc_quality","f-written_reason","f-prior_warnings",
+     "f-perf_review","f-comparators_exist","f-comparator_treatment","f-consistency",
+     "f-protected_class"].forEach(id => {
+      document.getElementById(id).selectedIndex = 0;
+    });
+    const el = document.getElementById("output");
+    el.className = "empty";
+    el.style.color = "";
+    el.textContent = "Fill in the case details and click Generate Risk Report.";
+    LAST_TEXT_REPORT = null;
+    LAST_HTML_REPORT = null;
+    document.getElementById("outputActions").style.display = "none";
+  }
+
+  async function loadHistory() {
+    const list = document.getElementById("historyList");
+    list.innerHTML = '<p style="color:var(--muted);font-size:13px;">Loading...</p>';
+    try {
+      const res = await fetch("/api/history", {
+        method:"POST", headers:{"Content-Type":"application/json"},
+        body: JSON.stringify({ code: ACCESS_CODE })
+      });
+      const data = await res.json();
+      if (!data.ok || !data.entries || !data.entries.length) {
+        list.innerHTML = '<p style="color:var(--muted);font-size:13px;">No reports generated yet on this code.</p>';
+        return;
+      }
+      list.innerHTML = data.entries.map(e => `
+        <div class="history-item">
+          <div>
+            <div class="history-case">${e.case_label || "Unnamed case"}</div>
+            <div class="history-meta">${formatDate(e.used_at)}</div>
+          </div>
+        </div>`).join("");
+    } catch(e) {
+      list.innerHTML = '<p style="color:var(--muted);font-size:13px;">Could not load history.</p>';
+    }
+  }
+
+  function formatDate(iso) {
+    if (!iso) return "";
+    try {
+      const d = new Date(iso);
+      return d.toLocaleDateString("en-US",{month:"short",day:"numeric",year:"numeric"}) +
+             " at " + d.toLocaleTimeString("en-US",{hour:"numeric",minute:"2-digit"});
+    } catch(e) { return iso; }
+  }
+</script>
 </body>
 </html>
