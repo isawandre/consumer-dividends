@@ -292,7 +292,7 @@
   .product-link:hover { gap: 14px; }
   .product-link .arr { color: var(--brass); }
 
-  /* plate (screenshot placeholder) */
+  /* plate (screenshot) */
   .product-plate {
     aspect-ratio: 4 / 3;
     background: var(--cream-deep);
@@ -318,6 +318,7 @@
   .plate-label {
     position: absolute;
     left: 16px; top: 16px;
+    z-index: 3;
     font-size: 11px; font-weight: 600;
     letter-spacing: 0.1em; text-transform: uppercase;
     color: var(--muted);
@@ -477,7 +478,7 @@
     <div class="wrap studio-grid">
       <div class="studio-label">A studio,<br>not a single app.</div>
       <div>
-        <p>Each tool gives proffesionals time back by saving the hours, reducing the risk, organizing the mess, or taking the production off your hands, so it goes to the work that actually matters.</p>
+        <p>Each tool gives professionals time back by saving the hours, reducing the risk, organizing the mess, or taking the production off your hands, so it goes to the work that actually matters.</p>
       </div>
     </div>
   </section>
@@ -497,13 +498,13 @@
           <h3>Numidian</h3>
           <div class="tagline">You put in the facts. We organize them by risk factor.</div>
           <p class="body">Structured risk scoring for the workplace dispute in front of you, built for fractional HR consultants and employment attorneys who need a fast, consistent read before they act.</p>
-          <a class="product-link" href="/numidian.html">Explore Numidian<span class="arr">&rarr;</span></a>
+          <a class="product-link" href="/numidian.html">Explore Numidian <span class="arr">&rarr;</span></a>
         </div>
         <div class="product-plate">
           <div class="plate-grid"></div>
           <div class="plate-label">Numidian &middot; Risk Report</div>
           <div class="plate-corner"></div>
-          <img src="/assets/Numidian-report.png" alt="Numidian risk report"
+          <img src="/assets/Numidian-report.png" alt="Numidian risk report" onerror="this.style.display='none'" />
         </div>
       </div>
 
@@ -513,14 +514,14 @@
           <div class="product-eyebrow">Real Estate</div>
           <h3>ListingPro</h3>
           <div class="tagline">One property in. The full listing package out.</div>
-          <p class="body">A listing operations platform for working agents and brokerages, turning one property into the full production set so the hours go back to winning the next listing instead of chasing shots.</p>
+          <p class="body">A listing operations platform for working agents and brokerages, turning one property into the full production set so the hours go back to winning the next listing instead of formatting the last one.</p>
           <a class="product-link" href="/listingpro.html">Explore ListingPro <span class="arr">&rarr;</span></a>
         </div>
         <div class="product-plate">
           <div class="plate-grid"></div>
           <div class="plate-label">ListingPro &middot; Generated Listing</div>
           <div class="plate-corner"></div>
-          <!-- When ready: <img src="/assets/listingpro-listing.png" alt="ListingPro generated listing" /> -->
+          <img src="/assets/listingpro-listing.png" alt="ListingPro generated listing" onerror="this.style.display='none'" />
         </div>
       </div>
     </div>
