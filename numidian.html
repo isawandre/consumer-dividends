@@ -161,14 +161,17 @@
   .pricing-note a { color: var(--blue); border-bottom: 1px solid var(--line-soft); }
 
   .disclaimer { background: var(--cream-deep); padding: 40px 0; border-top: 1px solid var(--line); }
-  .disclaimer p { font-size: 14px; color: var(--muted); line-height: 1.6; max-width: 820px; }
+  .disclaimer p { font-size: 14px; color: var(--muted); line-height: 1.6; max-width: 820px; margin-bottom: 8px; }
+  .disclaimer p:last-child { margin-bottom: 0; }
   .disclaimer strong { color: var(--walnut); font-weight: 600; }
+  .disclaimer a { color: var(--blue); border-bottom: 1px solid var(--line-soft); transition: border-color 0.16s ease; }
+  .disclaimer a:hover { border-bottom-color: var(--brass); }
 
   footer { background: var(--graphite); color: rgba(238,232,218,0.7); padding: 54px 0 40px; border-top: 1px solid rgba(176,141,87,0.22); }
   .footer-top { display: flex; justify-content: space-between; align-items: flex-start; gap: 40px; flex-wrap: wrap; margin-bottom: 40px; }
   .footer-brand { font-family: var(--serif); font-size: 20px; font-weight: 500; color: var(--cream); margin-bottom: 10px; }
   .footer-brand-tag { font-size: 14px; color: rgba(238,232,218,0.6); max-width: 280px; line-height: 1.5; }
-  .footer-cols { display: flex; gap: 64px; flex-wrap: wrap; }
+  .footer-cols { display: flex; gap: 56px; flex-wrap: wrap; }
   .footer-col h4 { font-size: 12px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--brass); margin-bottom: 14px; }
   .footer-col a { display: block; font-size: 14px; color: rgba(238,232,218,0.72); margin-bottom: 9px; transition: color 0.16s ease; }
   .footer-col a:hover { color: var(--cream); }
@@ -214,6 +217,7 @@
       <a href="/numidian.html" class="active">Numidian</a>
       <a href="/listingpro.html">ListingPro</a>
       <a href="/founder.html">Founder</a>
+      <a href="/legal/">Legal</a>
     </nav>
   </div>
 </header>
@@ -397,7 +401,8 @@
 
   <section class="disclaimer">
     <div class="wrap">
-      <p><strong>Numidian is a structured risk-factor inventory.</strong> It is not legal advice and does not create an attorney-client relationship. For guidance specific to your jurisdiction, consult licensed employment counsel.</p>
+      <p><strong>Numidian is a structured risk-factor inventory.</strong> It is not legal advice and does not create an attorney-client relationship. It does not make, recommend, or materially influence any employment decision about an individual. For guidance specific to your jurisdiction, consult licensed employment counsel.</p>
+      <p>Full detail in the <a href="/legal/numidian-terms.html">Numidian Product Terms</a> and the <a href="/legal/llm-disclosure.html">Language Model Use Disclosure</a>.</p>
     </div>
   </section>
 
@@ -419,13 +424,25 @@
         <div class="footer-col">
           <h4>Company</h4>
           <a href="/founder.html">Founder</a>
-          <a href="/founder.html">What we hold to</a>
+          <a href="/founder.html#principles">What we hold to</a>
+          <a href="mailto:support@consumerdividends.com">Contact</a>
+        </div>
+        <div class="footer-col">
+          <h4>Legal</h4>
+          <a href="/legal/privacy.html">Privacy Policy</a>
+          <a href="/legal/terms.html">Terms of Service</a>
+          <a href="/legal/numidian-terms.html">Numidian Terms</a>
+          <a href="/legal/llm-disclosure.html">LLM Disclosure</a>
+          <a href="/legal/acceptable-use.html">Acceptable Use</a>
+          <a href="/legal/cookies.html">Cookies</a>
+          <a href="/legal/subprocessors.html">Subprocessors</a>
+          <a href="/legal/">All policies</a>
         </div>
       </div>
     </div>
     <div class="footer-bottom">
       <span>&copy; 2026 Consumer Dividends Holding Corp</span>
-      <span>Built for the operator doing the work themselves.</span>
+      <span>support@consumerdividends.com</span>
     </div>
   </div>
 </footer>
