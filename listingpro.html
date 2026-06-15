@@ -93,6 +93,7 @@
   .out:nth-last-child(1), .out:nth-last-child(2), .out:nth-last-child(3) { border-bottom: none; }
   .out h3 { font-family: var(--serif); font-weight: 500; font-size: 18px; color: var(--graphite); margin-bottom: 7px; letter-spacing: -0.01em; }
   .out p { font-size: 14.5px; color: var(--muted); line-height: 1.54; }
+  .out .new-tag { display: inline-block; font-size: 10px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--brass); margin-left: 6px; vertical-align: middle; }
 
   .audience { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; }
   .aud { padding: 28px; background: var(--cream); border: 1px solid var(--line); }
@@ -124,11 +125,18 @@
   .pricing-note { font-size: 14px; color: var(--muted); margin-top: 22px; line-height: 1.5; }
   .pricing-note a { color: var(--blue); border-bottom: 1px solid var(--line-soft); }
 
+  .disclaimer { background: var(--cream-deep); padding: 40px 0; border-top: 1px solid var(--line); }
+  .disclaimer p { font-size: 14px; color: var(--muted); line-height: 1.6; max-width: 820px; margin-bottom: 8px; }
+  .disclaimer p:last-child { margin-bottom: 0; }
+  .disclaimer strong { color: var(--walnut); font-weight: 600; }
+  .disclaimer a { color: var(--blue); border-bottom: 1px solid var(--line-soft); transition: border-color 0.16s ease; }
+  .disclaimer a:hover { border-bottom-color: var(--brass); }
+
   footer { background: var(--graphite); color: rgba(238,232,218,0.7); padding: 54px 0 40px; border-top: 1px solid rgba(176,141,87,0.22); }
   .footer-top { display: flex; justify-content: space-between; align-items: flex-start; gap: 40px; flex-wrap: wrap; margin-bottom: 40px; }
   .footer-brand { font-family: var(--serif); font-size: 20px; font-weight: 500; color: var(--cream); margin-bottom: 10px; }
   .footer-brand-tag { font-size: 14px; color: rgba(238,232,218,0.6); max-width: 280px; line-height: 1.5; }
-  .footer-cols { display: flex; gap: 64px; flex-wrap: wrap; }
+  .footer-cols { display: flex; gap: 56px; flex-wrap: wrap; }
   .footer-col h4 { font-size: 12px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--brass); margin-bottom: 14px; }
   .footer-col a { display: block; font-size: 14px; color: rgba(238,232,218,0.72); margin-bottom: 9px; transition: color 0.16s ease; }
   .footer-col a:hover { color: var(--cream); }
@@ -143,7 +151,7 @@
     .math .inner { grid-template-columns: 1fr; gap: 22px; }
     .outputs { grid-template-columns: 1fr; }
     .out { border-right: none; }
-    .out:nth-last-child(2) { border-bottom: 1px solid var(--line); }
+    .out:nth-last-child(2), .out:nth-last-child(3) { border-bottom: 1px solid var(--line); }
     .audience { grid-template-columns: 1fr; gap: 18px; }
     .trial .inner { grid-template-columns: 1fr; gap: 26px; }
     .tiers { grid-template-columns: 1fr; }
@@ -170,6 +178,7 @@
       <a href="/numidian.html">Numidian</a>
       <a href="/listingpro.html" class="active">ListingPro</a>
       <a href="/founder.html">Founder</a>
+      <a href="/legal/">Legal</a>
     </nav>
   </div>
 </header>
@@ -221,15 +230,18 @@
       <div class="block-head">
         <span class="tick"></span>
         <h2>What comes out</h2>
-        <p class="lead-p">You enter the property once and get the whole set back, ready to use.</p>
+        <p class="lead-p">You enter the property once and get the whole set back, ready to use. The deal numbers, the comp range, and the risk read are computed deterministically, so the same inputs produce the same outputs every time.</p>
       </div>
       <div class="outputs">
-        <div class="out"><h3>MLS description</h3><p>Written to standard and ready to publish, in more than one variant.</p></div>
+        <div class="out"><h3>MLS description</h3><p>Written to standard and ready to publish, in more than one variant. Screened for fair housing language before it reaches you.</p></div>
         <div class="out"><h3>Social copy</h3><p>Captions and highlights formatted for the channels you actually post to.</p></div>
         <div class="out"><h3>Bullet highlights</h3><p>The selling points pulled out and laid clean for the listing sheet.</p></div>
-        <div class="out"><h3>Deal numbers</h3><p>The figures a buyer or investor will ask about, run and laid out.</p></div>
+        <div class="out"><h3>Deal numbers</h3><p>Mortgage, cash flow, cap rate, cash-on-cash, all the figures a buyer or investor will ask about.</p></div>
+        <div class="out"><h3>Comp analysis<span class="new-tag">New</span></h3><p>Per-comp adjustments for size, beds, baths, and days on market. Outliers trimmed. P25/P50/P75 range with a confidence read.</p></div>
+        <div class="out"><h3>Risk read<span class="new-tag">New</span></h3><p>Five-factor deal score from 0 to 100. Pursue, caution, or pass, with the specific factors that drove the call.</p></div>
         <div class="out"><h3>Client packet</h3><p>A handover-ready document you can send without reformatting.</p></div>
-        <div class="out"><h3>Outreach emails</h3><p>Drafted and ready to send, plus export to PDF and DOCX.</p></div>
+        <div class="out"><h3>Outreach emails</h3><p>Drafted and ready to send to past clients, sphere, and the surrounding street.</p></div>
+        <div class="out"><h3>PDF and DOCX export</h3><p>Every output downloadable as PDF and DOCX. White-label on Agency.</p></div>
       </div>
     </div>
   </section>
@@ -248,8 +260,8 @@
         </div>
         <div class="aud">
           <div class="oak-dot"></div>
-          <h3>Brokerages</h3>
-          <p>That want consistent listing output across a team without adding headcount.</p>
+          <h3>Brokerages and teams</h3>
+          <p>That want consistent listing output across a team, with seats and shared inventory under one org.</p>
         </div>
         <div class="aud">
           <div class="oak-dot"></div>
@@ -285,39 +297,52 @@
           <div class="tier-price">$39</div>
           <div class="tier-sub">One-time, one property</div>
           <ul>
-            <li>Full content suite</li>
-            <li>Deal calculator</li>
+            <li>One property, one seat</li>
+            <li>MLS copy, social, bullets</li>
+            <li>Deal numbers</li>
             <li>Client packet</li>
             <li>PDF and DOCX export</li>
           </ul>
           <a class="btn" href="https://buy.stripe.com/cNi7sK5Pm0Fe8Fv41787K0b" target="_blank" rel="noopener">Buy $39</a>
         </div>
         <div class="tier popular">
-          <div class="tier-name">Pro</div>
+          <div class="tier-name">Professional</div>
           <div class="tier-price">$99<span>/mo</span></div>
-          <div class="tier-sub">Fifteen properties a month</div>
+          <div class="tier-sub">For the working solo agent</div>
           <ul>
+            <li>Fifteen properties a month</li>
+            <li>Two team seats</li>
             <li>Everything in Starter</li>
-            <li>Comp analyzer</li>
-            <li>Outreach engine</li>
+            <li>Comp analysis with confidence</li>
+            <li>Risk read with five factors</li>
+            <li>Outreach email engine</li>
             <li>Regenerate any module</li>
           </ul>
           <a class="btn brass" href="https://buy.stripe.com/bJe8wO0v2gEc7BrcxD87K0c" target="_blank" rel="noopener">Subscribe $99/mo</a>
         </div>
         <div class="tier">
-          <div class="tier-name">Unlimited</div>
+          <div class="tier-name">Agency</div>
           <div class="tier-price">$199<span>/mo</span></div>
-          <div class="tier-sub">Unlimited properties</div>
+          <div class="tier-sub">Brokerages and teams</div>
           <ul>
-            <li>Everything in Pro</li>
-            <li>Three seats</li>
+            <li>Unlimited properties</li>
+            <li>Five team seats</li>
+            <li>Everything in Professional</li>
             <li>White-label exports</li>
+            <li>Org-scoped vault</li>
             <li>Priority support</li>
           </ul>
           <a class="btn" href="https://buy.stripe.com/7sYcN4cdK1JibRH8hn87K0d" target="_blank" rel="noopener">Subscribe $199/mo</a>
         </div>
       </div>
-      <p class="pricing-note">First property is free at <a href="https://listingpro.up.railway.app" target="_blank" rel="noopener">listingpro.up.railway.app</a>.</p>
+      <p class="pricing-note">First property is free at <a href="https://listingpro.up.railway.app" target="_blank" rel="noopener">listingpro.up.railway.app</a>. Cancel anytime from your billing portal.</p>
+    </div>
+  </section>
+
+  <section class="disclaimer">
+    <div class="wrap">
+      <p><strong>ListingPro is a listing operations tool.</strong> The licensed real estate professional remains responsible for every output before publication, including review for accuracy, fair housing compliance, MLS rules, and the National Association of Realtors Code of Ethics. ListingPro runs a fair housing language screen on every output, but the screen does not replace your or your broker's review.</p>
+      <p>Full detail in the <a href="/legal/listingpro-terms.html">ListingPro Product Terms and Fair Housing Notice</a> and the <a href="/legal/llm-disclosure.html">Language Model Use Disclosure</a>.</p>
     </div>
   </section>
 
@@ -339,13 +364,25 @@
         <div class="footer-col">
           <h4>Company</h4>
           <a href="/founder.html">Founder</a>
-          <a href="/founder.html">What we hold to</a>
+          <a href="/founder.html#principles">What we hold to</a>
+          <a href="mailto:support@consumerdividends.com">Contact</a>
+        </div>
+        <div class="footer-col">
+          <h4>Legal</h4>
+          <a href="/legal/privacy.html">Privacy Policy</a>
+          <a href="/legal/terms.html">Terms of Service</a>
+          <a href="/legal/listingpro-terms.html">ListingPro Terms</a>
+          <a href="/legal/llm-disclosure.html">LLM Disclosure</a>
+          <a href="/legal/acceptable-use.html">Acceptable Use</a>
+          <a href="/legal/cookies.html">Cookies</a>
+          <a href="/legal/subprocessors.html">Subprocessors</a>
+          <a href="/legal/">All policies</a>
         </div>
       </div>
     </div>
     <div class="footer-bottom">
       <span>&copy; 2026 Consumer Dividends Holding Corp</span>
-      <span>Built for the operator doing the work themselves.</span>
+      <span>support@consumerdividends.com</span>
     </div>
   </div>
 </footer>
