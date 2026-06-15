@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Terms of Service — Consumer Dividends</title>
+<meta name="description" content="Terms of Service for Consumer Dividends Holding Corp and our products including Numidian and ListingPro." />
+<meta name="robots" content="index,follow" />
+
+<link rel="icon" href="/assets/favicon.ico" sizes="any" />
+<link rel="icon" href="/assets/consumer-dividends-logo.png" type="image/png" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Public+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+<style>
+  :root {
+    --graphite: #2F3437;
+    --cream: #EEE8DA;
+    --cream-deep: #E5DDCB;
+    --blue: #3D5873;
+    --brass: #B08D57;
+    --walnut: #5A4330;
+    --ink: #2A2E31;
+    --muted: #6B6256;
+    --line: rgba(90,67,48,0.22);
+    --line-soft: rgba(61,88,115,0.16);
+    --serif: "Fraunces", Georgia, "Times New Roman", serif;
+    --sans: "Public Sans", system-ui, -apple-system, sans-serif;
+    --maxw: 880px;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+  body {
+    font-family: var(--sans);
+    background: var(--cream);
+    color: var(--ink);
+    line-height: 1.65;
+    font-size: 16.5px;
+    -webkit-font-smoothing: antialiased;
+  }
+  a { color: var(--blue); text-decoration: none; border-bottom: 1px solid rgba(61,88,115,0.28); }
+  a:hover { border-bottom-color: var(--brass); color: var(--graphite); }
+
+  body::after {
+    content: "";
+    position: fixed; inset: 0;
+    z-index: 200;
+    pointer-events: none;
+    opacity: 0.04;
+    mix-blend-mode: multiply;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+    background-size: 140px 140px;
+  }
+
+  .wrap { width: min(var(--maxw), calc(100% - 48px)); margin: 0 auto; }
+
+  /* nav */
+  header {
+    position: sticky; top: 0; z-index: 100;
+    background: var(--graphite);
+    border-bottom: 1px solid rgba(176,141,87,0.28);
+  }
+  .nav { display: flex; align-items: center; justify-content: space-between; height: 70px; }
+  .nav-wrap { width: min(1200px, calc(100% - 48px)); margin: 0 auto; }
+  .brand {
+    display: flex; align-items: center; gap: 12px;
+    font-family: var(--serif); font-weight: 500; font-size: 21px;
+    letter-spacing: -0.01em; color: var(--cream);
+    border-bottom: none;
+  }
+  .brand:hover { color: var(--cream); border-bottom: none; }
+  .brand img { width: 30px; height: 30px; object-fit: contain; display: block; }
+  .navlinks { display: flex; align-items: center; gap: 28px; }
+  .navlinks a {
+    font-size: 14px; font-weight: 500; letter-spacing: 0.01em;
+    color: rgba(238,232,218,0.74);
+    border-bottom: none;
+    transition: color 0.18s ease;
+  }
+  .navlinks a:hover { color: var(--cream); border-bottom: none; }
+  .menu-btn { display: none; background: none; border: none; color: var(--cream); font-family: var(--sans); font-size: 14px; cursor: pointer; padding: 8px; }
+
+  /* legal index sidebar appears on every page so visitors can jump between docs */
+  main.legal {
+    display: grid;
+    grid-template-columns: 220px 1fr;
+    gap: 56px;
+    width: min(1200px, calc(100% - 48px));
+    margin: 0 auto;
+    padding: 64px 0 96px;
+    position: relative;
+  }
+  .legal-side {
+    position: sticky;
+    top: 96px;
+    align-self: start;
+    border-left: 1px solid var(--line);
+    padding-left: 22px;
+  }
+  .legal-side .legal-eyebrow {
+    font-size: 11px; font-weight: 700;
+    letter-spacing: 0.12em; text-transform: uppercase;
+    color: var(--brass);
+    margin-bottom: 18px;
+  }
+  .legal-side ul { list-style: none; }
+  .legal-side li { margin-bottom: 10px; }
+  .legal-side a {
+    display: block;
+    font-size: 13.5px;
+    color: var(--muted);
+    border-bottom: none;
+    line-height: 1.4;
+    transition: color 0.16s ease;
+  }
+  .legal-side a:hover { color: var(--graphite); border-bottom: none; }
+  .legal-side a.active {
+    color: var(--graphite);
+    font-weight: 600;
+    padding-left: 12px;
+    border-left: 2px solid var(--brass);
+    margin-left: -14px;
+  }
+
+  /* document body */
+  article.doc {
+    max-width: 720px;
+  }
+  article.doc .tick {
+    display: inline-block;
+    width: 30px; height: 3px;
+    background: var(--brass);
+    margin-bottom: 26px;
+  }
+  article.doc h1 {
+    font-family: var(--serif);
+    font-weight: 500;
+    font-size: clamp(34px, 5vw, 48px);
+    line-height: 1.05;
+    letter-spacing: -0.025em;
+    color: var(--graphite);
+    margin-bottom: 24px;
+  }
+  article.doc h2 {
+    font-family: var(--serif);
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 1.25;
+    letter-spacing: -0.015em;
+    color: var(--graphite);
+    margin: 44px 0 14px;
+    padding-top: 24px;
+    border-top: 1px solid var(--line);
+  }
+  article.doc h3 {
+    font-family: var(--sans);
+    font-weight: 700;
+    font-size: 16px;
+    letter-spacing: 0.005em;
+    color: var(--graphite);
+    margin: 26px 0 8px;
+  }
+  article.doc p { margin: 0 0 14px; color: var(--ink); }
+  article.doc ul { margin: 8px 0 18px 18px; }
+  article.doc li { margin-bottom: 7px; color: var(--ink); }
+  article.doc strong { color: var(--graphite); font-weight: 600; }
+  article.doc em { color: var(--walnut); }
+  article.doc hr {
+    border: none;
+    border-top: 1px solid var(--line);
+    margin: 32px 0;
+  }
+  article.doc blockquote {
+    margin: 18px 0;
+    padding: 16px 20px;
+    background: rgba(176,141,87,0.08);
+    border-left: 3px solid var(--brass);
+    font-style: italic;
+    color: var(--walnut);
+  }
+  article.doc blockquote p { margin: 0 0 6px; }
+  article.doc blockquote p:last-child { margin: 0; }
+  article.doc code {
+    font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+    font-size: 14px;
+    background: rgba(61,88,115,0.08);
+    padding: 1px 6px;
+    border-radius: 2px;
+    color: var(--blue);
+  }
+  article.doc table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 18px 0 26px;
+    font-size: 14.5px;
+  }
+  article.doc table th {
+    text-align: left;
+    background: var(--graphite);
+    color: var(--cream);
+    padding: 10px 14px;
+    font-weight: 600;
+    font-size: 13px;
+    letter-spacing: 0.02em;
+  }
+  article.doc table td {
+    padding: 10px 14px;
+    border-bottom: 1px solid var(--line);
+    vertical-align: top;
+    background: rgba(255,255,255,0.5);
+  }
+  article.doc table tr:last-child td { border-bottom: none; }
+
+  /* footer */
+  footer {
+    background: var(--graphite);
+    color: rgba(238,232,218,0.7);
+    padding: 54px 0 40px;
+    border-top: 1px solid rgba(176,141,87,0.22);
+  }
+  .footer-wrap { width: min(1200px, calc(100% - 48px)); margin: 0 auto; }
+  .footer-top {
+    display: flex; justify-content: space-between; align-items: flex-start;
+    gap: 40px; flex-wrap: wrap;
+    margin-bottom: 40px;
+  }
+  .footer-brand {
+    font-family: var(--serif); font-size: 20px; font-weight: 500;
+    color: var(--cream); margin-bottom: 10px;
+  }
+  .footer-brand-tag { font-size: 14px; color: rgba(238,232,218,0.6); max-width: 280px; line-height: 1.5; }
+  .footer-cols { display: flex; gap: 56px; flex-wrap: wrap; }
+  .footer-col h4 {
+    font-size: 12px; font-weight: 600; letter-spacing: 0.08em;
+    text-transform: uppercase; color: var(--brass); margin-bottom: 14px;
+  }
+  .footer-col a {
+    display: block; font-size: 14px; color: rgba(238,232,218,0.72);
+    margin-bottom: 9px; transition: color 0.16s ease;
+    border-bottom: none;
+  }
+  .footer-col a:hover { color: var(--cream); border-bottom: none; }
+  .footer-bottom {
+    border-top: 1px solid rgba(238,232,218,0.12);
+    padding-top: 24px;
+    display: flex; justify-content: space-between; gap: 20px; flex-wrap: wrap;
+    font-size: 13px; color: rgba(238,232,218,0.5);
+  }
+
+  @media (max-width: 880px) {
+    .menu-btn { display: block; }
+    .navlinks {
+      display: none;
+      position: absolute; top: 70px; left: 0; right: 0;
+      background: var(--graphite);
+      flex-direction: column; align-items: flex-start;
+      gap: 0; padding: 8px 24px 20px;
+      border-bottom: 1px solid rgba(176,141,87,0.28);
+    }
+    .navlinks.open { display: flex; }
+    .navlinks a { padding: 12px 0; width: 100%; }
+    main.legal {
+      grid-template-columns: 1fr;
+      gap: 32px;
+      padding: 40px 0 64px;
+    }
+    .legal-side {
+      position: static;
+      border-left: none;
+      padding-left: 0;
+      border-bottom: 1px solid var(--line);
+      padding-bottom: 24px;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    * { scroll-behavior: auto; transition: none !important; }
+  }
+  :focus-visible { outline: 2px solid var(--brass); outline-offset: 3px; }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="nav-wrap nav">
+    <a class="brand" href="/index.html">
+      <img src="/assets/consumer-dividends-logo.png" alt="Consumer Dividends" />
+      <span>Consumer Dividends</span>
+    </a>
+    <button class="menu-btn" aria-label="Menu" onclick="document.getElementById('navlinks').classList.toggle('open')">Menu</button>
+    <nav class="navlinks" id="navlinks">
+      <a href="/numidian.html">Numidian</a>
+      <a href="/listingpro.html">ListingPro</a>
+      <a href="/founder.html">Founder</a>
+      <a href="/legal/">Legal</a>
+    </nav>
+  </div>
+</header>
+
+<main class="legal">
+  <aside class="legal-side">
+    <div class="legal-eyebrow">Legal</div>
+    <ul>
+      <li><a href="/legal/privacy.html">Privacy</a></li>
+      <li><a href="/legal/terms.html" class="active">Terms</a></li>
+      <li><a href="/legal/acceptable-use.html">Acceptable Use</a></li>
+      <li><a href="/legal/llm-disclosure.html">LLM Disclosure</a></li>
+      <li><a href="/legal/cookies.html">Cookies</a></li>
+      <li><a href="/legal/numidian-terms.html">Numidian Terms</a></li>
+      <li><a href="/legal/listingpro-terms.html">ListingPro Terms</a></li>
+      <li><a href="/legal/dpa.html">DPA</a></li>
+      <li><a href="/legal/subprocessors.html">Subprocessors</a></li>
+    </ul>
+  </aside>
+
+  <article class="doc">
+    <span class="tick"></span>
+<h1>Terms of Service</h1>
+<p><strong>Consumer Dividends Holding Corp</strong></p>
+<p>Effective date: June 14, 2026</p>
+<p>Last updated: June 14, 2026</p>
+<p>These terms govern your use of consumerdividends.com and every product operated by Consumer Dividends Holding Corp ("CDHC", "we", "us"), including Numidian and ListingPro. By using any of our products you agree to these terms. If you do not agree, do not use the products.</p>
+<p>Each product may have additional product-specific terms. Where product terms conflict with these master terms, the product terms control for that product.</p>
+<h2>1. The basics</h2>
+<p>We license the products to you for your business use. You pay the fee for the tier you select. We deliver the product as described. Either party can end the arrangement under the conditions below.</p>
+<h2>2. Your account and access</h2>
+<p>Some products use email-delivered access codes rather than traditional accounts. You are responsible for keeping your access code or login confidential and for any activity under your access. Tell us immediately if you suspect unauthorized use.</p>
+<p>You agree to provide accurate information when purchasing or signing up. You may not share paid access with people outside your organization unless your tier allows it (Agency tier on Numidian permits multi-client use within a single firm).</p>
+<h2>3. Acceptable use</h2>
+<p>You agree to follow our Acceptable Use Policy. In short, do not use our products to break the law, harm someone, infringe rights, or attack our systems. Violations can result in immediate suspension without refund.</p>
+<h2>4. Fees, billing, refunds</h2>
+<ul>
+<li>One-time purchases are charged when you place the order.</li>
+<li>Subscriptions are charged at the start of each billing period and renew automatically until you cancel.</li>
+<li>You can cancel a subscription at any time from your Stripe billing portal. Cancellation takes effect at the end of the current period.</li>
+<li>One-time purchases and subscription periods are non-refundable except where required by law or where we have failed to deliver the product. Disputes raised within 7 days of purchase will be reviewed in good faith.</li>
+<li>We may change prices for new purchases. Existing subscriptions keep their price until they renew after we give 30 days' notice.</li>
+</ul>
+<h2>5. Your content and our output</h2>
+<p><strong>Your content</strong> is anything you enter into our products: case facts, property details, custom prompts, uploaded files. You keep ownership of your content. You grant us a limited license to process it for the sole purpose of delivering the product to you.</p>
+<p><strong>Our output</strong> is the report, listing, score, or document the product generates from your content. You own the output and may use it however you want within the law and these terms. We make no claim to it.</p>
+<p>We do not use your content to train language models. We do not share your content with anyone except as needed to deliver the product (see our Subprocessor List).</p>
+<h2>6. What our products are and are not</h2>
+<p>Our products produce structured outputs from the information you provide. They are software tools, not professional services.</p>
+<p><strong>Numidian</strong> is a structured risk inventory and scoring tool. It is not legal advice and does not create an attorney-client relationship. It does not make, recommend, or materially influence any employment decision about any individual. Decisions about employees remain with the employer. See the Numidian Product Terms and our Language Model Use and Transparency Disclosure for full detail.</p>
+<p><strong>ListingPro</strong> is a listing production tool. It generates marketing content from property details you provide. You are responsible for reviewing every output for accuracy, fair housing compliance, MLS rules, and the National Association of Realtors Code of Ethics before publishing. See the ListingPro Product Terms.</p>
+<p>You agree that:</p>
+<ul>
+<li>You will not rely on our outputs as a substitute for advice from a licensed professional (attorney, real estate broker, HR counsel).</li>
+<li>You will review every output before acting on it or publishing it.</li>
+<li>You are responsible for the outputs you choose to use.</li>
+</ul>
+<h2>7. Intellectual property</h2>
+<p>We own the software, the website, our trademarks, our scoring frameworks, and all underlying technology. Nothing in these terms transfers ownership to you. You get a license to use the product for the term you paid for.</p>
+<p>Our marks (Consumer Dividends, Numidian, ListingPro, and any logos) may not be used without written permission.</p>
+<h2>8. Third-party services</h2>
+<p>We use third-party infrastructure providers (listed in our Subprocessor List) and process payments through Stripe. Their terms apply to their portion of the service. We are not responsible for outages or actions of third parties beyond our reasonable control.</p>
+<h2>9. Warranties and disclaimers</h2>
+<p>We provide the products "as is" and "as available". To the maximum extent permitted by law, we disclaim all warranties, including merchantability, fitness for a particular purpose, and non-infringement.</p>
+<p>The outputs of our products are computational results based on the inputs you provide and the frameworks we have built. They may contain errors, omissions, or content that is not appropriate for your situation. You are responsible for reviewing and verifying outputs before relying on them.</p>
+<p>Some jurisdictions do not allow disclaiming certain warranties. In those jurisdictions, the disclaimers apply only to the extent permitted.</p>
+<h2>10. Limitation of liability</h2>
+<p>To the maximum extent permitted by law, our total liability to you for any claim arising from these terms or your use of the products is limited to the amount you paid us in the 12 months before the claim arose, or one hundred US dollars, whichever is greater.</p>
+<p>We are not liable for indirect, incidental, special, consequential, exemplary, or punitive damages, including lost profits, lost revenue, or loss of data, even if we were advised of the possibility.</p>
+<p>This limitation does not apply to liability we cannot disclaim by law, including gross negligence, fraud, or willful misconduct.</p>
+<h2>11. Indemnification</h2>
+<p>You agree to defend, indemnify, and hold CDHC harmless from any claim, loss, or expense (including reasonable legal fees) arising from your use of the products in violation of these terms, your violation of any law, or your infringement of any third party's rights.</p>
+<h2>12. Termination</h2>
+<p>You can stop using the products at any time. We can suspend or terminate your access if you violate these terms, fail to pay, or use the products in a way that creates legal or operational risk for us. We will refund any unused prepaid amounts on termination, except where you violated these terms.</p>
+<p>Sections that by their nature should survive termination (intellectual property, disclaimers, limitations of liability, indemnification, dispute resolution) survive.</p>
+<h2>13. Governing law and disputes</h2>
+<p>These terms are governed by the laws of the State of Hawaii, United States, without regard to conflict-of-laws principles. Any dispute will be resolved in the state or federal courts located in Hawaii, except where applicable consumer protection law requires otherwise.</p>
+<p>If you are a consumer in the EU, UK, or another jurisdiction with mandatory consumer protections, those protections apply in addition to these terms.</p>
+<h2>14. Changes to these terms</h2>
+<p>We may update these terms when our products or the law change. The "Last updated" date at the top reflects the most recent change. Material changes will be emailed to active customers at least 30 days before they take effect. Continued use after the effective date means you accept the updated terms.</p>
+<h2>15. Miscellaneous</h2>
+<ul>
+<li><strong>Entire agreement</strong>: these terms, the Privacy Policy, the AUP, the Language Model Disclosure, and any product-specific terms are the entire agreement between you and CDHC.</li>
+<li><strong>Severability</strong>: if a court finds a provision unenforceable, the rest of the terms remain in effect.</li>
+<li><strong>No waiver</strong>: if we do not enforce a right immediately, that does not waive the right.</li>
+<li><strong>Assignment</strong>: you may not assign these terms. We may assign them to a successor in connection with a sale or merger.</li>
+<li><strong>Force majeure</strong>: neither party is liable for failure to perform due to causes beyond reasonable control.</li>
+</ul>
+<h2>16. Contact</h2>
+<p>support@consumerdividends.com</p>
+<p>Consumer Dividends Holding Corp, Pāhoa, Hawaii, United States.</p>
+  </article>
+</main>
+
+<footer>
+  <div class="footer-wrap">
+    <div class="footer-top">
+      <div>
+        <div class="footer-brand">Consumer Dividends</div>
+        <div class="footer-brand-tag">A multi-industry product studio, building tools that give professionals more control over their work and more of their time back.</div>
+      </div>
+      <div class="footer-cols">
+        <div class="footer-col">
+          <h4>Systems</h4>
+          <a href="/numidian.html">Numidian</a>
+          <a href="/listingpro.html">ListingPro</a>
+        </div>
+        <div class="footer-col">
+          <h4>Company</h4>
+          <a href="/founder.html">Founder</a>
+        </div>
+        <div class="footer-col">
+          <h4>Legal</h4>
+          <a href="/legal/privacy.html">Privacy</a>
+          <a href="/legal/terms.html">Terms</a>
+          <a href="/legal/acceptable-use.html">Acceptable Use</a>
+          <a href="/legal/llm-disclosure.html">LLM Disclosure</a>
+          <a href="/legal/cookies.html">Cookies</a>
+          <a href="/legal/numidian-terms.html">Numidian Terms</a>
+          <a href="/legal/listingpro-terms.html">ListingPro Terms</a>
+          <a href="/legal/dpa.html">DPA</a>
+          <a href="/legal/subprocessors.html">Subprocessors</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; 2026 Consumer Dividends Holding Corp</span>
+      <span>support@consumerdividends.com</span>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
