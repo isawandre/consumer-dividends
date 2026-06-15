@@ -75,6 +75,16 @@
   .origin p:last-child { margin-bottom: 0; }
   .origin .signoff { font-family: var(--sans); font-size: 15px; font-weight: 600; color: var(--muted); letter-spacing: 0.02em; margin-top: 34px; }
 
+  /* WHAT STAYS THE SAME — new bridging section */
+  .stays { background: var(--cream-deep); padding: 72px 0; border-top: 1px solid var(--line); position: relative; overflow: hidden; }
+  .stays-grid-bg { position: absolute; inset: 0; background-image: linear-gradient(to right, var(--line-soft) 1px, transparent 1px), linear-gradient(to bottom, var(--line-soft) 1px, transparent 1px); background-size: 46px 46px; -webkit-mask-image: linear-gradient(to right, transparent 0%, #000 30%, #000 70%, transparent 100%); mask-image: linear-gradient(to right, transparent 0%, #000 30%, #000 70%, transparent 100%); opacity: 0.7; z-index: 0; }
+  .stays .inner { position: relative; z-index: 2; }
+  .stays .stays-eyebrow { font-size: 13px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--blue); margin-bottom: 14px; }
+  .stays h2 { font-family: var(--serif); font-weight: 500; font-size: clamp(26px, 3.6vw, 36px); line-height: 1.1; letter-spacing: -0.02em; color: var(--graphite); margin-bottom: 22px; }
+  .stays p { font-size: 17.5px; color: var(--ink); line-height: 1.66; margin-bottom: 16px; }
+  .stays p:last-child { margin-bottom: 0; }
+  .stays .lens-line { font-family: var(--serif); font-style: italic; font-size: 19px; color: var(--walnut); line-height: 1.5; padding: 18px 0 6px; border-left: 3px solid var(--brass); padding-left: 22px; margin: 24px 0; }
+
   /* PRINCIPLES */
   .principles { background: var(--graphite); color: var(--cream); padding: 84px 0; position: relative; overflow: hidden; }
   .principles-oak { position: absolute; right: -140px; top: -100px; width: 360px; height: 360px; border-radius: 50%; background: radial-gradient(circle at 45% 55%, rgba(176,141,87,0.24), rgba(90,67,48,0) 64%); z-index: 0; }
@@ -104,7 +114,7 @@
   .footer-top { display: flex; justify-content: space-between; align-items: flex-start; gap: 40px; flex-wrap: wrap; margin-bottom: 40px; }
   .footer-brand { font-family: var(--serif); font-size: 20px; font-weight: 500; color: var(--cream); margin-bottom: 10px; }
   .footer-brand-tag { font-size: 14px; color: rgba(238,232,218,0.6); max-width: 280px; line-height: 1.5; }
-  .footer-cols { display: flex; gap: 64px; flex-wrap: wrap; }
+  .footer-cols { display: flex; gap: 56px; flex-wrap: wrap; }
   .footer-col h4 { font-size: 12px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--brass); margin-bottom: 14px; }
   .footer-col a { display: block; font-size: 14px; color: rgba(238,232,218,0.72); margin-bottom: 9px; transition: color 0.16s ease; }
   .footer-col a:hover { color: var(--cream); }
@@ -119,6 +129,7 @@
     .photo-frame { max-width: 360px; }
     .principle { grid-template-columns: 44px 1fr; gap: 18px; }
     .closing-inner { flex-direction: column; align-items: flex-start; }
+    .stays .lens-line { font-size: 17px; padding-left: 16px; }
   }
   @media (max-width: 520px) { .wrap, .wrap-narrow { width: calc(100% - 36px); } }
   @media (prefers-reduced-motion: reduce) { * { scroll-behavior: auto; transition: none !important; } }
@@ -138,6 +149,7 @@
       <a href="/numidian.html">Numidian</a>
       <a href="/listingpro.html">ListingPro</a>
       <a href="/founder.html" class="active">Founder</a>
+      <a href="/legal/">Legal</a>
     </nav>
   </div>
 </header>
@@ -171,6 +183,19 @@
     </div>
   </section>
 
+  <!-- WHAT STAYS THE SAME — bridging section -->
+  <section class="stays">
+    <div class="stays-grid-bg"></div>
+    <div class="wrap-narrow inner">
+      <div class="stays-eyebrow">What stays the same</div>
+      <h2>The products change. The lens doesn't.</h2>
+      <p>We've already cut Consumer Dividends from thirteen products to two, and we'll cut again when the work tells us to. The products are how we make money. They are not the deepest thing about the company.</p>
+      <p>The deepest thing is what we keep finding when we go looking for what to build.</p>
+      <p class="lens-line">There is always a group creating value and a group capturing it. There is always coordination missing between people whose incentives don't line up. We build inside those gaps.</p>
+      <p>The four things below are what we hold to while we do it.</p>
+    </div>
+  </section>
+
   <!-- PRINCIPLES -->
   <section class="principles">
     <div class="principles-oak"></div>
@@ -184,29 +209,29 @@
         <div class="principle">
           <div class="principle-num">i.</div>
           <div>
-            <h3>Leverage means the system does the work, not you.</h3>
-            <p>It's when the work still gets done without you having to grind through it every time. A good tool takes the part that used to eat an afternoon and does it the same way every time, so the hours and the margin come back to you.</p>
+            <h3>The work happens in the gap.</h3>
+            <p>There is a gap between the operator carrying every function alone and the organization with a team for each one. The professional who is also their own paralegal, their own analyst, and their own back office faces the same work a fully resourced firm would, with none of the help. We build the bridge across that gap, so a single operator can work at the level a full team would, and give their hours back to the work that actually brings in money.</p>
           </div>
         </div>
         <div class="principle">
           <div class="principle-num">ii.</div>
           <div>
-            <h3>We build for the operator doing the work themselves.</h3>
-            <p>The people we build for are the ones with no team to hand things off to: the fractional consultant, the solo agent, the small professional carrying the whole load. They lose the most time to manual work and have the least help absorbing it, so they get the most back when a tool takes that work off their hands.</p>
+            <h3>Leverage means the system does the work, not you.</h3>
+            <p>It's when the work still gets done without you having to grind through it every time. A good tool takes the part that used to eat an afternoon and does it the same way every time, so the hours and the margin come back to you.</p>
           </div>
         </div>
         <div class="principle">
           <div class="principle-num">iii.</div>
           <div>
-            <h3>One person should be able to see what a whole team would.</h3>
-            <p>Most of these tools exist because the person facing the situation has no department behind them to make sense of it. You bring the facts, we organize them and weigh them, so a single operator walks in with the same clear read a full team would have spent days assembling.</p>
+            <h3>One person should be able to access what a whole team would.</h3>
+            <p>Most of these tools exist because the person facing the situation has no department behind them to make sense of it. They have to fill every role on a team that doesn't exist, in the same hour they're supposed to be doing the actual work. A single operator should be able to access the same resources a full team would have spent days assembling.</p>
           </div>
         </div>
         <div class="principle">
           <div class="principle-num">iv.</div>
           <div>
-            <h3>If it is not useful, it does not ship.</h3>
-            <p>We do not build things to look busy or to round out a catalog. A tool earns its place by doing something real for the person using it, or it does not go out.</p>
+            <h3>If it doesn't close a real gap, it doesn't ship.</h3>
+            <p>We don't build to look busy or to round out a catalog. A tool earns its place by closing a specific coordination failure between specific groups. If we can't say in one sentence who it sits between and what it aligns, it doesn't go out.</p>
           </div>
         </div>
       </div>
@@ -216,7 +241,7 @@
   <!-- CLOSING -->
   <section class="closing">
     <div class="wrap closing-inner">
-      <h2>Two systems are live now. See the one built for your work.</h2>
+      <h2>Two systems are live, more on the way. See the one built for your work.</h2>
       <div class="closing-actions">
         <a class="btn" href="/numidian.html">Numidian</a>
         <a class="btn ghost" href="/listingpro.html">ListingPro</a>
@@ -242,13 +267,25 @@
         <div class="footer-col">
           <h4>Company</h4>
           <a href="/founder.html">Founder</a>
-          <a href="/founder.html">What we hold to</a>
+          <a href="/founder.html#principles">What we hold to</a>
+          <a href="mailto:support@consumerdividends.com">Contact</a>
+        </div>
+        <div class="footer-col">
+          <h4>Legal</h4>
+          <a href="/legal/privacy.html">Privacy Policy</a>
+          <a href="/legal/terms.html">Terms of Service</a>
+          <a href="/legal/llm-disclosure.html">LLM Disclosure</a>
+          <a href="/legal/acceptable-use.html">Acceptable Use</a>
+          <a href="/legal/cookies.html">Cookies</a>
+          <a href="/legal/numidian-terms.html">Numidian Terms</a>
+          <a href="/legal/listingpro-terms.html">ListingPro Terms</a>
+          <a href="/legal/">All policies</a>
         </div>
       </div>
     </div>
     <div class="footer-bottom">
       <span>&copy; 2026 Consumer Dividends Holding Corp</span>
-      <span>Tools that put leverage back in your hands.</span>
+      <span>support@consumerdividends.com</span>
     </div>
   </div>
 </footer>
