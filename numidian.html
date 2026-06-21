@@ -4,10 +4,10 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Numidian | Consumer Dividends</title>
-<meta name="description" content="Structured HR risk scoring for workplace disputes. You put in the facts. We organize them by risk factor. A risk inventory, not legal advice." />
+<meta name="description" content="Structured HR risk scoring for workplace disputes. You put in the facts. We organize them by risk factor, and estimate the settlement range. A risk inventory, not legal advice." />
 
 <meta property="og:title" content="Numidian | Consumer Dividends" />
-<meta property="og:description" content="You put in the facts. We organize them by risk factor. Structured HR risk scoring weighed against EEOC charge data, court timing patterns, and a state law matrix." />
+<meta property="og:description" content="You put in the facts. We organize them by risk factor and estimate the settlement range. Structured HR risk scoring weighed against EEOC charge data, court timing patterns, Title VII damage caps, and a state law matrix." />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://consumerdividends.com/numidian.html" />
 <meta property="og:image" content="https://consumerdividends.com/assets/cover.png" />
@@ -143,19 +143,29 @@
   .trial .cta-col .btn { width: 100%; }
 
   .pricing-head { margin-bottom: 0; }
-  .tiers { display: grid; grid-template-columns: repeat(4, 1fr); border: 1px solid var(--line); margin-top: 40px; }
+  .pricing-universal {
+    margin-top: 28px;
+    padding: 20px 24px;
+    background: var(--cream-deep);
+    border-left: 3px solid var(--brass);
+    border-radius: 2px;
+    max-width: 880px;
+  }
+  .pricing-universal p { font-size: 15.5px; color: var(--ink); line-height: 1.6; margin: 0; }
+  .pricing-universal strong { color: var(--graphite); font-weight: 600; }
+
+  .tiers { display: grid; grid-template-columns: repeat(4, 1fr); border: 1px solid var(--line); margin-top: 28px; }
   .tier { padding: 30px 26px; border-right: 1px solid var(--line); position: relative; display: flex; flex-direction: column; background: var(--cream); }
   .tier:last-child { border-right: none; }
-  .tier.popular { background: var(--cream-deep); }
-  .tier.popular::before { content: "Most popular"; position: absolute; top: 0; left: 0; right: 0; background: var(--brass); color: var(--graphite); font-size: 11px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; text-align: center; padding: 6px; }
-  .tier.popular { padding-top: 54px; }
   .tier-name { font-family: var(--serif); font-weight: 500; font-size: 20px; color: var(--graphite); margin-bottom: 6px; }
   .tier-price { font-family: var(--serif); font-size: 34px; font-weight: 500; color: var(--graphite); letter-spacing: -0.02em; line-height: 1; margin-bottom: 4px; }
   .tier-price span { font-size: 15px; color: var(--muted); font-family: var(--sans); font-weight: 500; }
-  .tier-sub { font-size: 13.5px; color: var(--muted); margin-bottom: 18px; min-height: 20px; }
-  .tier ul { list-style: none; margin-bottom: 22px; flex: 1; }
+  .tier-sub { font-size: 13.5px; color: var(--muted); margin-bottom: 4px; min-height: 20px; }
+  .tier-best-value { font-size: 11px; font-weight: 700; color: var(--brass); text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 14px; }
+  .tier ul { list-style: none; margin-top: 6px; margin-bottom: 22px; flex: 1; }
   .tier li { font-size: 14.5px; color: var(--ink); padding: 7px 0 7px 18px; position: relative; line-height: 1.4; }
   .tier li::before { content: ""; position: absolute; left: 0; top: 14px; width: 7px; height: 7px; border-radius: 50%; background: var(--brass); }
+  .tier li.highlight { color: var(--graphite); font-weight: 600; }
   .tier .btn { width: 100%; font-size: 14px; padding: 12px; }
   .pricing-note { font-size: 14px; color: var(--muted); margin-top: 22px; line-height: 1.5; }
   .pricing-note a { color: var(--blue); border-bottom: 1px solid var(--line-soft); }
@@ -230,7 +240,7 @@
     <div class="wrap phero-inner">
       <div class="eyebrow-lg">Numidian</div>
       <h1>You put in the facts.<br>We organize them by risk factor.</h1>
-      <p class="intro">A workplace situation turns into a dispute, and suddenly there are three versions of what happened and no clear read on how much exposure the company has. Numidian takes the facts and scores the exposure across five risk factors, weighed against EEOC charge data, federal court timing patterns, and a state-by-state law matrix, so that you know exactly where the exposure sits before the next decision gets made.</p>
+      <p class="intro">A workplace situation turns into a dispute, and suddenly there are three versions of what happened and no clear read on how much exposure the company has. Numidian takes the facts, scores the exposure across five risk factors, and estimates the settlement range using Title VII damage caps and state law, so you know exactly where the exposure sits in dollars before the next decision gets made.</p>
       <div class="hero-actions">
         <a class="btn brass" href="https://numidian.up.railway.app" target="_blank" rel="noopener">Run a free risk report</a>
         <a class="btn ghost" href="#pricing">See pricing</a>
@@ -246,10 +256,10 @@
       </div>
       <div class="split">
         <div>
-          <p>You enter the facts that matter: the action taken, the protected activity if there was one, how much time passed between them, who knew about it, the documentation on hand, how consistently policy was applied, the jurisdiction, and the protected class factors involved.</p>
+          <p>You enter the facts that matter: the action taken, the protected activity if there was one, how much time passed between them, who knew about it, the documentation on hand, how consistently policy was applied, the jurisdiction, and the protected class factors involved. Optionally, the employee's salary, used as the basis for back-pay estimates.</p>
         </div>
         <div class="col-muted">
-          <p>Numidian runs each input through a fixed framework and returns a structured score across five risk factors. The state you enter sets a jurisdiction multiplier, so the same situation scores higher in California than in Georgia, because the law itself is different.</p>
+          <p>Numidian runs each input through a fixed framework and returns a structured score across five risk factors, plus a settlement exposure range built from Title VII damage caps, state damage rules, and BLS median wage data. The state you enter sets a jurisdiction multiplier, so the same situation scores higher in California than in Georgia, because the law itself is different.</p>
         </div>
       </div>
     </div>
@@ -285,7 +295,7 @@
         <div class="factor full">
           <span class="factor-num">v.</span>
           <h3>Overall exposure index</h3>
-          <p>The composite read across the other four, weighted by severity, that tells you how seriously to treat the situation.</p>
+          <p>The composite read across the other four, weighted by severity, that tells you how seriously to treat the situation. Pairs with the settlement exposure range so you have both the risk score and the dollar figure in one place.</p>
         </div>
       </div>
     </div>
@@ -298,7 +308,7 @@
         <h2>What you get</h2>
       </div>
       <div>
-        <p>A structured report you can read in a few minutes and keep on file: the five scores, the specific flags raised by the facts you entered, and a set of practical next steps. Download as HTML or PDF.</p>
+        <p>A structured report you can read in a few minutes and keep on file: the five scores, an estimated settlement range built from Title VII damage caps and state rules, the relevant state statutes cited, the specific flags raised by the facts you entered, and a set of practical next steps. Download as HTML or PDF.</p>
       </div>
     </div>
   </section>
@@ -318,7 +328,7 @@
         <div class="aud">
           <div class="oak-dot"></div>
           <h3>Employment attorneys</h3>
-          <p>Who want fast, consistent triage before sinking hours into intake on a case that may not hold.</p>
+          <p>Who want fast, consistent triage and a defensible settlement range before sinking hours into intake on a case that may not hold.</p>
         </div>
         <div class="aud">
           <div class="oak-dot"></div>
@@ -334,7 +344,7 @@
     <div class="wrap inner">
       <div>
         <h2>Run one full report, free.</h2>
-        <p>No account needed. Use the code <span class="code">FREE-TRIAL</span> to run a complete risk report and see exactly what comes back.</p>
+        <p>No account needed. Use the code <span class="code">FREE-TRIAL</span> to run a complete risk report, settlement range and all, and see exactly what comes back.</p>
       </div>
       <div class="cta-col">
         <a class="btn brass" href="https://numidian.up.railway.app" target="_blank" rel="noopener">Reach Numidian</a>
@@ -348,6 +358,9 @@
         <span class="tick"></span>
         <h2>Pricing</h2>
       </div>
+      <div class="pricing-universal">
+        <p><strong>Every report includes</strong> the five risk scores, an estimated settlement range built from Title VII damage caps and state law, the relevant state statutes, risk flags, and recommended next steps. Plans differ on report volume, team access, and report branding.</p>
+      </div>
       <div class="tiers">
         <div class="tier">
           <div class="tier-name">Single Report</div>
@@ -360,7 +373,7 @@
           </ul>
           <a class="btn" href="https://buy.stripe.com/aFa28q91y9bKdZP8hn87K09" target="_blank" rel="noopener">Buy $79</a>
         </div>
-        <div class="tier popular">
+        <div class="tier">
           <div class="tier-name">5-Report Pack</div>
           <div class="tier-price">$299</div>
           <div class="tier-sub">Ninety-day access window</div>
@@ -369,39 +382,44 @@
             <li>Every feature included</li>
             <li>HTML and PDF download</li>
           </ul>
-          <a class="btn brass" href="https://buy.stripe.com/00w4gycdKcnW2h755b87K08" target="_blank" rel="noopener">Buy $299</a>
+          <a class="btn" href="https://buy.stripe.com/00w4gycdKcnW2h755b87K08" target="_blank" rel="noopener">Buy $299</a>
         </div>
         <div class="tier">
           <div class="tier-name">Pro</div>
           <div class="tier-price">$349<span>/mo</span></div>
           <div class="tier-sub">Twenty reports a month</div>
+          <div class="tier-best-value">Best value</div>
           <ul>
-            <li>Case history</li>
+            <li>Portfolio dashboard</li>
+            <li>Client workspaces with 2 team seats</li>
+            <li>Full case history</li>
             <li>Priority support</li>
-            <li>Renews monthly</li>
           </ul>
-          <a class="btn" href="https://buy.stripe.com/dRm8wO1z6afOf3T55b87K07" target="_blank" rel="noopener">Subscribe $349/mo</a>
+          <a class="btn brass" href="https://buy.stripe.com/dRm8wO1z6afOf3T55b87K07" target="_blank" rel="noopener">Subscribe $349/mo</a>
         </div>
         <div class="tier">
           <div class="tier-name">Agency</div>
           <div class="tier-price">$799<span>/mo</span></div>
           <div class="tier-sub">Unlimited reports</div>
           <ul>
+            <li class="highlight">White-label reports</li>
+            <li class="highlight">Client workspaces with 5 team seats</li>
+            <li class="highlight">Batch CSV analysis</li>
             <li>Portfolio dashboard</li>
-            <li>Batch CSV analysis</li>
+            <li>Aggregate risk view</li>
             <li>Full case history</li>
-            <li>Renews monthly</li>
           </ul>
           <a class="btn" href="https://buy.stripe.com/7sY00i0v25Zy8Fv55b87K0a" target="_blank" rel="noopener">Subscribe $799/mo</a>
         </div>
       </div>
-      <p class="pricing-note">Your access code arrives by email right after purchase, used at <a href="https://numidian.up.railway.app" target="_blank" rel="noopener">numidian.up.railway.app</a>.</p>
+      <p class="pricing-note">Your access code arrives by email right after purchase, used at <a href="https://numidian.up.railway.app" target="_blank" rel="noopener">numidian.up.railway.app</a>. Subscriptions renew monthly and can be cancelled anytime.</p>
     </div>
   </section>
 
   <section class="disclaimer">
     <div class="wrap">
       <p><strong>Numidian is a structured risk-factor inventory.</strong> It is not legal advice and does not create an attorney-client relationship. It does not make, recommend, or materially influence any employment decision about an individual. For guidance specific to your jurisdiction, consult licensed employment counsel.</p>
+      <p>Settlement exposure ranges in reports are statistical estimates based on Title VII damage caps (42 U.S.C. § 1981a), state damage rules, and U.S. Bureau of Labor Statistics median wage data. They are not case-specific valuations and should not be used as a basis for settlement negotiation without independent legal review.</p>
       <p>Full detail in the <a href="/legal/numidian-terms.html">Numidian Product Terms</a> and the <a href="/legal/llm-disclosure.html">Language Model Use Disclosure</a>.</p>
     </div>
   </section>
