@@ -12,7 +12,7 @@ Our products use large language models combined with deterministic scoring and t
 
 **Numidian** is a risk inventory and scoring tool used by HR consultants, employment attorneys, and HR managers. It scores organizational exposure across five dimensions using EEOC charge data, federal court timing patterns, and a state-by-state law matrix. A language model is used to express the report in readable prose. The scores come from the scoring framework, not the model.
 
-**ListingPro** is a listing operations platform used by real estate agents, brokers, and property managers. It generates MLS-ready descriptions, social copy, deal analysis, and client packets from property details. A language model produces the marketing prose. The deal analysis numbers come from deterministic calculations on the inputs you provide, not from the model.
+**Tesali** is a listing operations platform used by real estate agents, brokers, and property managers. It generates MLS-ready descriptions, social copy, deal analysis, and client packets from property details. A language model produces the marketing prose. The deal analysis numbers come from deterministic calculations on the inputs you provide, not from the model.
 
 ## 2. What our products do not do
 
@@ -20,7 +20,7 @@ Our products use large language models combined with deterministic scoring and t
 
 Numidian does not decide whether to hire, fire, promote, discipline, or take any other employment action against any person. It produces a risk score for an advisor to read. The decision sits with the employer.
 
-ListingPro does not screen tenants, evaluate buyers, set prices, or target audiences. It produces listing copy and supporting materials for a licensed agent to review.
+Tesali does not screen tenants, evaluate buyers, set prices, or target audiences. It produces listing copy and supporting materials for a licensed agent to review.
 
 Neither product is an "automated employment-related decision technology" under the Connecticut Artificial Intelligence Responsibility and Transparency Act (Public Act 26-15, Section 31-57aa et seq., applying to systems deployed on or after October 1, 2027). The CART Act covers technology that processes personal data and produces output that is a "substantial factor" in an employment-related decision about an individual. Numidian's output is a structured risk inventory for the firm's own analysis. It does not direct or materially influence a decision about any individual employee.
 
@@ -30,27 +30,27 @@ If a deployer of our product chooses to use the output as a substantial factor i
 
 ## 3. What data is sent to the language model
 
-When you submit inputs to Numidian or ListingPro, those inputs are sent to our language model provider only for the duration needed to generate your output. The provider does not retain those inputs for training purposes under our agreement with them.
+When you submit inputs to Numidian or Tesali, those inputs are sent to our language model provider only for the duration needed to generate your output. The provider does not retain those inputs for training purposes under our agreement with them.
 
 Specifically:
 - Numidian sends the structured case facts you enter (action, protected activity, timing, documentation status, state, company size, comparator detail, protected class).
-- ListingPro sends the property details you enter (address, features, condition, price information, listing context).
+- Tesali sends the property details you enter (address, features, condition, price information, listing context).
 
 Neither product sends payment information, account credentials, or content from other users to the model.
 
 ## 4. Whether your data trains models
 
-No. We do not use the content of your Numidian inputs, ListingPro inputs, or any reports generated for you to train, fine-tune, or otherwise improve any language model. Your case facts and property details stay yours.
+No. We do not use the content of your Numidian inputs, Tesali inputs, or any reports generated for you to train, fine-tune, or otherwise improve any language model. Your case facts and property details stay yours.
 
 Aggregate, non-identifying usage statistics (such as how many reports were generated in a month) may inform product improvements. The content of your inputs is not used for this.
 
 ## 5. How outputs are produced
 
-Numidian and ListingPro both combine deterministic logic with language model generation:
+Numidian and Tesali both combine deterministic logic with language model generation:
 
 - **Numidian** uses a fixed scoring framework. Each of the 18 input fields feeds into one of five scoring dimensions through documented rules. A jurisdiction multiplier is applied based on the state entered. The language model is used to express the final report in readable prose. The scores themselves come from the framework, not the model.
 
-- **ListingPro** uses templates and structured prompts to convert property details into marketing copy. The language model generates the prose. The deal analysis numbers come from deterministic calculations on the inputs you provide, not from the model.
+- **Tesali** uses templates and structured prompts to convert property details into marketing copy. The language model generates the prose. The deal analysis numbers come from deterministic calculations on the inputs you provide, not from the model.
 
 In both products, the same inputs produce substantially similar outputs across runs. We are not generating creative content where the model decides on substance. The model is generating text from a structured frame.
 
@@ -58,8 +58,8 @@ In both products, the same inputs produce substantially similar outputs across r
 
 - Language models can produce errors. Review every output before relying on it.
 - Language models can produce content that is plausible-sounding but wrong about facts not provided in the inputs. Do not assume any factual content beyond what you input is accurate.
-- Language models can produce text that, in a real estate marketing context, may raise fair housing concerns. ListingPro includes a fair housing screen on every output, but you and your broker remain responsible for the final review.
-- Language models cannot replace professional judgment. Numidian outputs are not legal advice. ListingPro outputs are not approved marketing.
+- Language models can produce text that, in a real estate marketing context, may raise fair housing concerns. Tesali includes a fair housing screen on every output, but you and your broker remain responsible for the final review.
+- Language models cannot replace professional judgment. Numidian outputs are not legal advice. Tesali outputs are not approved marketing.
 
 ## 7. Bias and fairness
 
@@ -67,7 +67,7 @@ We have built specific scoring frameworks and review processes intended to reduc
 
 **Numidian** scores against documented data sources (EEOC charge data, federal court timing patterns, 15-state law matrix). The scoring framework is fixed. The same inputs produce the same scores. The protected class field is used to apply the legal framework appropriate to the situation, not to differentiate scoring against any individual.
 
-**ListingPro** runs every output through a fair housing language screen before delivery. The screen checks for terms HUD has identified as discriminatory, plus terms flagged by major MLS systems. Outputs that contain flagged language are revised before delivery or returned with a warning for the user to review.
+**Tesali** runs every output through a fair housing language screen before delivery. The screen checks for terms HUD has identified as discriminatory, plus terms flagged by major MLS systems. Outputs that contain flagged language are revised before delivery or returned with a warning for the user to review.
 
 We do not represent these measures as a complete or certified bias audit. We document them so that you and your counsel can evaluate them. Where regulators require formal anti-bias testing or impact assessments for the use of an automated decision tool, those obligations sit with the deployer in their specific deployment.
 
