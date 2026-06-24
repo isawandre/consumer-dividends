@@ -4,7 +4,7 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Subprocessor List — Consumer Dividends</title>
-<meta name="description" content="Subprocessor List for Consumer Dividends Holding Corp and our products including Numidian and ListingPro." />
+<meta name="description" content="Subprocessor List for Consumer Dividends Holding Corp and our products including Numidian and Tesali." />
 <meta name="robots" content="index,follow" />
 
 <link rel="icon" href="/assets/favicon.ico" sizes="any" />
@@ -293,7 +293,7 @@
     <button class="menu-btn" aria-label="Menu" onclick="document.getElementById('navlinks').classList.toggle('open')">Menu</button>
     <nav class="navlinks" id="navlinks">
       <a href="/numidian.html">Numidian</a>
-      <a href="/listingpro.html">ListingPro</a>
+      <a href="/listingpro.html">Tesali</a>
       <a href="/founder.html">Founder</a>
       <a href="/legal/">Legal</a>
     </nav>
@@ -310,7 +310,7 @@
       <li><a href="/legal/llm-disclosure.html">LLM Disclosure</a></li>
       <li><a href="/legal/cookies.html">Cookies</a></li>
       <li><a href="/legal/numidian-terms.html">Numidian Terms</a></li>
-      <li><a href="/legal/listingpro-terms.html">ListingPro Terms</a></li>
+      <li><a href="/legal/listingpro-terms.html">Tesali Terms</a></li>
       <li><a href="/legal/dpa.html">DPA</a></li>
       <li><a href="/legal/subprocessors.html" class="active">Subprocessors</a></li>
     </ul>
@@ -324,17 +324,17 @@
 <p>This list identifies the third-party service providers ("subprocessors") that may process customer personal data on behalf of Consumer Dividends Holding Corp. We publish it so that customers, their counsel, and their compliance teams can evaluate our supply chain. Updates are reflected in the "Last updated" date and, for material changes, emailed to active customers and Agency tier contacts at least 30 days before they take effect.</p>
 <h2>Active subprocessors</h2>
 <table><thead><tr><th>Provider</th><th>Purpose</th><th>Data processed</th><th>Region</th><th>Compliance</th></tr></thead><tbody>
-<tr><td>Railway</td><td>Application hosting (Numidian, ListingPro)</td><td>All inputs and outputs during processing; access codes; usage logs</td><td>United States</td><td>SOC 2 alignment; encryption in transit and at rest</td></tr>
-<tr><td>Supabase</td><td>Database backing for ListingPro</td><td>Property inputs, generated outputs, account references</td><td>United States</td><td>SOC 2 Type II; GDPR-aligned</td></tr>
+<tr><td>Railway</td><td>Application hosting (Numidian, Tesali)</td><td>All inputs and outputs during processing; access codes; usage logs</td><td>United States</td><td>SOC 2 alignment; encryption in transit and at rest</td></tr>
+<tr><td>Supabase</td><td>Database backing for Tesali</td><td>Property inputs, generated outputs, account references</td><td>United States</td><td>SOC 2 Type II; GDPR-aligned</td></tr>
 <tr><td>PostgreSQL on Railway</td><td>Database backing for Numidian</td><td>Case inputs, generated outputs, access codes, case history</td><td>United States</td><td>Same as Railway above</td></tr>
 <tr><td>Cloudflare</td><td>DNS, CDN, edge security for consumerdividends.com and product subdomains</td><td>IP address, request paths, security logs</td><td>Global edge; primary US</td><td>SOC 2 Type II; ISO 27001; GDPR-aligned; DPA available</td></tr>
 <tr><td>Stripe</td><td>Payment processing, subscription management, billing</td><td>Cardholder data (Stripe-tokenized, not stored by us), customer email, transaction history</td><td>United States and other regions per Stripe</td><td>PCI DSS Level 1; SOC 1, SOC 2; GDPR-aligned</td></tr>
-<tr><td>OpenAI (via API)</td><td>Language model inference for Numidian and ListingPro outputs</td><td>Inputs submitted at runtime; not retained for training under our API agreement</td><td>United States</td><td>SOC 2 Type II; GDPR-aligned; zero-retention API option in use</td></tr>
+<tr><td>OpenAI (via API)</td><td>Language model inference for Numidian and Tesali outputs</td><td>Inputs submitted at runtime; not retained for training under our API agreement</td><td>United States</td><td>SOC 2 Type II; GDPR-aligned; zero-retention API option in use</td></tr>
 <tr><td>Google Workspace</td><td>Operational email (support@, andreys@, admin@consumerdividends.com)</td><td>Email content sent to or from us</td><td>United States</td><td>SOC 1/2/3; ISO 27001/27017/27018; GDPR-aligned</td></tr>
 <tr><td>GitHub</td><td>Source code hosting</td><td>No customer personal data</td><td>United States</td><td>SOC 2 Type II</td></tr>
 </tbody></table>
 <h2>Notes on scope</h2>
-<p><strong>OpenAI</strong>: Inputs you submit to Numidian or ListingPro are sent to OpenAI for the duration needed to generate your output. Under our API agreement with OpenAI, those inputs are not used to train OpenAI's models and are not retained beyond 30 days for abuse-monitoring purposes (and zero retention where requested for specific endpoints). We have configured our integration to minimize retention to the extent OpenAI supports.</p>
+<p><strong>OpenAI</strong>: Inputs you submit to Numidian or Tesali are sent to OpenAI for the duration needed to generate your output. Under our API agreement with OpenAI, those inputs are not used to train OpenAI's models and are not retained beyond 30 days for abuse-monitoring purposes (and zero retention where requested for specific endpoints). We have configured our integration to minimize retention to the extent OpenAI supports.</p>
 <p><strong>Railway and Cloudflare</strong>: handle infrastructure and edge security. They have access to network metadata (IP addresses, request paths) but not to the contents of your inputs or outputs except as data passes through their networks in transit.</p>
 <p><strong>Stripe</strong>: receives payment information directly through Stripe's secure checkout. We do not store full payment card data on our systems. We receive payment confirmation events and customer identifiers from Stripe.</p>
 <h2>Changes</h2>
@@ -361,7 +361,7 @@
         <div class="footer-col">
           <h4>Systems</h4>
           <a href="/numidian.html">Numidian</a>
-          <a href="/listingpro.html">ListingPro</a>
+          <a href="/listingpro.html">Tesali</a>
         </div>
         <div class="footer-col">
           <h4>Company</h4>
@@ -375,7 +375,7 @@
           <a href="/legal/llm-disclosure.html">LLM Disclosure</a>
           <a href="/legal/cookies.html">Cookies</a>
           <a href="/legal/numidian-terms.html">Numidian Terms</a>
-          <a href="/legal/listingpro-terms.html">ListingPro Terms</a>
+          <a href="/legal/listingpro-terms.html">Tesali Terms</a>
           <a href="/legal/dpa.html">DPA</a>
           <a href="/legal/subprocessors.html">Subprocessors</a>
         </div>
